@@ -1,0 +1,286 @@
+{
+    "key": "group_598f3a3e71e8d",
+    "title": "Informationen zum Event",
+    "fields": [
+        {
+            "key": "field_598f3a4707e58",
+            "label": "Startdatum",
+            "name": "start_date",
+            "type": "date_picker",
+            "instructions": "z.B. 16.08.2017",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "d.m.Y",
+            "return_format": "Y\/m\/d",
+            "first_day": 1
+        },
+        {
+            "key": "field_59a99d4d8c7a9",
+            "label": "Enddatum",
+            "name": "end_date",
+            "type": "date_picker",
+            "instructions": "Wenn kein Enddatum angegeben ist, wir nur das Startdatum angezeigt. Zum Beispiel bei Events die nur an einem Tag stattfinden.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "d.m.Y",
+            "return_format": "Y\/m\/d",
+            "first_day": 1
+        },
+        {
+            "key": "field_598f3cef329df",
+            "label": "Zeit",
+            "name": "time",
+            "type": "text",
+            "instructions": "z.B. 11.15 Uhr",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_598f3a7207e59",
+            "label": "genauer Ort",
+            "name": "location",
+            "type": "text",
+            "instructions": "z.B. Bernard Theater, Zürich (Diese Information wird in der Eventliste unterhalb des Titel des Events angezeigt.)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_59a99bcd0e4be",
+            "label": "Veranstalter",
+            "name": "organizer",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_598f422b06244",
+            "label": "Kosten",
+            "name": "costs",
+            "type": "text",
+            "instructions": "z.B. CHF 400.– (Falls der Event nicht kostenpflichtig ist, kann dieses Feld leer gelassen werden.)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_598f45e8091e0",
+            "label": "Campus Event",
+            "name": "is_campus",
+            "type": "true_false",
+            "instructions": "Handelt es sich bei diesem Event um einen Campus Event?",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_598f427631431",
+            "label": "Anmeldung",
+            "name": "has_registration",
+            "type": "true_false",
+            "instructions": "Muss man sich für diesen Event anmelden?",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_598f42e531432",
+            "label": "Anmeldung über externe Website",
+            "name": "registration_link",
+            "type": "link",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_598f427631431",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_598f45e8091e0",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
+            "key": "field_598f432731435",
+            "label": "Anmeldeformular des Campus",
+            "name": "registration_form",
+            "type": "gravity_forms_field",
+            "instructions": "Wählen Sie das Anmeldeformular, welches für diesen Campus Event angezeigt werden soll.",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_598f427631431",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_598f45e8091e0",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "allow_null": 0,
+            "allow_multiple": 0
+        },
+        {
+            "key": "field_59a998ed42d52",
+            "label": "Link-Text für Anmeldeformular auf Event-Übersichtsseite",
+            "name": "registration_button_text",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_598f427631431",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_598f45e8091e0",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Zum Anmeldeformular",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_59a5db61fd777",
+            "label": "Externer Link zum Event",
+            "name": "external_link",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_598f45e8091e0",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "event"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "featured_image"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1507643807
+}

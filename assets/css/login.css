@@ -1,0 +1,101 @@
+/*
+
+Stylesheet: Login Stylesheet
+
+This stylesheet is loaded only on the login page. It won't affect any other page, admin or front-end.
+
+For more info, check out the codex:
+http://codex.wordpress.org/Creating_Admin_Themes
+
+*/
+
+.login { background:  #ffffff; }
+
+.login form { box-shadow: none; }
+
+.login h1 a {
+  background: url(../images/campus_demokratie_logo.svg) no-repeat top center;
+  width: 326px;
+  height: 67px;
+  text-indent: -9999px;
+  overflow: hidden;
+  padding-bottom: 15px;
+  display: block; }
+
+/* 
+	colors 
+	#bd4145: light red
+	#8d464a: dark red	
+*/
+.login #login_error, .login .message { border-left-color: #bb474e; }
+
+input[type="text"]:focus, 
+input[type="search"]:focus, 
+input[type="radio"]:focus, 
+input[type="tel"]:focus, 
+input[type="time"]:focus, 
+input[type="url"]:focus, 
+input[type="week"]:focus, 
+input[type="password"]:focus, 
+input[type="checkbox"]:focus, 
+input[type="color"]:focus, 
+input[type="date"]:focus, 
+input[type="datetime"]:focus, 
+input[type="datetime-local"]:focus, 
+input[type="email"]:focus, 
+input[type="month"]:focus, 
+input[type="number"]:focus, 
+select:focus, 
+textarea:focus {
+	border-color: #bb474e; 
+	box-shadow: 0 0 2px rgba(187, 71, 78, 0.8);
+}
+ 
+.wp-core-ui .button-primary {
+    background: #bb474e;
+    border-color: #bb474e #bd4145 #bd4145;
+    -webkit-box-shadow: 0 1px 0 #bd4145;
+    box-shadow: 0 1px 0 #bd4145;
+    color: #ffffff;
+    text-decoration: none;
+    text-shadow: 0 -1px 1px #bd4145, 1px 0 1px #bd4145, 0 1px 1px #bd4145, -1px 0 1px #bd4145;
+    transition: all 0.2s ease-in-out;
+}
+
+.wp-core-ui .button-primary.focus, 
+.wp-core-ui .button-primary.hover, 
+.wp-core-ui .button-primary:focus, 
+.wp-core-ui .button-primary:hover,
+.wp-core-ui .button-primary.active, 
+.wp-core-ui .button-primary.active:focus, 
+.wp-core-ui .button-primary.active:hover, 
+.wp-core-ui .button-primary:active {
+    background: #bd4145;
+    border-color: #8d464a;
+    color: #fff;
+}
+
+.wp-core-ui .button-primary.focus, 
+.wp-core-ui .button-primary:focus {
+	box-shadow: none;
+}
+
+input[type=checkbox]:checked:before {
+	color: #bd4145;
+}
+
+.login #backtoblog a:hover, 
+.login #nav a:hover, .login h1 a:hover {
+	color: #bd4145;
+}
+
+
+
+
+
+
+
+
+
+
+

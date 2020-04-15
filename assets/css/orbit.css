@@ -1,0 +1,17 @@
+@charset "UTF-8";
+/*
+	light grey: #e9edf0
+	darker grey: #dee2e5
+	light red:  #bd4145
+	dark red:   #8d464a
+*/
+
+.cd-orbit-slide {
+  padding: 2rem 4rem;
+}
+
+.orbit-next, .orbit-previous { background: #e9edf0; cursor: pointer; }
+.orbit-next:hover, .orbit-previous:hover { background: #bd4145; }
+
+.orbit-bullets button { background-color: #e9edf0; }
+.orbit-bullets button.is-active, .orbit-bullets button:hover { background-color: #bd4145; cursor: pointer; }

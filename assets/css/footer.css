@@ -1,0 +1,70 @@
+@charset "UTF-8";
+/*
+	light grey: #e9edf0
+	darker grey: #dee2e5
+	light red:  #bd4145
+	dark red:   #8d464a
+*/
+
+.footer {
+  clear: both;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+  background-color: #bd4145;
+  color: white; 
+}
+
+.inner-footer {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+
+.inner-footer div:last-child {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: flex-end;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.inner-footer p { margin-bottom: 5px; }
+
+.inner-footer .contact-name { font-weight: bold; }
+
+.footer .nav {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: flex-end;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.inner-footer .menu { border-left: 1px solid white; }
+
+.footer .copyright { 
+	padding: 0 0.5rem 0.1rem;
+    line-height: 1;
+    margin-bottom: 0.05rem;
+}
+
+.some-channels {
+	font-size: 2rem;
+	padding-right: 0.5rem;
+}
+
+.some-channels a:hover { font-weight: normal; color: #f2f2f2; }
+
+.footer .menu-item:not(:last-child) {
+	border-right: 1px solid white;
+}
+
+.footer .menu-item a { padding: 0 0.5rem 0.1rem; }
+
+
+

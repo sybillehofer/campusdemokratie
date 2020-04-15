@@ -1,0 +1,56 @@
+@font-face {
+  font-family: 'MinionPro';
+  src: url('../fonts/MinionPro-Regular.eot');
+  src: url('../fonts/MinionPro-Regular.woff2') format('woff2'),
+       url('../fonts/MinionPro-Regular.woff') format('woff'),
+       url('../fonts/MinionPro-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'KohinoorDevanagari';
+  src: url('../fonts/KohinoorDevanagari-Bold.woff') format('woff'),
+       url('../fonts/KohinoorDevanagari-Bold.ttf') format('truetype'),
+       url('../fonts/KohinoorDevanagari-Bold.svg#KohinoorDevanagari-Bold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'KohinoorDevanagari-Book';
+  src: url('../fonts/KohinoorDevanagari-Book.woff') format('woff'),
+       url('../fonts/KohinoorDevanagari-Book.ttf') format('truetype'),
+       url('../fonts/KohinoorDevanagari-Book.svg#KohinoorDevanagari-Book') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'KohinoorDevanagari-Demi';
+  src: url('../fonts/KohinoorDevanagari-Demi.woff') format('woff'),
+       url('../fonts/KohinoorDevanagari-Demi.ttf') format('truetype'),
+       url('../fonts/KohinoorDevanagari-Demi.svg#KohinoorDevanagari-Demi') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'KohinoorDevanagari-Light';
+  src: url('../fonts/KohinoorDevanagari-Light.woff') format('woff'),
+       url('../fonts/KohinoorDevanagari-Light.ttf') format('truetype'),
+       url('../fonts/KohinoorDevanagari-Light.svg#KohinoorDevanagari-Light') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'KohinoorDevanagari-Medium';
+  src: url('../fonts/KohinoorDevanagari-Medium.woff') format('woff'),
+       url('../fonts/KohinoorDevanagari-Medium.ttf') format('truetype'),
+       url('../fonts/KohinoorDevanagari-Medium.svg#KohinoorDevanagari-Medium') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+

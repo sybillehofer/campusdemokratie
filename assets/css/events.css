@@ -1,0 +1,160 @@
+@charset "UTF-8";
+/*
+	light grey: #e9edf0
+	darker grey: #dee2e5
+	light red:  #bd4145
+	dark red:   #8d464a
+*/
+
+.events-header { margin-bottom: 2rem; }
+
+.events-header .filter-item { 
+	margin-right: 1em;
+	text-align: center;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    background-color: #e9edf0;
+	cursor: pointer;
+	min-width: 5rem;
+}
+
+.events-header .filter-item.filter-active,
+.events-header .filter-item.filter-active .filter-select { 
+	background-color: #bd4145;
+	color: white;
+}
+
+.events-header .filter-item.filter-active:hover,
+.events-header .filter-item.filter-active:hover .filter-select {
+	background-color: #8c464a;
+	color: white;
+}
+
+
+.events-header .filter-item:hover,
+.events-header .filter-item:hover .filter-select,
+.events-header .filter-select:hover { 
+	color: #bd4145;
+	cursor: pointer;
+}
+
+.events-header .filter-select { 
+	border: none;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: auto;
+    line-height: 1.6;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+.events-header .filter-item.filter-active .filter-select {
+	background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='32' height='24' viewBox='0 0 32 24'><polygon points='0,0 32,0 16,24' style='fill: rgb%28255, 255, 255%29'></polygon></svg>");
+}
+
+.months { margin: 0; }
+
+.events-month { width: 100%; }
+
+.events-month-title { margin-top: 2.5rem; margin-bottom: 1rem; }
+
+.events-event {
+	border-bottom: 1px solid #dee2e5;
+	padding: 10px 0;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	width: 100%;
+}
+
+.events-event.is-first,
+.events-event.is-js-first {
+	border-top: 1px solid #dee2e5;
+}
+
+.events-event.is-last {
+	margin-bottom: 5.5rem;
+}
+
+.events-event.is-first:before,
+.events-event.is-js-first:before {
+	content: attr(data-before);
+	font-size: 20px;
+	line-height: 1.4;
+	font-family: 'KohinoorDevanagari-Medium';
+	font-weight: 400;
+	position: absolute;
+	top: -2.25rem;
+	left: 0;
+	display: block;
+}
+
+.events-event * {
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	-webkit-flex-basis: 50%;
+	flex-basis: 50%;
+}
+
+.event-info {
+	-webkit-flex-basis: 100%;
+	flex-basis: 100%;
+}
+
+.event-name, .event-day {
+	font-family: 'KohinoorDevanagari';
+	font-weight: bold;
+}
+
+.event-name { margin-bottom: 0; }
+
+.events-event.is-campus { padding-top: 15px; }
+
+.events-event.is-campus .event-day {
+	color: #bd4145;
+	position: relative;
+	padding: 9px 0 0 16px;
+}
+
+.events-event.is-campus .event-day:before { 
+	content: '';
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-image: url('../images/is_campus_event.svg');
+	height: 25px;
+	width: 25px;
+	background-repeat: no-repeat;
+}
+
+.event-registration-link { color: #bd4145; }
+
+.event-registration-link:hover, 
+.event-registration-link:active, 
+.event-registration-link:focus { color: #8d464a; }
+
+.reveal {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-justify-content: center;
+	justify-content: center;
+	align-items: center;
+}
+
+.reveal-image {
+	max-height: 80%;
+	min-width: 80%;
+}
+
+
+@media (max-width: 640px) {
+	.events-content {
+		margin-top: 2rem;
+	}
+}
