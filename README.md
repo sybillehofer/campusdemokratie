@@ -17,6 +17,7 @@ Sybille Hofer @sybillehofer
 * Feature: Add blog format
 * Feature: Add navigation for social media channels
 * Layout: Change front page
+* Feature: Change category of projects to project-category
 
 ### 1.4.0 2019-05-27
 

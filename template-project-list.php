@@ -61,7 +61,7 @@ Template Name: Projekt-Liste
 							<div class="filter-group">
 								<select class="filters-select filter-akteur" data-filter-group="category">
 									<option value=""><?php pll_e( 'Alle Kategorien' ); ?></option>
-									<?php foreach( cd_get_taxonomy_terms('category') as $category ) : ?>
+									<?php foreach( cd_get_taxonomy_terms('project-category') as $category ) : ?>
 										<option value="<?php echo $category->slug; ?>"><?php echo $category->name; ?></option>
 									<?php endforeach; ?>
 								</select>

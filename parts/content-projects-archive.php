@@ -61,7 +61,7 @@
 		      <td><?php echo join(', ', cd_get_tax_name($project->ID, 'akteur')); ?></td>
 		      <td><?php echo join(', ', cd_get_tax_name($project->ID, 'zielgruppe')); ?></td>
 		      <td><?php echo join(', ', cd_get_tax_name($project->ID, 'ort')); ?></td>
-		      <td><?php echo join(', ', cd_get_tax_name($project->ID, 'category')); ?></td>
+		      <td><?php echo join(', ', cd_get_tax_name($project->ID, 'project-category')); ?></td>
 		      <td style="display:none;"><?php echo join(', ', cd_get_tax_name($project->ID, 'tag')); ?></td>
 		    </tr>
 	    <?php endforeach; ?>
