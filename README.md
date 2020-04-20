@@ -12,9 +12,11 @@ Sybille Hofer @sybillehofer
 
 ## Changelog
 
-### 1.5.0 2020-04-15
+### 1.5.0 2020-04-20
 
-* Feature: 
+* Feature: Add blog format
+* Feature: Add navigation for social media channels
+* Layout: Change front page
 
 ### 1.4.0 2019-05-27
 
