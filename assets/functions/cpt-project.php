@@ -137,8 +137,8 @@ function sh_register_taxonomies() {
 	
 	
 	$labels = array(
-		'name'              => _x( 'Kategorie', 'taxonomy general name', 'wptheme.campus' ),
-		'singular_name'     => _x( 'Kategorie', 'taxonomy singular name', 'wptheme.campus' ),
+		'name'              => _x( 'Projektkategorie', 'taxonomy general name', 'wptheme.campus' ),
+		'singular_name'     => _x( 'Projektkategorie', 'taxonomy singular name', 'wptheme.campus' ),
 		'search_items'      => __( 'Kategorie suchen', 'wptheme.campus' ),
 		'all_items'         => __( 'Alle Kategorien', 'wptheme.campus' ),
 		'edit_item'         => __( 'Kategorie bearbeiten', 'wptheme.campus' ),

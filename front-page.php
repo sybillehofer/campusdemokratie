@@ -16,7 +16,9 @@
 
 					if( $cd_news_query->have_posts() ) { ?>
 					<section class="news-section medium-12 columns">
-						<?php include( locate_template( 'parts/content-front-page.php' ) ); ?>
+						<div class="row">
+							<?php include( locate_template( 'parts/content-front-page.php' ) ); ?>
+						</div>
 					</section>
 				<?php } 
 					wp_reset_postdata();

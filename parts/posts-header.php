@@ -7,6 +7,7 @@
         $subtitle = get_field('subtitle', get_option( 'page_for_posts' ));
     } else if ( is_archive() ) {
         $title = get_the_archive_title();
+        $subtitle = wp_strip_all_tags(term_description());
     } else if( $post->post_type === 'post' ) {
         $image_url = get_field('post_icon')["sizes"]["full-width"];
     } else {
