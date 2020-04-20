@@ -21,15 +21,10 @@
 							<?php } ?>
 	    				</div>
 						<div class="large-6 medium-8 small-12 columns text-right">
-							<p class="some-channels">
-								<?php if( $contact['facebook'] ) { ?>
-								<a class="fa fa-facebook-square" href="<?php echo $contact['facebook']; ?>" target="_blank"></a>
-								<?php }
-								if( $contact['twitter'] ) { ?>
-								<a class="fa fa-twitter-square" href="<?php echo $contact['twitter']; ?>" target="_blank"></a>
-								<?php } ?>
-							</p>					
-							<nav class="nav">
+							<nav class="nav some-links">
+								<?php joints_some_links(); ?>
+							</nav>				
+							<nav class="nav footer-links">
 	    						<span class="copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></span>
 								<?php joints_footer_links(); ?>
 	    					</nav>

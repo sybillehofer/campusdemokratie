@@ -7,23 +7,6 @@
 */
 
 /*********************
-NEWS FRONT PAGE
-*********************/
-.news-section {
-	margin-top: 5rem;
-	margin-bottom: 5rem;
-}
-
-.news-section-title { margin-bottom: 2.5rem; }
-
-.news-section .post_metadata { margin-bottom: 0; }
-
-.news-section .article-footer { margin-top: 10px; }
-
-.single-title a { font-weight: normal; }
-
-
-/*********************
 NEWS SINGLE
 *********************/
 .aside-button {

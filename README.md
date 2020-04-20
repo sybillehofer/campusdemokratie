@@ -4,13 +4,17 @@
 
 Dieses Theme wird für die Website campusdemokratie.ch des Campus für Demokratie eingesetzt.
 
-## Version: 1.4.0
+## Version: 1.5.0
 
 ## Person Responsible
 
 Sybille Hofer @sybillehofer
 
 ## Changelog
+
+### 1.5.0 2020-04-15
+
+* Feature: 
 
 ### 1.4.0 2019-05-27
 

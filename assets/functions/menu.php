@@ -9,7 +9,8 @@ register_nav_menus(
 		'main-nav' 		=> pll__( 'The main menu' ),
 		'meta-nav' 		=> pll__( 'Meta links in Header' ), 
 		'icon-nav' 		=> pll__( 'Icon links on front page' ), 		
-		'footer-links' 	=> pll__( 'Footer links' ),
+		'footer-links' 	=> pll__( 'Footer Links' ),
+		'some-links' 		=> pll__( 'SocialMedia Links' ),
 	)
 );	
 
@@ -41,17 +42,17 @@ function cd_main_nav() {
 
 // The icon menu
 function cd_icon_nav() {
-	 wp_nav_menu(array(
+	return wp_nav_menu(array(
         'container' => false,                           	// Remove nav container
         'menu_class' => 'vertical menu icon-menu',  // Adding custom nav class
-        'items_wrap' => '<ul id="%1$s" class="%2$s" data-responsive-menu="accordion medium-dropdown">%3$s</ul>',
+        'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
         'theme_location' => 'icon-nav',        				// Where it's located in the theme
         'depth' => 1,                                   	// Limit the depth of the nav
         'fallback_cb' => false,                         	// Fallback function (see below)
-        'walker' => new Topbar_Menu_Walker()
+		'walker' => new Topbar_Menu_Walker(),
+        'echo'            => false
     ));
-} 
-
+}
 
 /* 
  * 
@@ -94,11 +95,40 @@ class Topbar_Menu_Walker extends Walker_Nav_Menu {
 function joints_footer_links() {
     wp_nav_menu(array(
     	'container' => 'false',                         // Remove nav container
-    	'menu' => pll__( 'Footer links' ),   								// Nav name
+    	'menu' => pll__( 'Footer Links' ),   								// Nav name
     	'menu_class' => 'menu',      					// Adding custom nav class
     	'theme_location' => 'footer-links',             // Where it's located in the theme
         'depth' => 0,                                   // Limit the depth of the nav
     	'fallback_cb' => ''  							// Fallback function
+	));
+} /* End Footer Menu */
+
+//Add Icons to SoMe Navigation
+function cd_wp_nav_menu_objects( $items, $args ) {
+	if( $args->theme_location !== 'some-links' )
+		return $items;
+	foreach( $items as &$item ) {
+
+		$icon = get_field('icon', $item);
+		if( $icon ) {
+			$title = $item->title;
+			$item->title = ' <img src="' . $icon['url'] . '" title="' . $title . '" alt="' . $title . '" />';
+			$item->target = '_blank';
+		}
+	}
+	return $items;
+}
+add_filter('wp_nav_menu_objects', 'cd_wp_nav_menu_objects', 10, 2);
+
+// The SocialMedia Menu
+function joints_some_links() {
+    wp_nav_menu(array(
+    	'container' => 'false',                         // Remove nav container
+    	'menu' => pll__( 'SocialMedia Links' ),   								// Nav name
+    	'menu_class' => 'menu',      					// Adding custom nav class
+    	'theme_location' => 'some-links',             // Where it's located in the theme
+        'depth' => 0,                                   // Limit the depth of the nav
+		'fallback_cb' => ''							// Fallback function
 	));
 } /* End Footer Menu */
 

@@ -12,6 +12,7 @@ function site_scripts() {
     wp_enqueue_script( 'isotope-filters-js', get_template_directory_uri() . '/assets/js/isotope-filters.js', array( 'jquery' ), '', true );
     wp_enqueue_script( 'glossary-js', get_template_directory_uri() . '/assets/js/glossary.js', array( 'jquery' ), '', true );
     wp_enqueue_script( 'glossary-ajax-js', get_template_directory_uri() . '/assets/js/glossary-ajax.js', array( 'jquery' ), '', true );
+    wp_enqueue_script( 'isotope-post-js', get_template_directory_uri() . '/assets/js/isotope-post.js', array( 'jquery' ), '', true );
     
     // AJAX
     wp_localize_script( 'glossary-ajax-js', 'CDAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' )) );
@@ -34,7 +35,9 @@ function site_scripts() {
     wp_enqueue_style( 'glossary-css', get_template_directory_uri() . '/assets/css/glossary.css', array(), '', 'all' );
     wp_enqueue_style( 'events-css', get_template_directory_uri() . '/assets/css/events.css', array(), '', 'all' );
 	wp_enqueue_style( 'responsive-css', get_template_directory_uri() . '/assets/css/responsive.css', array(), '', 'all' );
-	wp_enqueue_style( 'isotope-css', get_template_directory_uri() . '/assets/css/isotope.css', array(), '', 'all' );
+    wp_enqueue_style( 'isotope-css', get_template_directory_uri() . '/assets/css/isotope.css', array(), '', 'all' );
+    wp_enqueue_style( 'block-elements-css', get_template_directory_uri() . '/assets/css/block-elements.css', array(), '', 'all' );
+    wp_enqueue_style( 'posts-css', get_template_directory_uri() . '/assets/css/posts.css', array(), '', 'all' );
 
 }
 add_action('wp_enqueue_scripts', 'site_scripts', 999);

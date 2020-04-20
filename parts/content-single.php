@@ -1,8 +1,3 @@
-<?php if( get_field('has_readmore') === false ) { 
-	wp_redirect( home_url() . '/#news-section' );
-	exit;
-} ?>
-	
 <header class="page-header">
 	<h1 class="page-title">
 		<?php the_title();
@@ -123,16 +118,3 @@ if( $post->post_type === 'event' ) {
 	}
 
 }
-	
-
-
-
-
-
-
-
-
-
-
-
-

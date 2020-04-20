@@ -277,6 +277,22 @@ function cd_get_projects(){
 	return $projects->posts;
 }
 
+function cd_get_posts_by_categories($categories) {
+	$args = array(
+		'post_type' => 'post',
+		'tax_query' => array(
+			array(
+			'taxonomy' => 'category',
+			'field' => 'term_id',
+			'terms' => $categories
+			)
+		)
+	);
+	$query = new WP_Query( $args );
+
+	return $query;
+}
+
 function cd_get_tax_name($post_id, $tax) {
 
     $tax = get_the_terms( $post_id, $tax ); //get all terms

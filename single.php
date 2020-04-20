@@ -9,7 +9,7 @@
 		    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 		    
 				<?php
-					if( get_field('is_campus', $post->ID) === false ) {
+					if( $post->post_type === 'event' && get_field('is_campus', $post->ID) === false ) {
 						wp_redirect(get_post_type_archive_link($post->post_type));
 					} else if( is_singular( 'project' ) ) {
 						$args = [
@@ -23,7 +23,7 @@
 					}
 				?>
 				
-		    	<?php get_template_part( 'parts/content', 'single' ); ?>
+		    	<?php get_template_part( 'parts/content-single', $post->post_type ); ?>
 		    	
 		    <?php endwhile; else : ?>
 		

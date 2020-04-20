@@ -53,11 +53,14 @@ require_once(get_template_directory().'/assets/functions/login.php');
 // Customize the WordPress admin
 require_once(get_template_directory().'/assets/functions/admin.php'); 
 
-// Settings for news
-require_once(get_template_directory().'/assets/functions/news.php'); 
+// Settings for default posts
+require_once(get_template_directory().'/assets/functions/default-posts.php'); 
 
 // Get post objects
 require_once(get_template_directory().'/assets/functions/get-posts.php'); 
 
 // Get AJAX handling for glossary
 require_once(get_template_directory().'/assets/functions/glossary-ajax.php'); 
+
+// Get all shortcodes
+require_once(get_template_directory().'/assets/functions/shortcodes.php'); 

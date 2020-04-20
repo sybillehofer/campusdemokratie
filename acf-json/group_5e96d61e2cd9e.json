@@ -1,11 +1,11 @@
 {
-    "key": "group_59a87a11c5391",
-    "title": "Beitragsicon",
+    "key": "group_5e96d61e2cd9e",
+    "title": "Angaben zur Kategorie (Beiträge)",
     "fields": [
         {
-            "key": "field_59a87a194543d",
-            "label": "",
-            "name": "post_icon",
+            "key": "field_5e96d62a562f8",
+            "label": "Symbol",
+            "name": "icon",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -16,7 +16,7 @@
                 "id": ""
             },
             "return_format": "array",
-            "preview_size": "medium",
+            "preview_size": "full",
             "library": "all",
             "min_width": "",
             "min_height": "",
@@ -24,35 +24,25 @@
             "max_width": "",
             "max_height": "",
             "max_size": "",
-            "mime_types": "png, jpg, jpeg, svg"
+            "mime_types": "png, jpg, svg, jpeg"
         }
     ],
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "taxonomy",
                 "operator": "==",
-                "value": "post"
+                "value": "category"
             }
         ]
     ],
     "menu_order": 0,
-    "position": "side",
-    "style": "default",
+    "position": "normal",
+    "style": "seamless",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": [
-        "excerpt",
-        "discussion",
-        "comments",
-        "author",
-        "format",
-        "featured_image",
-        "categories",
-        "tags",
-        "send-trackbacks"
-    ],
+    "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1586950759
+    "modified": 1586953143
 }

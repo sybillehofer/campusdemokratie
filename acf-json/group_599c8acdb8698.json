@@ -59,7 +59,6 @@
     "instruction_placement": "label",
     "hide_on_screen": [
         "excerpt",
-        "custom_fields",
         "discussion",
         "comments",
         "slug",
@@ -67,7 +66,7 @@
         "format",
         "categories"
     ],
-    "active": 1,
+    "active": 0,
     "description": "",
-    "modified": 1507643838
+    "modified": 1586951020
 }

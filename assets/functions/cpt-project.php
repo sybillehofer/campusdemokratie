@@ -159,7 +159,7 @@ function sh_register_taxonomies() {
 		'rewrite'           => array( 'slug' => 'kategorie' ),
 	);
 
-	register_taxonomy( 'category', array( 'project' ), $args );
+	register_taxonomy( 'project-category', array( 'project' ), $args );
 	
 	
 	$labels = array(
@@ -189,16 +189,3 @@ function sh_register_taxonomies() {
 	
 }
 add_action( 'init', 'sh_register_taxonomies', 0 );
-
-
-/*
-
-function sh_remove_event_metaboxes() {
-	remove_meta_box( 'slugdiv', 'event', 'normal' );
-}
-add_action( 'admin_menu', 'sh_remove_event_metaboxes' );
-*/
-
-
-
-

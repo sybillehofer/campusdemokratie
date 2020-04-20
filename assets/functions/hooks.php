@@ -168,42 +168,9 @@ remove_filter('get_the_excerpt', 'wp_trim_excerpt');
 add_filter('get_the_excerpt', 'cd_get_excerpt');
 
 
-
-
 /*
  *
- * register shortcode
- *
-*/
-function slideshow_shortcode( $atts, $content, $tag = 'slideshow' ) {
-  
-    $atts = array_change_key_case((array)$atts, CASE_LOWER); // normalize attribute keys, lowercase
- 
-    // override default attributes with user attributes
-    $cd_atts = shortcode_atts([
-                                 'slideshow' => 'Beispiel Slideshow',
-                                 'title' => false,
-                             ], $atts, $tag);
-                                 
-    ob_start();
-    $shortcode_post = esc_html__($cd_atts['slideshow'], 'slideshow');
-    $title = esc_html__($cd_atts['title'], 'slideshow');
-    include(locate_template( 'parts/slideshow-shortcode.php'));
-	$content = ob_get_contents();
-    ob_end_clean();
-    
-    return $content;
-    
-}
-
-add_shortcode('slideshow', 'slideshow_shortcode');
-
-
-
-
-/*
- *
- * register shortcode
+ * 
  *
 */
 function cd_set_correct_taxonomies( $post_id, $post, $update ) {

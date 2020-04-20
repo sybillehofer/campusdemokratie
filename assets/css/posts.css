@@ -1,0 +1,91 @@
+@charset "UTF-8";
+/*
+	light grey: #e9edf0
+	darker grey: #dee2e5
+	light red:  #bd4145
+	dark red:   #8d464a
+*/
+
+.posts-grid {
+    margin-top: 2rem;
+}
+
+.grid-item {
+    margin: 0 0 20px 0;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .grid-item:nth-child(6n+1) {
+        padding-right: 20px;
+        width: 65%;
+    }
+
+    .grid-item:nth-child(6n+2) {
+        width: 35%;
+    }
+
+    .grid-item:nth-child(6n+3) {
+        width: 45%;
+    }
+
+    .grid-item:nth-child(6n+4) {
+        padding-left: 20px;
+        width: 55%;
+    }
+
+    .grid-item:nth-child(6n+5) {
+        width: 35%;
+    }
+
+    .grid-item:nth-child(6n+6) {
+        padding-left: 20px;
+        width: 65%;
+    }
+}
+
+/* cards */
+.article {
+    height: 25rem;
+    background-color: #e9edf0;
+    position: relative;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.article-header {
+    color: white;
+    padding: 1.5rem 1rem;
+    background-color: rgba(189, 65, 69, 0.8);
+    position: absolute;
+    top: auto;
+    bottom: 5%;
+    left: 0;
+    right: 0;
+    max-height: 95%;
+    overflow: hidden;
+    transition: all 200ms ease-in-out;
+}
+
+.article-title {
+    margin: 0;
+    font-family: 'KohinoorDevanagari-Light';
+}
+
+.article-icon {
+    height: 2.5rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center right;
+}
+
+.grid-item:hover .article-header {
+    background-color: rgba(189, 65, 69, 0.9);
+}
+
+
+/* single view */
+.post-article {
+    margin-bottom: 3rem;
+}

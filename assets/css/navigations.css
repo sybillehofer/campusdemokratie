@@ -131,7 +131,7 @@ META NAVIGATION
 /*********************
 ICON NAVIGATION
 *********************/
-.iconnav-section { margin-top: 4rem; }
+.iconnav-section { margin: 2rem 0 4rem; }
 .iconnav-title  { margin-bottom: 2.5rem; }
 .icon-menu {
 	display: -webkit-box;
