@@ -10,9 +10,11 @@
 		</article>
 
 		<?php
-			$terms = get_the_terms( $post->ID, 'category' );
-			if($terms) {
-				echo '<a href="' . get_term_link($terms[0]) . '" class="btn-primary">' . pll__( 'Alle ' ) . $terms[0]->name . '</a>';
+			$primary = get_primary_taxonomy_term(get_the_id(), 'category');
+			$buttontext = get_field('buttontext', 'category_' . $primary['term_id']);
+			if(!$buttontext) { $buttontext = pll__('Alle Beiträge'); }
+			if($primary) {
+				echo '<a href="' . $primary['url'] . '" class="btn-primary">' . $buttontext . '</a>';
 			}
 		?>
 	</div>

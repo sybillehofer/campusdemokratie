@@ -28,3 +28,10 @@
 </ul>
 
 <p class="no-results"><?php echo pll_e( 'Zur Zeit sind keine Events aufgeschaltet, welche die gewählten Kriterien erfüllen.' ); ?></p>
+
+<?php 
+	$button = get_field( 'link_events_list', 'sh_options' );
+	if( isset($button) && $button['url'] !== '') :
+?>
+<a href="<?php echo $button['url']; ?>" target="<?php echo $button['target']; ?>" class="btn-primary"><?php echo $button['title']; ?></a>	
+<?php endif; ?>

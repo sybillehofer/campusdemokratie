@@ -25,6 +25,7 @@
 										endwhile;
 									?>
 								</div>
+								<a href="<?php echo get_permalink( get_option( 'page_for_posts' )); ?>" class="btn-primary"><?php pll_e( 'Alle Beiträge' ); ?></a>	
 							</div>
 						</section>
 						

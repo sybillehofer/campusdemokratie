@@ -1,6 +1,6 @@
 {
     "key": "group_5e9711222b914",
-    "title": "Untertitel",
+    "title": "Untertitel & Link",
     "fields": [
         {
             "key": "field_5e971125790d0",
@@ -20,6 +20,21 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
+        },
+        {
+            "key": "field_5e9db438d6c27",
+            "label": "Link",
+            "name": "title_link",
+            "type": "link",
+            "instructions": "Die ganze graue Box mit Titel und Untertitel der Seite wird verlinkt.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
         }
     ],
     "location": [
@@ -60,5 +75,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1586969224
+    "modified": 1587393737
 }

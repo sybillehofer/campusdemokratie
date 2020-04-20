@@ -25,6 +25,25 @@
             "max_height": "",
             "max_size": "",
             "mime_types": "png, jpg, svg, jpeg"
+        },
+        {
+            "key": "field_5e9daa8cff3fc",
+            "label": "Buttontext",
+            "name": "buttontext",
+            "type": "text",
+            "instructions": "Dieser Text wird auf der Schaltfläche von einem einzelnen Beitrag dieser Kategorie zurück zur Archiv-Seite ausgegeben. z.B. «Alle Themendossiers»",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Alle Beiträge dieser Kategorie",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -44,5 +63,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1586953143
+    "modified": 1587391206
 }
