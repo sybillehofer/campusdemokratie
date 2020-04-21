@@ -9,6 +9,7 @@
 			<section class="home-content row">
 				<div class="columns small-12">
 					<?php include( locate_template( 'parts/posts-header.php' ) ); ?>
+					<?php the_content(); ?>
 				</div>
 				
 				<?php				

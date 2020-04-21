@@ -5,6 +5,7 @@
     if ( is_home() ) {
         $title = single_post_title('', false);
         $subtitle = get_field('subtitle', get_option( 'page_for_posts' ));
+        $image_url = get_the_post_thumbnail_url(get_option( 'page_for_posts' ), 'full-width');
     } else if ( is_archive() ) {
         $title = get_the_archive_title();
         $subtitle = wp_strip_all_tags(term_description());

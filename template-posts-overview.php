@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Übersicht Beiträge
+Template Name: Archivseite Beiträge
 */
 ?>
 
@@ -15,6 +15,7 @@ Template Name: Übersicht Beiträge
 				<section class="row">
 					<div class="small-12 columns">
 						<?php include( locate_template( 'parts/posts-header.php' ) ); ?>
+						<?php the_content(); ?>
 					</div>
 
 					<?php
