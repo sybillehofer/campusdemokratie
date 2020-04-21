@@ -9,6 +9,7 @@
     } else if ( is_archive() ) {
         $title = get_the_archive_title();
         $subtitle = wp_strip_all_tags(term_description());
+        $image_url = get_field('post_icon', 'category_' . get_queried_object()->term_id)["sizes"]["full-width"];
     } else if( $post->post_type === 'post' ) {
         $image_url = get_field('post_icon')["sizes"]["full-width"];
     } else {
