@@ -1,6 +1,6 @@
 {
     "key": "group_599c8acdb8698",
-    "title": "Sidebar des ersten Inhaltsblocks",
+    "title": "Sidebar",
     "fields": [
         {
             "key": "field_599c8ad9df64a",
@@ -36,24 +36,10 @@
                 "operator": "==",
                 "value": "default"
             }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "post"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "event"
-            }
         ]
     ],
     "menu_order": 1,
-    "position": "normal",
+    "position": "side",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
@@ -66,7 +52,7 @@
         "format",
         "categories"
     ],
-    "active": 0,
-    "description": "",
-    "modified": 1586951020
+    "active": 1,
+    "description": "des ersten Inhaltsblocks",
+    "modified": 1587460882
 }
