@@ -8,7 +8,7 @@
 
 .posts-header {
 	position: relative;
-	background-size: auto 100%;
+	background-size: auto 90%;
 	background-repeat: no-repeat;
 	background-position: right bottom;
 	background-color: #e9edf0;
@@ -31,7 +31,7 @@ a .posts-header {
 	transition: all 200ms ease-in-out;
 }
 a .posts-header:hover {
-	background-size: auto 110%;
+	background-size: auto 100%;
 }
 
 .posts-description h2 { margin: 0.5rem 0 1rem; }
