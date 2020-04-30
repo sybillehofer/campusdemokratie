@@ -8,19 +8,30 @@
 
 .posts-header {
 	position: relative;
-	background-size: contain;
+	background-size: auto 100%;
 	background-repeat: no-repeat;
 	background-position: right bottom;
 	background-color: #e9edf0;
-	padding: 3rem;
+	padding: 3.75rem 3rem 2.25rem;
 	margin-top: 4rem;
-	margin-bottom: 2rem;
 }
 
 .posts-title {
 	font-weight: bold;
-	font-size: 46px;
+	font-size: 48px;
 	margin-bottom: 0;
+}
+
+.posts-subtitle {
+	margin-top: 0.5rem;
+}
+
+a .posts-header {
+	color: black;
+	transition: all 200ms ease-in-out;
+}
+a .posts-header:hover {
+	background-size: auto 110%;
 }
 
 .posts-description h2 { margin: 0.5rem 0 1rem; }
