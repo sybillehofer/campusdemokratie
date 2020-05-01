@@ -1,4 +1,4 @@
-<div class="grid-item">
+<div class="filter-item<?php echo cd_get_isotope_classes($post); ?> not-filtered" data-item-layout="<?php echo $post->post_idx; ?>">
 	<a href="<?php the_permalink(); ?>">
 	<article id="post-<?php the_ID(); ?>" <?php post_class('article'); ?> role="article" style="background-image: url(<?php echo the_post_thumbnail_url('full-width'); ?>);">
 					

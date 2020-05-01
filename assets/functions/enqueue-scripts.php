@@ -12,8 +12,7 @@ function site_scripts() {
     wp_enqueue_script( 'isotope-filters-js', get_template_directory_uri() . '/assets/js/isotope-filters.js', array( 'jquery' ), '', true );
     wp_enqueue_script( 'glossary-js', get_template_directory_uri() . '/assets/js/glossary.js', array( 'jquery' ), '', true );
     wp_enqueue_script( 'glossary-ajax-js', get_template_directory_uri() . '/assets/js/glossary-ajax.js', array( 'jquery' ), '', true );
-    wp_enqueue_script( 'isotope-post-js', get_template_directory_uri() . '/assets/js/isotope-post.js', array( 'jquery' ), '', true );
-    
+
     // AJAX
     wp_localize_script( 'glossary-ajax-js', 'CDAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' )) );
     

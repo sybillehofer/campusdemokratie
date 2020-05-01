@@ -15,7 +15,7 @@
 						if (have_posts()) : ?>
 						<section class="medium-12 columns">
 							<div class="row">
-								<div class="posts-grid">
+								<div class="posts-grid isotope-filter-container" data-isotope-layoutMode="fitRows">
 									<?php
 										while (have_posts()) : the_post();
 										

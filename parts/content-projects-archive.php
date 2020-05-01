@@ -11,7 +11,7 @@
 			</tr>
 		</thead>
 		
-		<tbody class="isotope-filter-container">
+		<tbody class="isotope-filter-container" data-isotope-layoutMode="vertical">
 		<?php foreach( $projects as $project ) :
 			$project_link = '';
 			switch (pll_current_language()) {

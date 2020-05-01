@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="column small-12">
-		<div class="posts-grid">
+		<div class="posts-grid isotope-filter-container" data-isotope-layoutMode="fitRows">
 			<?php
 				if( $cd_news_query->have_posts() ):
 					while( $cd_news_query->have_posts() ): $cd_news_query->the_post();

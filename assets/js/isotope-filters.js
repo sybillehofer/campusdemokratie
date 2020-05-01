@@ -54,11 +54,41 @@
 			return value;
 		}
 		
-		//filter the list
+		//filter the list and arrange items
 		$.filterList = function(filterValue) {
-			$events_grid.isotope({ filter: filterValue });
+			$grid.isotope({ filter: filterValue }); //filter the list
+
+			$.asignLayoutId(); //needed for 'posts' only
+		}	
+
+		$.asignLayoutId = function() {
+			var visibleElements = $grid.isotope('getFilteredItemElements'); //get elements that are visible
+			$(visibleElements).attr('data-item-layout', '0'); //set data-item-layout to 0
+			if( visibleElements.length == $grid.isotope('getItemElements').length) { //if all categories are visible
+				$(visibleElements).addClass('not-filtered');
+			} else { //if a single category is visible
+				$(visibleElements).removeClass('not-filtered');
+
+				//for each post asign layout-id (there are six different layouts --> widths, see posts.css)
+				$(visibleElements).each(function(i,e){
+					if((i+1)%6 == 0) {
+						$(e).attr('data-item-layout', "6");
+					} else if((i+1)%5 == 0) {
+						$(e).attr('data-item-layout', "5");
+					} else if((i+1)%4 == 0) {
+						$(e).attr('data-item-layout', "4");
+					} else if((i+1)%3 == 0) {
+						$(e).attr('data-item-layout', "3");
+					} else if((i+1)%2 == 0) {
+						$(e).attr('data-item-layout', "2");
+					} else if((i+1)%1 == 0) {
+						$(e).attr('data-item-layout', "1");
+					}				
+				});
+			}
+			$grid.isotope( 'layout' ); //rearrange elements after layout assignment
 		}
-		
+
 		//add filterValue as parameter to url
 		$.addFilterstoURL = function(filterValue) {
 			var param = '';
@@ -80,9 +110,9 @@
 		}
 		
 		//initialize isotope grid
-		var $events_grid = $('.isotope-filter-container').isotope({
+		var $grid = $('.isotope-filter-container').isotope({
 			itemSelector: '.filter-item',
-			layoutMode: 'vertical',
+			layoutMode: $('.isotope-filter-container').attr('data-isotope-layoutMode'),
 			hiddenStyle: {
 				opacity: 0
 			},
@@ -117,9 +147,9 @@
 		});		
 		
 		//as soon as filtering is done
-		$events_grid.on( 'arrangeComplete', function( event, filteredItems ) {
+		$grid.on( 'arrangeComplete', function( event, filteredItems ) {
 
-		    if ( $events_grid.data('isotope').filteredItems.length == 0) {
+		    if ( $grid.data('isotope').filteredItems.length == 0) {
 			    $('.no-results').fadeIn(); 
 			} else {
 				$('.no-results').hide();

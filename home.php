@@ -13,15 +13,20 @@
 
 					<?php 
 						if (have_posts()) : ?>
+						
 						<section class="medium-12 columns">
 							<div class="row">
-								<div class="posts-grid">
+								<?php get_template_part( 'parts/posts', 'filter' ); ?>
+								<div class="posts-grid isotope-filter-container" data-isotope-layoutMode="fitRows">
 									<?php
+										$post_idx = 1;
 										while (have_posts()) : the_post();
 										
-											$post_type = $post->post_type;			
+											$post_type = $post->post_type;
+											$post->post_idx = $post_idx;		
 											get_template_part( 'parts/card', $post_type );
-											
+											$post_idx++;
+
 										endwhile;
 									?>
 								</div>

@@ -1,4 +1,4 @@
-<ul class="months no-bullet isotope-filter-container">
+<ul class="months no-bullet isotope-filter-container" data-isotope-layoutMode="vertical">
 	
 	<?php 
 	foreach ( cd_get_events_new() as $month => $events ) :

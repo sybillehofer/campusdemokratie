@@ -25,7 +25,8 @@ Template Name: Archivseite Beiträge
 						if( $posts_by_cat->have_posts() ) : ?>
 						<section class="medium-12 columns">
 							<div class="row">
-								<div class="posts-grid">
+								<?php get_template_part( 'parts/posts', 'filter' ); ?>
+								<div class="posts-grid isotope-filter-container" data-isotope-layoutMode="fitRows">
 									<?php
 									if( $posts_by_cat->have_posts() ):
 										while( $posts_by_cat->have_posts() ): $posts_by_cat->the_post();
