@@ -19,13 +19,10 @@
 								<?php get_template_part( 'parts/posts', 'filter' ); ?>
 								<div class="posts-grid isotope-filter-container" data-isotope-layoutMode="fitRows">
 									<?php
-										$post_idx = 1;
 										while (have_posts()) : the_post();
 										
-											$post_type = $post->post_type;
-											$post->post_idx = $post_idx;		
+											$post_type = $post->post_type;	
 											get_template_part( 'parts/card', $post_type );
-											$post_idx++;
 
 										endwhile;
 									?>
