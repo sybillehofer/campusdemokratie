@@ -37,8 +37,22 @@ main a { font-weight: 700; }
 	display: inline-block;
 	font-weight: bold;
 }
+.btn-secondary {
+  background-color: white; 
+  color: #bd4145; 
+  border: 2px solid #bd4145;
+  border-radius: 50px;
+  margin: 0 0.25rem;
+	padding: 0.6rem 1.25rem; 
+	transition: all 0.2s ease-in-out;
+	display: inline-block;
+  font-weight: bold;
+  cursor: pointer;
+}
 .button:hover, .button:active, .button:focus,
-.btn-primary:hover, .btn-primary:active, .btn-primary:focus { background-color: #8d464a; color: white; }
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus, .btn-primary.selected { background-color: #8d464a; color: white; }
+.btn-secondary:hover, .btn-secondary:active, .btn-secondary:focus, .btn-secondary.selected { background-color: #bd4145; color: white; }
+
 .text-link { color: #bd4145; font-size: 1.1rem; margin-left: 1.5rem; font-family: 'KohinoorDevanagari-Light'; }
 .text-link:hover { color: #8d464a; }
 

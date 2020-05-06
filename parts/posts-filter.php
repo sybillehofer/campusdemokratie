@@ -10,14 +10,20 @@
     }
 ?>
 
-<div id="filter-wrapper" class="posts-filters" data-sticky-container>
-    <div class="selects-container filters sticky" data-sticky data-margin-top="0" data-top-anchor="filter-wrapper:top">
-        <select class="filters-select filter-category" data-filter-group="category">
+<div id="filter-wrapper" class="posts-filters row">
+    <div class="selects-container filters">
+        
+        <!-- <select class="filters-select filter-category" data-filter-group="category">
             <option value=""><?php pll_e( 'Alle Kategorien' ); ?></option>
             <?php foreach( $categories as $category ) : ?>
                 <option value="<?php echo $category->slug; ?>"><?php echo $category->name; ?></option>
             <?php endforeach; ?>
-        </select>
+        </select> -->
+            
+        <button class="btn-secondary filter-button selected" data-filter-group="category" data-filter-value=""><?php pll_e( 'Alle Kategorien' ); ?></button>
+        <?php foreach( $categories as $category ) : ?>
+            <button class="btn-secondary filter-button" data-filter-group="category" data-filter-value="<?php echo $category->slug; ?>"><?php echo $category->name; ?></button>
+        <?php endforeach; ?>
         
     </div>
 </div>

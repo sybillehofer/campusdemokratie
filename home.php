@@ -7,16 +7,19 @@
 		    <main id="main" class="large-12 columns" role="main">
 
 				<section class="row">
-					<div class="small-12 columns">
+					<div class="small-12 columns posts-header-wrapper">
 						<?php include( locate_template( 'parts/posts-header.php' ) ); ?>
 					</div>
 
 					<?php 
 						if (have_posts()) : ?>
 						
-						<section class="medium-12 columns">
+						<div class="medium-12 columns posts-filter-wrapper">
+							<?php get_template_part( 'parts/posts', 'filter' ); ?>
+						</div>
+
+						<div class="medium-12 columns">
 							<div class="row">
-								<?php get_template_part( 'parts/posts', 'filter' ); ?>
 								<div class="posts-grid isotope-filter-container" data-isotope-layoutMode="fitRows">
 									<?php
 										while (have_posts()) : the_post();
@@ -28,7 +31,7 @@
 									?>
 								</div>
 							</div>
-						</section>
+						</div>
 						
 						<?php
 						else :

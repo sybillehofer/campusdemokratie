@@ -13,41 +13,49 @@ Template Name: Archivseite Beiträge
 			<main id="main" class="large-12 columns" role="main">
 
 				<section class="row">
-					<div class="small-12 columns">
+					<div class="small-12 columns posts-header-wrapper">
 						<?php include( locate_template( 'parts/posts-header.php' ) ); ?>
-						<?php the_content(); ?>
+					</div>
+						
+					<?php if ( !empty( get_the_content() ) ){ ?>
+						<div class="small-12 columns posts-header-wrapper">
+							<?php the_content();?>
+						</div>
+					<?php }
+
+					$categories = get_field('categories_to_show');
+					$posts_by_cat = cd_get_posts_by_categories($categories);
+					
+					if( $posts_by_cat->have_posts() ) : ?>
+
+					<div class="medium-12 columns posts-filter-wrapper">
+							<?php get_template_part( 'parts/posts', 'filter' ); ?>
 					</div>
 
-					<?php
-						$categories = get_field('categories_to_show');
-						$posts_by_cat = cd_get_posts_by_categories($categories);
-						
-						if( $posts_by_cat->have_posts() ) : ?>
-						<section class="medium-12 columns">
-							<div class="row">
-								<?php get_template_part( 'parts/posts', 'filter' ); ?>
-								<div class="posts-grid isotope-filter-container" data-isotope-layoutMode="fitRows">
-									<?php
-									if( $posts_by_cat->have_posts() ):
-										while( $posts_by_cat->have_posts() ): $posts_by_cat->the_post();
-										
-										get_template_part( 'parts/card', 'post' );       
-										
-										endwhile;
-									endif;
-									wp_reset_postdata();
-									?>
-								</div>
-								<a href="<?php echo get_permalink( get_option( 'page_for_posts' )); ?>" class="btn-primary"><?php pll_e( 'Alle Beiträge' ); ?></a>
+					<section class="medium-12 columns">
+						<div class="row">
+							<div class="posts-grid isotope-filter-container" data-isotope-layoutMode="fitRows">
+								<?php
+								if( $posts_by_cat->have_posts() ):
+									while( $posts_by_cat->have_posts() ): $posts_by_cat->the_post();
+									
+									get_template_part( 'parts/card', 'post' );       
+									
+									endwhile;
+								endif;
+								wp_reset_postdata();
+								?>
 							</div>
-						</section>
-						
-						<?php
-						else :
+							<a href="<?php echo get_permalink( get_option( 'page_for_posts' )); ?>" class="btn-primary"><?php pll_e( 'Alle Beiträge' ); ?></a>
+						</div>
+					</section>
 					
-							get_template_part( 'parts/content', 'missing' );
+					<?php
+					else :
+				
+						get_template_part( 'parts/content', 'missing' );
 
-						endif; 
+					endif; 
 					?>
 				</section>
 																								

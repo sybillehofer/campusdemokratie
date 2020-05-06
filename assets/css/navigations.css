@@ -105,7 +105,7 @@ SUBNAVIGATION
 }
 .bottom-bar .menu-item:hover { background-color: #8d464a; }
 .bottom-bar .menu li.active { background-color: #8d464a; }
-.bottom-bar .menu-item-has-children .submenu { background-color: #e9edf0; position: absolute; width: 100%; border: none; }
+.bottom-bar .menu-item-has-children .submenu { background-color: #e9edf0; position: absolute; width: 100%; border: none; border-bottom: 3px solid white; }
 .bottom-bar .menu-item-has-children .submenu .menu-item { width: auto; float: left; padding: 1rem 0; border: none; }
 .bottom-bar .menu-item-has-children .submenu .menu-item:hover,
 .bottom-bar .menu-item-has-children .submenu .menu-item.active { background-color: #e9edf0; }

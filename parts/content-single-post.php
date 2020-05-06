@@ -1,6 +1,6 @@
 <section class="row section-content-wrapper">
 
-	<div class="columns small-12">
+	<div class="small-12 columns posts-header-wrapper">
 		<?php include( locate_template( 'parts/posts-header.php' ) ); ?>
 	</div>
 

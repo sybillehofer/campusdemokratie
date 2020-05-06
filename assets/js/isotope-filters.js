@@ -13,17 +13,23 @@
 		}
 		
 		//set selects according to filterValue
-		$.setSelects = function(filterValue) {
+		$.setFilters = function(filterValue) {
 			if(filterValue) {
 				values = filterValue.split('.');
-				
 				$.each( values, function( index, value ){
-				    var $thisOption = $('.filters-select option[value="' + value + '"]'),
-				    	$thisSelect = $thisOption.parents('select');
-				    
-				    $thisSelect.val(value);
-				    $.setSelectActive($thisSelect);
-				    $.updateFilters($thisSelect);
+				    if( value != '' ) {
+						//for selects
+						var $thisOption = $('.filters-select option[value="' + value + '"]'),
+				    	$thisFilter = $thisOption.parents('select');
+						$thisFilter.val(value);
+						$.setSelectActive($thisFilter);
+
+						//for buttons
+						var $thisFilter = $('.filter-button[data-filter-value="' + value + '"]');
+						$.setButtonActive($thisFilter);
+						
+						$.updateFilters($thisFilter);
+					}
 				});
 			}
 		}
@@ -36,11 +42,25 @@
 				$this.addClass('selected');
 			}
 		}
+
+		//set given button element to active
+		$.setButtonActive = function($this) {
+			$this.siblings('button').removeClass('selected');
+			$this.addClass('selected');
+		}
 		
-		//update filters according to given select
+		//update filters according to given select or button
 		$.updateFilters = function($this) {
-			var filterGroup = $this.attr('data-filter-group');
-			filters[ filterGroup ] = $this.val();
+			var filterGroup = $this.attr('data-filter-group'),
+				value = '',
+				attr = $this.attr('data-filter-value');
+
+			if (typeof attr !== typeof undefined && attr !== false) {
+				value = $this.attr('data-filter-value'); //for buttons
+			} else {
+				value = $this.val(); //for selects
+			}
+			filters[ filterGroup ] = value;
 		}
 		
 		//combine all filters to one string
@@ -57,7 +77,6 @@
 		//filter the list and arrange items
 		$.filterList = function(filterValue) {
 			$grid.isotope({ filter: filterValue }); //filter the list
-
 			$.asignLayoutId(); //needed for 'posts' only
 		}	
 
@@ -123,7 +142,7 @@
 		
 		//if the url contains a parameter called "filter"
 		if( $.urlParam('filter') ) {
-			$.setSelects($.urlParam('filter'));
+			$.setFilters($.urlParam('filter'));
 			$.filterList($.urlParam('filter'));
 			$('[data-reset-filter]').show();
 		}		
@@ -144,7 +163,25 @@
 			$.addFilterstoURL(filterValue);	
 			
 			$('[data-reset-filter]').show();		
-		});		
+		});
+		
+		//if a button is clicked
+		$('.filter-button').on('click', function(){
+			$('.no-results').hide();
+					
+			var $thisButton = $(this);
+			
+			$.setButtonActive($thisButton);
+			$.updateFilters($thisButton);
+
+			var filterValue = $.concatValues( filters );
+			
+			$.filterList(filterValue);
+			
+			$.addFilterstoURL(filterValue);	
+			
+			$('[data-reset-filter]').show();		
+		});	
 		
 		//as soon as filtering is done
 		$grid.on( 'arrangeComplete', function( event, filteredItems ) {

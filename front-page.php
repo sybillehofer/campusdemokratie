@@ -7,20 +7,25 @@
 	    <main id="main" class="small-12 columns" role="main">
 
 			<section class="home-content row">
-				<div class="columns small-12">
+				<div class="small-12 columns posts-header-wrapper">
 					<?php include( locate_template( 'parts/posts-header.php' ) ); ?>
-					<?php the_content(); ?>
 				</div>
-				
-				<?php				
-					$cd_news_query = cd_get_news(6);
+					
+				<?php if ( !empty( get_the_content() ) ){ ?>
+					<div class="small-12 columns posts-header-wrapper">
+						<?php the_content();?>
+					</div>
+				<?php }
+							
+				$cd_news_query = cd_get_news(6);
 
-					if( $cd_news_query->have_posts() ) { ?>
-					<section class="news-section medium-12 columns">
-						<div class="row">
-							<?php include( locate_template( 'parts/content-front-page.php' ) ); ?>
-						</div>
-					</section>
+				if( $cd_news_query->have_posts() ) { ?>
+				<section class="news-section medium-12 columns">
+					<div class="row">
+						<?php include( locate_template( 'parts/content-front-page.php' ) ); ?>
+					</div>
+				</section>
+				
 				<?php } 
 					wp_reset_postdata();
 				?>

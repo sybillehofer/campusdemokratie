@@ -64,3 +64,6 @@ require_once(get_template_directory().'/assets/functions/glossary-ajax.php');
 
 // Get all shortcodes
 require_once(get_template_directory().'/assets/functions/shortcodes.php'); 
+
+// Get all custom acf blocks for Gutenberg Editor
+require_once(get_template_directory().'/assets/functions/acf-blocks.php'); 

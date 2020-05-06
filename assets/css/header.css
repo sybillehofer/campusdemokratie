@@ -6,15 +6,18 @@
 	dark red:   #8d464a
 */
 
+.posts-header-wrapper {
+	margin: 20px 0;
+	float: none;
+}
+
 .posts-header {
 	position: relative;
 	background-size: auto 90%;
 	background-repeat: no-repeat;
-	background-position: right bottom;
+	background-position: right 2rem bottom;
 	background-color: #e9edf0;
 	padding: 3.75rem 3rem 2.25rem;
-	margin-top: 4rem;
-	margin-bottom: 2rem;
 }
 
 .posts-title {

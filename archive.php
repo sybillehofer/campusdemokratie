@@ -7,7 +7,7 @@
 		    <main id="main" class="large-12 columns" role="main">
 
 				<section class="row">
-					<div class="small-12 columns">
+					<div class="small-12 columns posts-header-wrapper">
 						<?php include( locate_template( 'parts/posts-header.php' ) ); ?>
 					</div>
 

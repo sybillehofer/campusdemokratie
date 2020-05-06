@@ -6,10 +6,6 @@
 	dark red:   #8d464a
 */
 
-.posts-grid {
-    margin-top: -12px;
-}
-
 .posts-grid .filter-item {
     margin: 0 0 20px 0;
     width: 100%;
@@ -98,12 +94,14 @@
 
 
 /* filter on archive pages */
-.posts-filters .filters {
-    margin: 0;
-    padding-bottom: 0;
+.posts-filter-wrapper {
+	margin: 0 0 20px;
+	float: none;
 }
 
-.posts-filters .filters-select {
-    width: 300px;
-    margin: 0 0 0 auto;
+.posts-filters .filters {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
 }
