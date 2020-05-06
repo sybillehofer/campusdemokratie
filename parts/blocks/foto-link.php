@@ -28,5 +28,5 @@ if( !empty($block['align']) ) {
 $link = get_field('link');
 ?>
 <div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
-    <a class="link" href="<?= $link['url']; ?>" target="<?= $link['target']; ?>"><span class="dashicons dashicons-camera-alt"></span><?= $link['title'] ? $link['title'] : 'Hier geht’s zu den Fotos des Events.'; ?></a>
+    <a class="link" href="<?= $link['url']; ?>" target="<?= $link['target']; ?>"><span class="dashicons dashicons-camera-alt"></span><?= $link['title'] ? $link['title'] : pll__( 'Hier geht’s zu den Fotos des Events.'); ?></a>
 </div>
