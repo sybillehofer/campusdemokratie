@@ -10,8 +10,7 @@
     }
 ?>
 
-<div id="filter-wrapper" class="posts-filters row">
-    <div class="selects-container filters">
+<div id="filter-wrapper" class="posts-filters">
         
         <!-- <select class="filters-select filter-category" data-filter-group="category">
             <option value=""><?php pll_e( 'Alle Kategorien' ); ?></option>
@@ -20,10 +19,9 @@
             <?php endforeach; ?>
         </select> -->
             
-        <button class="btn-secondary filter-button selected" data-filter-group="category" data-filter-value=""><?php pll_e( 'Alle Kategorien' ); ?></button>
+        <button class="filter-button selected" data-filter-group="category" data-filter-value=""><?php pll_e( 'Alle Kategorien' ); ?></button>
         <?php foreach( $categories as $category ) : ?>
-            <button class="btn-secondary filter-button" data-filter-group="category" data-filter-value="<?php echo $category->slug; ?>"><?php echo $category->name; ?></button>
+            <button class="filter-button" data-filter-group="category" data-filter-value="<?php echo $category->slug; ?>"><?php echo $category->name; ?></button>
         <?php endforeach; ?>
         
-    </div>
 </div>

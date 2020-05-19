@@ -3,6 +3,12 @@
     margin: 0;
 }
 
+@media screen and (min-width: 40em) {
+    .wp-block-embed-youtube {
+        max-width: 65%;
+    }
+}
+
 /* custom blocks */
 .logo-link-list .list {
     list-style: none;

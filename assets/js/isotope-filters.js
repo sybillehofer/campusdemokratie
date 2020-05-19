@@ -208,6 +208,14 @@
 			$.resetFilters();
 		});
 		
+		//show and hide filters on blog archive pages
+		$('[data-filter-trigger]').on( 'mouseenter', function() {
+			$('.posts-filters').addClass('visible');
+		});
+		$('[data-filter-trigger]').on( 'mouseleave', function() {
+			$('.posts-filters').removeClass('visible');
+		});
+
 	});
 	
 

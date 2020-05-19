@@ -94,14 +94,46 @@
 
 
 /* filter on archive pages */
-.posts-filter-wrapper {
-	margin: 0 0 20px;
-	float: none;
+.posts-header-wrapper {
+    position: relative;
 }
 
-.posts-filters .filters {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
+[data-filter-trigger] header {
+    transition: all 200ms ease-in-out;
+}
+
+[data-filter-trigger]:hover header {
+    background-size: auto 100%;
+}
+
+.posts-filters {
+    float: none;
+    background-color: #e9edf0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 900;
+    border-top: 3px solid white;
+    display: none;
+    padding: 1rem 0;
+}
+
+.posts-filters.visible {
+    display: block;
+}
+
+.filter-button {
+    font-family: 'KohinoorDevanagari-Demi';
+    border-right: 1px solid grey;
+    padding: 0.1rem 0.8rem;
+    color: grey;
+    cursor: pointer;
+}
+
+.filter-button:last-child {
+    border: none;
+}
+
+.filter-button:hover {
+    color: #8d464a;
 }

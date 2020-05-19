@@ -17,17 +17,48 @@
 	background-repeat: no-repeat;
 	background-position: right 2rem bottom;
 	background-color: #e9edf0;
-	padding: 3.75rem 3rem 2.25rem;
+	padding: 3rem 1rem 1.5rem;
+}
+
+.posts-header:before {
+	background-color: #e9edf07a;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
 }
 
 .posts-title {
 	font-weight: bold;
-	font-size: 48px;
 	margin-bottom: 0;
+	position: relative;
 }
 
 .posts-subtitle {
+	font-size: 1.3rem;
 	margin-top: 0.5rem;
+	position: relative;
+}
+
+@media (min-width: 768px) {
+	.posts-header {
+		padding: 3.75rem 3rem 2.25rem;
+	}
+	.posts-header:before {
+		display: none;
+	}
+	.posts-title {
+		max-width: 80%;
+	}
+	.home-content .posts-title {
+		font-size: 48px;
+	}
+	.posts-subtitle {
+		font-size: 1.6rem;
+		max-width: 85%;
+	}
 }
 
 a .posts-header {

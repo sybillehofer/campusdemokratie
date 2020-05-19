@@ -6,17 +6,14 @@
 	
 		    <main id="main" class="large-12 columns" role="main">
 
-				<section class="row">
-					<div class="small-12 columns posts-header-wrapper">
+				<section class="row posts-row">
+					<div class="small-12 columns posts-header-wrapper" data-filter-trigger>
 						<?php include( locate_template( 'parts/posts-header.php' ) ); ?>
+						<?php get_template_part( 'parts/posts', 'filter' ); ?>
 					</div>
 
 					<?php 
 						if (have_posts()) : ?>
-						
-						<div class="medium-12 columns posts-filter-wrapper">
-							<?php get_template_part( 'parts/posts', 'filter' ); ?>
-						</div>
 
 						<div class="medium-12 columns">
 							<div class="row">

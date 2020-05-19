@@ -20,10 +20,6 @@ jQuery(document).ready(function() {
 		}
 	});
     
-    jQuery('.home-arrow').on('click', function() {
-	    jQuery('html,body').animate({scrollTop: jQuery('.iconnav-title').offset().top - 50},'slow');
-    });
-    
 	jQuery(".back-to-top").on('click', function () {
 	   jQuery("html, body").animate({scrollTop: 0}, 1000);
 	});
