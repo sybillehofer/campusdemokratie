@@ -11,6 +11,12 @@
 						<?php include( locate_template( 'parts/posts-header.php' ) ); ?>
 					</div>
 
+					<?php if ( !empty( term_description() ) ){ ?>
+						<div class="small-12 columns posts-header-wrapper">
+							<?php echo wp_strip_all_tags(term_description()); ?>
+						</div>
+					<?php } ?>
+
 					<?php 
 						if (have_posts()) : ?>
 						<section class="medium-12 columns">

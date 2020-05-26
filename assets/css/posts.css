@@ -109,13 +109,20 @@
 .posts-filters {
     float: none;
     background-color: #e9edf0;
-    position: absolute;
-    left: 0;
-    right: 0;
     z-index: 900;
     border-top: 3px solid white;
-    display: none;
-    padding: 1rem 0;
+    margin: 7px -10px -10px;
+}
+
+@media (min-width: 768px) {
+    .posts-filters {
+        position: absolute;
+        left: 0;
+        right: 0;
+        display: none;
+        padding: 1rem 0;
+        margin: 0;
+    }
 }
 
 .posts-filters.visible {
@@ -124,10 +131,23 @@
 
 .filter-button {
     font-family: 'KohinoorDevanagari-Demi';
-    border-right: 1px solid grey;
-    padding: 0.1rem 0.8rem;
+    border-bottom: 2px solid white;
+    padding: 0.8rem;
     color: grey;
     cursor: pointer;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .filter-button {
+        border: none;
+        border-right: 1px solid grey;
+        padding: 0.1rem 0.8rem;
+        display: inline;
+        width: auto;
+    }
 }
 
 .filter-button:last-child {

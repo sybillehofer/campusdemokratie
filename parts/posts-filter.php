@@ -8,18 +8,16 @@
     } else {
         $categories = cd_get_taxonomy_terms('category');
     }
+
+    if( count($categories) <= 1 )
+        return;
 ?>
 
 <div id="filter-wrapper" class="posts-filters">
-        
-        <!-- <select class="filters-select filter-category" data-filter-group="category">
-            <option value=""><?php pll_e( 'Alle Kategorien' ); ?></option>
-            <?php foreach( $categories as $category ) : ?>
-                <option value="<?php echo $category->slug; ?>"><?php echo $category->name; ?></option>
-            <?php endforeach; ?>
-        </select> -->
             
-        <button class="filter-button selected" data-filter-group="category" data-filter-value=""><?php pll_e( 'Alle Kategorien' ); ?></button>
+        <?php if( !is_page_template('template-posts-overview.php') ) { ?>
+                <button class="filter-button selected" data-filter-group="category" data-filter-value=""><?php pll_e( 'Alle Kategorien' ); ?></button>
+        <?php } ?>
         <?php foreach( $categories as $category ) : ?>
             <button class="filter-button" data-filter-group="category" data-filter-value="<?php echo $category->slug; ?>"><?php echo $category->name; ?></button>
         <?php endforeach; ?>

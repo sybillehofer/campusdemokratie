@@ -1,13 +1,13 @@
 {
-    "key": "group_5e9711222b914",
-    "title": "Link (für Titelbox)",
+    "key": "group_5ecbc077820fe",
+    "title": "Untertitel (für Titelbox)",
     "fields": [
         {
-            "key": "field_5e9db438d6c27",
-            "label": "Link",
-            "name": "title_link",
-            "type": "link",
-            "instructions": "Die ganze graue Box mit Titel und Untertitel der Seite wird verlinkt.",
+            "key": "field_5ecbc0778ce75",
+            "label": "",
+            "name": "subtitle",
+            "type": "text",
+            "instructions": "Dieser Text wird direkt unterhalb des Titels innerhalb der grauen Box angezeigt.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -15,7 +15,11 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array"
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -35,6 +39,13 @@
         ],
         [
             {
+                "param": "page_type",
+                "operator": "==",
+                "value": "posts_page"
+            }
+        ],
+        [
+            {
                 "param": "page_template",
                 "operator": "==",
                 "value": "template-posts-overview.php"
@@ -48,7 +59,7 @@
             }
         ]
     ],
-    "menu_order": 4,
+    "menu_order": 3,
     "position": "side",
     "style": "default",
     "label_placement": "top",
@@ -56,5 +67,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1590411545
+    "modified": 1590411525
 }
