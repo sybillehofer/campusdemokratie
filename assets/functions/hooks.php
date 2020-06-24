@@ -4,7 +4,7 @@ function cd_error_notices() {
 	
 	$required_plugins = array( 
 		'Polylang' => '<a href="https://de.wordpress.org/plugins/polylang/" target="_blank">Polylang</a>', 
-		'MW_Polylang_Theme_Strings' => '<a href="https://de.wordpress.org/plugins/polylang-theme-strings/" target="_blank">Polylang Theme Strings</a>'
+		//'MW_Polylang_Theme_Strings' => '<a href="https://de.wordpress.org/plugins/polylang-theme-strings/" target="_blank">Polylang Theme Strings</a>'
 	);
 	
 	$missing_plugins = array();
