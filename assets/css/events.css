@@ -109,7 +109,9 @@
 	font-weight: bold;
 }
 
-.event-name { margin-bottom: 0; padding-right: 5px; }
+.event-name { margin-bottom: 0; }
+
+.event-city { padding-left: 15px; }
 
 .events-event.is-campus { padding-top: 15px; }
 
