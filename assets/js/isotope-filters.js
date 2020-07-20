@@ -90,8 +90,8 @@
 
 				//for each post asign layout-id (there are six different layouts --> widths, see posts.css)
 				$(visibleElements).each(function(i,e){
-					if( i >= 6 ) { //beginning with element number seven
-						i = i-6; //subtract initial six element in order to get the following assignment correct
+					if( i > 6 ) { //beginning with element number seven
+						i = i%6; //match to a number between 0 and 5 in order to get the following assignment correct
 					}
 					if((i+1)%6 == 0) {
 						$(e).attr('data-item-layout', "6");
