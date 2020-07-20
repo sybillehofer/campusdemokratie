@@ -4,13 +4,16 @@
 
 Dieses Theme wird für die Website campusdemokratie.ch des Campus für Demokratie eingesetzt.
 
-## Version: 1.6.1
+## Version: 1.6.2
 
 ## Person Responsible
 
 Sybille Hofer @sybillehofer
 
 ## Changelog
+
+### 1.6.2 2020-07-20
+* Bugfix: Change isotope filter function for posts in order to assign correct layout
 
 ### 1.6.1 2020-06-17
 * Feature: Remove "Category:" from archive titles
