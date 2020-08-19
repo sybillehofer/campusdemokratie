@@ -40,6 +40,11 @@
                 "param": "page_type",
                 "operator": "!=",
                 "value": "posts_page"
+            },
+            {
+                "param": "page_type",
+                "operator": "!=",
+                "value": "front_page"
             }
         ]
     ],
@@ -59,5 +64,5 @@
     ],
     "active": 1,
     "description": "des ersten Inhaltsblocks",
-    "modified": 1587471602
+    "modified": 1597328602
 }
