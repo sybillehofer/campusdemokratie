@@ -24,11 +24,15 @@
     echo '<a href="' . $link["url"] . '" target="' . $link["target"] . '" title="' . $link["title"] . '">';
 } ?>
 
-<header class="posts-header row" style="background-image: url(<?php echo $image_url; ?>);">			
-    <h1 class="posts-title"><?php echo $title; ?></h1>
-    <?php if( $subtitle ) { ?>
-        <h2 class="posts-subtitle"><?php echo $subtitle; ?></h2>
-    <?php } ?>
+<header class="posts-header row">		
+    <div class="posts-header-text columns small-12 medium-9">	
+        <h1 class="posts-title"><?php echo $title; ?></h1>
+        <?php if( $subtitle ) { ?>
+            <h2 class="posts-subtitle"><?php echo $subtitle; ?></h2>
+        <?php } ?>
+    </div>
+    <div class="columns small-12 medium-3">
+        <img class="posts-header-icon" src="<?php echo $image_url; ?>"/>
 </header>
 
 <?php

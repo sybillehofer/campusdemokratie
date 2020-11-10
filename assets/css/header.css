@@ -13,11 +13,8 @@
 
 .posts-header {
 	position: relative;
-	background-size: auto 90%;
-	background-repeat: no-repeat;
-	background-position: right 2rem bottom;
 	background-color: #e9edf0;
-	padding: 3rem 1rem 1.5rem;
+	padding: 3rem 1rem 0;
 }
 
 .posts-header:before {
@@ -42,22 +39,30 @@
 	position: relative;
 }
 
+.posts-header-icon {
+	transition: transform 200ms ease-in-out;
+	transform-origin: bottom;
+	transform: scale(0.9);
+}
+
 @media (min-width: 768px) {
 	.posts-header {
-		padding: 3.75rem 3rem 2.25rem;
+		display: flex;
+    	align-items: flex-end;
+		padding: 0 3rem;
 	}
 	.posts-header:before {
 		display: none;
 	}
-	.posts-title {
-		max-width: 80%;
+	.posts-header-text {
+		padding-top: 3.75rem;
+		padding-bottom: 2.25rem;
 	}
 	.home-content .posts-title {
 		font-size: 48px;
 	}
 	.posts-subtitle {
 		font-size: 1.6rem;
-		max-width: 85%;
 	}
 }
 
@@ -65,8 +70,8 @@ a .posts-header {
 	color: black;
 	transition: all 200ms ease-in-out;
 }
-a .posts-header:hover {
-	background-size: auto 100%;
+a .posts-header:hover .posts-header-icon {
+	transform: scale(1);
 }
 
 .posts-description h2 { margin: 0.5rem 0 1rem; }
