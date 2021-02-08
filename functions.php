@@ -14,6 +14,15 @@ require_once(get_template_directory().'/assets/functions/helpers.php');
 // Add custom post type project
 require_once(get_template_directory().'/assets/functions/cpt-project.php'); 
 
+// Add custom post type proposal
+require_once(get_template_directory().'/assets/functions/cpt-proposal.php'); 
+
+// Add custom post type activity
+require_once(get_template_directory().'/assets/functions/cpt-activity.php'); 
+
+// Add custom menu entry 'Democracy Day'
+require_once(get_template_directory().'/assets/functions/admin-menu-democracy-day.php'); 
+
 // Register general hooks
 require_once(get_template_directory().'/assets/functions/hooks.php'); 
 

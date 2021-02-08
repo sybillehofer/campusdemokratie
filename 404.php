@@ -8,7 +8,7 @@
 
 				<article id="content-not-found">
 				
-					<header class="article-header">
+					<header class="page-header">
 						<h1><?php _e( 'Epic 404 - Article Not Found', 'jointswp' ); ?></h1>
 					</header> <!-- end article header -->
 			

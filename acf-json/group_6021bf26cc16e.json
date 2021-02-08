@@ -1,0 +1,47 @@
+{
+    "key": "group_6021bf26cc16e",
+    "title": "Details zur Aktivität",
+    "fields": [
+        {
+            "key": "field_6021bf3164782",
+            "label": "Zugehöriger Vorschlag (Mehrfachauswahl möglich)",
+            "name": "proposal",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "proposal"
+            ],
+            "taxonomy": "",
+            "allow_null": 0,
+            "multiple": 1,
+            "return_format": "object",
+            "translations": "copy_once",
+            "ui": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "activity"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1612824456
+}
