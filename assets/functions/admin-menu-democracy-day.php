@@ -38,3 +38,10 @@ function cd_count_proposal_in_activities($proposal_ID) {
         return false;
     }
 }
+
+/**** NOVO MAP ****/
+add_filter( 'novo_map_allowed_post_type', 'novo_map_post_types' );
+function novo_map_post_types($types) {
+    $types = array( 'activity' );
+    return $types;
+}

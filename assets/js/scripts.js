@@ -23,5 +23,4 @@ jQuery(document).ready(function() {
 	jQuery(".back-to-top").on('click', function () {
 	   jQuery("html, body").animate({scrollTop: 0}, 1000);
 	});
-    
 });

@@ -1,0 +1,9 @@
+.novo-map-container {
+    margin-bottom: 2rem;
+}
+
+.novo-map-container .gm-fullscreen-control,
+.novo-map-container .gmnoprint,
+.novo-map-container .gm-style-cc {
+    display: none;
+}
