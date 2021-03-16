@@ -1,0 +1,99 @@
+.background-gray {
+    background-color: #e9edf0;
+}
+
+.content-row {
+    margin: 2rem 0;
+    position: relative;
+}
+
+.content-link {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.text-box {
+    padding: 1rem;
+}
+
+@media screen and (min-width: 40em) {
+    .text-box, .image-box {
+        float: left;
+    }
+    .text-box {
+        width: 75%;
+    }
+    .image-box {
+        width: 23%;
+        border: 5px solid #e9edf0;
+        padding: 1rem;
+    }
+    .image-box-left {
+        margin-right: 2%;
+    }
+    .image-box-right {
+        margin-left: 2%;
+    }
+}
+
+@media screen and (max-width: 39.9375em) {
+    .text-box {
+        padding-top: 25vw;
+    }
+}
+
+.icon-box {
+    width: 30vw;
+    height: 30vw;
+    border-radius: 50%;
+    background-color: #bd4145;
+    margin-left: 0.5rem;
+    margin-bottom: -20vw;
+    position: relative;
+    z-index: 100;
+    display: flex; 
+    padding: 1.25rem;
+}
+
+
+/* Proposal */
+.proposal {
+    text-align: center;
+    border: 5px solid #e9edf0;
+    padding: 1rem;
+    margin-right: 1rem;
+}
+
+.proposal-image {
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+    background-color: #e9edf0;
+}
+
+/* Proposal Filters */
+.slider-handle {
+    background-color: #bd4145;
+    border-radius: 50%;
+}
+.slider-handle:hover {
+    background-color: #8d464a;
+
+}
+.slider-handle input {
+    width: auto;
+    height:100%;
+    background: transparent;
+    border: none;
+    box-shadow: none;display:inline;color: white;padding:0;
+    padding-left: 3px;
+    font-size: 0.8rem;
+    cursor: grab;
+}
+
+#proposal-filter-wrapper .selects-container,
+#proposal-filter-wrapper .selects-container .filter-group {
+    display: block;
+}

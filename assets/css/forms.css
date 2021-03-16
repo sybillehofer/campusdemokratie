@@ -97,15 +97,7 @@ select.selected {
 	
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
+/* 2021 */
+.gform_wrapper ul.gfield_checkbox li input[type=checkbox] {
+	margin: 0 0 1px 0 !important;
+}

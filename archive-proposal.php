@@ -12,14 +12,15 @@
 					<br>
 					<br>
 					<section class="medium-3 columns">
-						<h2>Filter</h2>
+						<h2><?php pll_e( 'Filter' ); ?></h2>
+						<?php get_template_part( 'parts/proposal', 'filter' ); ?>
 					</section>
 
 					<?php 
 						if (have_posts()) : ?>
 						<section class="medium-9 columns">
 							<div class="row">
-								<div class="posts-grid isotope-filter-container" data-isotope-layoutMode="fitRows">
+								<div class="proposal-grid isotope-filter-container" data-isotope-layoutMode="fitRows">
 									<?php
 										while (have_posts()) : the_post();
 										

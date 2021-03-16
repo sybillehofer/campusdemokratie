@@ -33,6 +33,7 @@
     </div>
     <div class="columns small-12 medium-3">
         <img class="posts-header-icon" src="<?php echo $image_url; ?>"/>
+    </div>
 </header>
 
 <?php

@@ -11,9 +11,9 @@
 		
 		<a href="<?php echo get_post_type_archive_link( get_post_type() ); ?>" class="btn-primary"><?php pll_e( 'Alle Vorschläge' ); ?></a>	
 			
-		<?php if ($number = cd_count_proposal_in_activities(get_the_ID())) { ?>
+		<!-- <?php if ($number = cd_count_proposal_in_activities(get_the_ID())) { ?>
 		<span>Der Vorschlag wurde <?php echo $number; ?> Mal umgesetzt.</span>
-		<?php } ?>
+		<?php } ?> -->
 
 	</div>
 

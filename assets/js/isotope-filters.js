@@ -54,7 +54,7 @@
 			var filterGroup = $this.attr('data-filter-group'),
 				value = '',
 				attr = $this.attr('data-filter-value');
-
+			
 			if (typeof attr !== typeof undefined && attr !== false) {
 				value = $this.attr('data-filter-value'); //for buttons
 			} else {
@@ -163,7 +163,7 @@
 			
 			$.filterList(filterValue);
 			
-			$.addFilterstoURL(filterValue);	
+			$.addFilterstoURL(filterValue);
 			
 			$('[data-reset-filter]').show();		
 		});

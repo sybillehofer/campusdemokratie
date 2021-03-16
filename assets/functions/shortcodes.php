@@ -43,18 +43,3 @@ function slideshow_shortcode( $atts, $content, $tag = 'slideshow' ) {
 }
 
 add_shortcode('slideshow', 'slideshow_shortcode');
-
-
-/**
- * register shortcode "interactive map"
- */
-function interactive_map_shortcode() {
-	if( !is_admin() ) {
-        ob_start();
-        include(locate_template( 'parts/shortcode-interactive-map.php'));
-        $content = ob_get_contents();
-        ob_end_clean();
-	}
-    return $content;
-}
-add_shortcode( 'interactive-map', 'interactive_map_shortcode' );

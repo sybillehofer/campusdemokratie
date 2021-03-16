@@ -1,0 +1,994 @@
+{
+    "key": "group_6049b9476e635",
+    "title": "Details zum Vorschlag",
+    "fields": [
+        {
+            "key": "field_6049b9b464ea6",
+            "label": "Informationen zur Umsetzung der Aktivität",
+            "name": "activity-type",
+            "type": "radio",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Die Aktivität kann selbständig umgesetzt werden": "Die Aktivität kann selbständig umgesetzt werden",
+                "Die Aktivität kann gebucht werden": "Die Aktivität kann gebucht werden"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value",
+            "translations": "copy_once",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_6049b9477af27",
+            "label": "Kontaktdaten",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_6049b97764ea5",
+            "label": "Ein Vorschlag von ...",
+            "name": "author",
+            "type": "radio",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "mir": "mir",
+                "meiner Organisation": "meiner Organisation",
+                "Ich möchte anonym bleiben.": "Ich möchte anonym bleiben."
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value",
+            "translations": "copy_once",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_6049b9477af33",
+            "label": "Vorname",
+            "name": "name",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "translations": "translate"
+        },
+        {
+            "key": "field_6049b9477af3b",
+            "label": "Nachname",
+            "name": "surname",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "translations": "translate"
+        },
+        {
+            "key": "field_6049b9477af41",
+            "label": "E-Mail",
+            "name": "email",
+            "type": "email",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "translations": "copy_once"
+        },
+        {
+            "key": "field_6049b9477af65",
+            "label": "Name der Organisation",
+            "name": "organization",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "translations": "translate"
+        },
+        {
+            "key": "field_6049b9477afdc",
+            "label": "Einwilligung",
+            "name": "advertisement",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Ich bin einverstanden, dass der Campus für Demokratie (Stiftung Dialog) meine Aktivität auf seinen Kanälen bewirbt und mich über andere Angebote informiert. Gerne können Sie meine Kontaktdaten zu Vernetzungszwecken weitergeben.": "Ich bin einverstanden, dass der Campus für Demokratie (Stiftung Dialog) meine Aktivität auf seinen Kanälen bewirbt und mich über andere Angebote informiert. Gerne können Sie meine Kontaktdaten zu Vernetzungszwecken weitergeben.",
+                "Ich bin einverstanden, dass der Campus für Demokratie (Stiftung Dialog) meine Aktivität auf seinen Kanälen bewirbt und mich über andere Angebote informiert. Bitte kontaktieren Sie mich vorab, wenn Sie meine Kontaktdaten zu Vernetzungszwecken weitergeben möchten.": "Ich bin einverstanden, dass der Campus für Demokratie (Stiftung Dialog) meine Aktivität auf seinen Kanälen bewirbt und mich über andere Angebote informiert. Bitte kontaktieren Sie mich vorab, wenn Sie meine Kontaktdaten zu Vernetzungszwecken weitergeben möchten.",
+                "Meine Kontaktdaten sollen nach dem Tag der Demokratie für immer gelöscht werden. Ich möchte keinen Kontakt mehr und keine Informationen zum Tag der Demokratie in der Schweiz erhalten": "Meine Kontaktdaten sollen nach dem Tag der Demokratie für immer gelöscht werden. Ich möchte keinen Kontakt mehr und keine Informationen zum Tag der Demokratie in der Schweiz erhalten"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "return_format": "value",
+            "translations": "copy_once",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_6049b9477af87",
+            "label": "Zielgruppe",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_6049ba4a64ea7",
+            "label": "Für welche Altersgruppe eignet sich die Aktivität?",
+            "name": "age",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "sub_fields": [
+                {
+                    "key": "field_6049be059f3c5",
+                    "label": "von",
+                    "name": "from",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": "",
+                    "translations": "copy_once"
+                },
+                {
+                    "key": "field_6049be199f3c6",
+                    "label": "bis",
+                    "name": "to",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": "",
+                    "translations": "copy_once"
+                }
+            ]
+        },
+        {
+            "key": "field_6049be309f3c7",
+            "label": "Für welche Gruppengrösse eignet sich die Aktivität?",
+            "name": "group-size",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "sub_fields": [
+                {
+                    "key": "field_6049be309f3c8",
+                    "label": "von",
+                    "name": "from",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": "",
+                    "translations": "copy_once"
+                },
+                {
+                    "key": "field_6049be309f3c9",
+                    "label": "bis",
+                    "name": "to",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": "",
+                    "translations": "copy_once"
+                }
+            ]
+        },
+        {
+            "key": "field_6049b9477af99",
+            "label": "Bitte ergänzen Sie \"sonstiges\"",
+            "name": "target-group-info",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "translations": "translate"
+        },
+        {
+            "key": "field_6049bcfc64eab",
+            "label": "Umgebung\/Dauer\/Zeitpunkt",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_6049babf64ea9",
+            "label": "Welche Umgebung ist geeignet? (z.B. draussen, in einer Stadt)",
+            "name": "surroundings",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 2,
+            "new_lines": "",
+            "translations": "translate"
+        },
+        {
+            "key": "field_6049baf864eaa",
+            "label": "Wie lange dauert die Aktivität?",
+            "name": "duration",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "translations": "translate"
+        },
+        {
+            "key": "field_6049b9477afa0",
+            "label": "Die Umsetzung der Aktivität ist nur für den Internationalen Tag der Demokratie (15.9) geeignet.",
+            "name": "democracy-day-only",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "translations": "copy_once"
+        },
+        {
+            "key": "field_6049b9477afa7",
+            "label": "Unterlagen",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6049b9b464ea6",
+                        "operator": "==",
+                        "value": "Die Aktivität kann selbständig umgesetzt werden"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_6049b9477afad",
+            "label": "Anleitung und Planung",
+            "name": "guideline",
+            "type": "file",
+            "instructions": "Damit die Aktivität selbständig durchgeführt werden kann, hilft eine Anleitung. Gerne können Sie Ihre Planung hochladen oder unsere Vorlagen verwenden. Alle Vorlagen finden Sie unter www.campusdemokratie.ch\/tagderdemokratie\/vorlagen.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": "",
+            "translations": "copy_once"
+        },
+        {
+            "key": "field_6049b9477afb4",
+            "label": "Welches Material wird benötigt?",
+            "name": "documents",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Ohne Material.": "Ohne Material.",
+                "Von uns zur Verfügung gestelltes Material.": "Von uns zur Verfügung gestelltes Material.",
+                "Weiteres, nämlich...": "Weiteres, nämlich..."
+            },
+            "allow_custom": 0,
+            "default_value": [],
+            "layout": "horizontal",
+            "toggle": 0,
+            "return_format": "value",
+            "translations": "copy_once",
+            "save_custom": 0
+        },
+        {
+            "key": "field_6049b9477afba",
+            "label": "Datei",
+            "name": "file",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6049b9477afb4",
+                        "operator": "==",
+                        "value": "Von uns zur Verfügung gestelltes Material."
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": "",
+            "translations": "copy_once"
+        },
+        {
+            "key": "field_6049b9477afc1",
+            "label": "Link zum Material",
+            "name": "document-link",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6049b9477afb4",
+                        "operator": "==",
+                        "value": "Von uns zur Verfügung gestelltes Material."
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "translations": "copy_once"
+        },
+        {
+            "key": "field_6049b9477afc8",
+            "label": "Weiteres, nämlich....",
+            "name": "document-info",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6049b9477afb4",
+                        "operator": "==",
+                        "value": "Weiteres, nämlich..."
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "translations": "translate"
+        },
+        {
+            "key": "field_6049bef4cca76",
+            "label": "Ort",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6049b9b464ea6",
+                        "operator": "==",
+                        "value": "Die Aktivität kann gebucht werden"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_6049bf06cca77",
+            "label": "Wo findet die Aktivität statt?",
+            "name": "location",
+            "type": "radio",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Online": "Online",
+                "Vor Ort (bei uns)": "Vor Ort (bei uns)",
+                "Vor Ort (bei Ihnen)": "Vor Ort (bei Ihnen)"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value",
+            "translations": "copy_once",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_6049bf3fcca78",
+            "label": "Adresse",
+            "name": "address",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6049bf06cca77",
+                        "operator": "==",
+                        "value": "Vor Ort (bei uns)"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "translations": "translate"
+        },
+        {
+            "key": "field_6049bf64cca79",
+            "label": "Wir kommen vorbei",
+            "name": "region",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6049bf06cca77",
+                        "operator": "==",
+                        "value": "Vor Ort (bei Ihnen)"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Schweizweit": "Schweizweit",
+                "Deutschschweiz": "Deutschschweiz",
+                "Französischsprachige Schweiz": "Französischsprachige Schweiz",
+                "Italienischsprachige Schweiz": "Italienischsprachige Schweiz",
+                "Einzelne Kantone": "Einzelne Kantone"
+            },
+            "allow_custom": 0,
+            "default_value": [],
+            "layout": "vertical",
+            "toggle": 0,
+            "return_format": "value",
+            "translations": "copy_once",
+            "save_custom": 0
+        },
+        {
+            "key": "field_6049bf9acca7a",
+            "label": "Einzelne Kantone",
+            "name": "canton",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6049bf64cca79",
+                        "operator": "==",
+                        "value": "Einzelne Kantone"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Aargau": "Aargau",
+                "Appenzell Innerrhoden": "Appenzell Innerrhoden",
+                "Appenzell Ausserrhoden": "Appenzell Ausserrhoden",
+                "Bern": "Bern",
+                "Basel-Landschaft": "Basel-Landschaft",
+                "Basel-Stadt": "Basel-Stadt",
+                "Freiburg": "Freiburg",
+                "Genf": "Genf",
+                "Glarus": "Glarus",
+                "Graubünden": "Graubünden",
+                "Jura": "Jura",
+                "Luzern": "Luzern",
+                "Neuenburg": "Neuenburg",
+                "Nidwalden": "Nidwalden",
+                "Obwalden": "Obwalden",
+                "St. Gallen": "St. Gallen",
+                "Schaffhausen": "Schaffhausen",
+                "Solothurn": "Solothurn",
+                "Schwyz": "Schwyz",
+                "Thurgau": "Thurgau",
+                "Tessin": "Tessin",
+                "Uri": "Uri",
+                "Waadt": "Waadt",
+                "Wallis": "Wallis",
+                "Zug": "Zug",
+                "Zürich": "Zürich"
+            },
+            "allow_custom": 0,
+            "default_value": [],
+            "layout": "vertical",
+            "toggle": 0,
+            "return_format": "value",
+            "translations": "copy_once",
+            "save_custom": 0
+        },
+        {
+            "key": "field_6049c1dda10c2",
+            "label": "Buchung",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6049b9b464ea6",
+                        "operator": "==",
+                        "value": "Die Aktivität kann gebucht werden"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_6049bfedcca7b",
+            "label": "Link zur Buchung",
+            "name": "booking-link",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "translations": "copy_once"
+        },
+        {
+            "key": "field_6049c012cca7c",
+            "label": "Kosten",
+            "name": "price-type",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "ist kostenlos": "ist kostenlos",
+                "kostet...": "kostet..."
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value",
+            "translations": "copy_once",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_6049c030cca7d",
+            "label": "Bitte geben Sie die Kosten in CHF an.",
+            "name": "price",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6049c012cca7c",
+                        "operator": "==",
+                        "value": "kostet..."
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "translations": "translate"
+        },
+        {
+            "key": "field_6049c1eba10c3",
+            "label": "Kontakt",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6049b9b464ea6",
+                        "operator": "==",
+                        "value": "Die Aktivität kann gebucht werden"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_6049c05fcca7e",
+            "label": "Kontaktperson\/Kontaktinstitution",
+            "name": "contact-info",
+            "type": "radio",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Kontaktdaten von Schritt 1 übernehmen": "Kontaktdaten von Schritt 1 übernehmen",
+                "Eine andere Kontaktperson angeben": "Eine andere Kontaktperson angeben",
+                "Ich möchte anonym bleiben": "Ich möchte anonym bleiben"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value",
+            "translations": "copy_once",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_6049c0a8cca80",
+            "label": "Name und Vorname oder Name der Organisation",
+            "name": "additional-name",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6049c05fcca7e",
+                        "operator": "==",
+                        "value": "Eine andere Kontaktperson angeben"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "translations": "translate"
+        },
+        {
+            "key": "field_6049c0c2cca81",
+            "label": "E-Mail",
+            "name": "additional-email",
+            "type": "email",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6049c05fcca7e",
+                        "operator": "==",
+                        "value": "Eine andere Kontaktperson angeben"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "translations": "copy_once"
+        },
+        {
+            "key": "field_6049c203a10c4",
+            "label": "Dokumente",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6049b9b464ea6",
+                        "operator": "==",
+                        "value": "Die Aktivität kann gebucht werden"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_6049c103cca82",
+            "label": "Gerne können Sie weitere Dateien (z.B. Ihr Logo, Flyer etc.) hochladen.",
+            "name": "additional-documents",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": "",
+            "translations": "copy_once"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "proposal"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Democracy Day",
+    "modified": 1615926991
+}
