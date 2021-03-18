@@ -27,7 +27,7 @@
 	
 </ul>
 
-<p class="no-results"><?php echo pll_e( 'Zur Zeit sind keine Events aufgeschaltet, welche die gewählten Kriterien erfüllen.' ); ?></p>
+<p class="no-results" data-no-results><?php echo pll_e( 'Zur Zeit sind keine Events aufgeschaltet, welche die gewählten Kriterien erfüllen.' ); ?></p>
 
 <?php 
 	$button = get_field( 'link_events_list', 'sh_options' );

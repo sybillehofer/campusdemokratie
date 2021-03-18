@@ -69,11 +69,20 @@
 
 .proposal-image {
     border-radius: 50%;
-    margin-bottom: 0.5rem;
+    width: 100%;
+}
+.proposal-image-container {
     background-color: #e9edf0;
+    height: 0;
+    padding-bottom: 100%;
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
 }
 
 /* Proposal Filters */
+.filter-group.no-flex {
+    display: block;
+}
 .slider-handle {
     background-color: #bd4145;
     border-radius: 50%;
@@ -93,7 +102,27 @@
     cursor: grab;
 }
 
-#proposal-filter-wrapper .selects-container,
-#proposal-filter-wrapper .selects-container .filter-group {
+.hiddenCheckbox {
+    display: none;
+}
+.hiddenCheckbox:checked + .termIcon {
+    background: #8d464a;
+}
+.termIcon {
+    background-color: #bd4145;
+    border-radius: 50%;
+    height: 1.75rem;
+    width: 1.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.3rem;
+}
+.termIcon img {
+    height: 70%;
+    width: 70%;
+}
+
+#proposal-filter-wrapper .selects-container {
     display: block;
 }

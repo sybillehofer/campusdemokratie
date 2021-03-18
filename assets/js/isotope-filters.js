@@ -33,7 +33,7 @@
 				});
 			}
 		}
-		
+		            
 		//set given select element to active
 		$.setSelectActive = function($this) {
 			if( $this.val() == '' ) {
@@ -49,7 +49,7 @@
 			$this.addClass('selected');
 		}
 		
-		//update filters according to given select or button
+		//update filters according to given select, button or checkbox
 		$.updateFilters = function($this) {
 			var filterGroup = $this.attr('data-filter-group'),
 				value = '',
@@ -57,6 +57,22 @@
 			
 			if (typeof attr !== typeof undefined && attr !== false) {
 				value = $this.attr('data-filter-value'); //for buttons
+			} else if (typeof $this.attr('data-filter-checkbox') !== typeof undefined && $this.attr('data-filter-checkbox') !== false) {
+				var $checkboxes = $('[data-filter-group="'+filterGroup+'"]'),
+					values = [];
+				$checkboxes.each( function(i,el) {
+					if ( el.checked ) {
+						values.push( el.value );
+					}
+				});
+				value = values.join([separator = '.']); //for checkboxes
+			} else if (typeof $this.attr('data-filter-range') !== typeof undefined && $this.attr('data-filter-range') !== false) {
+				// var filterGroup = $this.data('filter-group'),
+				// 	$inputs = $this.find('input'),
+				// 	values = [];
+				// values.push(filterGroup + '-from-' + $inputs.first().val());
+				// values.push(filterGroup + '-to-' + $inputs.last().val());
+				// value = values.join([separator = '.']); //for range sliders
 			} else {
 				value = $this.val(); //for selects
 			}
@@ -125,10 +141,25 @@
 		//reset all filters 
 		$.resetFilters = function() {
 			$('.filters-select').prop('selectedIndex',0).removeClass('selected');
+			$('[data-filter-checkbox]').prop("checked", false);
 			filters = {};
 			$.filterList();
 			$.addFilterstoURL('');
 			$('[data-reset-filter]').hide();
+		}
+
+		$.handleInputChange = function($input) {
+			$('[data-no-results]').hide();
+
+			$.updateFilters($input);
+
+			var filterValue = $.concatValues( filters );
+			
+			$.filterList(filterValue);
+			
+			$.addFilterstoURL(filterValue);
+			
+			$('[data-reset-filter]').show();
 		}
 		
 		//initialize isotope grid
@@ -148,51 +179,41 @@
 			$.setFilters($.urlParam('filter'));
 			$.filterList($.urlParam('filter'));
 			$('[data-reset-filter]').show();
-		}		
-		
+		} else {
+			setTimeout(function () {
+				$('[data-reset-filter]').hide();  
+			}, 500);
+		}
+
 		//if a select element changes
 		$('.selects-container').on('change', '.filters-select', function(){
-			$('.no-results').hide(); 
-											
-			var $thisSelect = $(this);
-			
-			$.setSelectActive($thisSelect);
-			$.updateFilters($thisSelect);
-
-			var filterValue = $.concatValues( filters );
-			
-			$.filterList(filterValue);
-			
-			$.addFilterstoURL(filterValue);
-			
-			$('[data-reset-filter]').show();		
+			$.setSelectActive($(this));
+			$.handleInputChange($(this));	
 		});
 		
 		//if a button is clicked
 		$('.filter-button').on('click', function(){
-			$('.no-results').hide();
-					
-			var $thisButton = $(this);
-			
-			$.setButtonActive($thisButton);
-			$.updateFilters($thisButton);
+			$.setButtonActive($(this));
+			$.handleInputChange($(this));		
+		});
 
-			var filterValue = $.concatValues( filters );
-			
-			$.filterList(filterValue);
-			
-			$.addFilterstoURL(filterValue);	
-			
-			$('[data-reset-filter]').show();		
+		//if a checkbox is clicked
+		$('[data-filter-checkbox]').on('change', function(){
+			$.handleInputChange($(this));	
 		});	
+
+		//if a range slider is changed
+		$('[data-filter-range]').on('changed.zf.slider', function(){
+			$.handleInputChange($(this));	
+		});
 		
 		//as soon as filtering is done
 		$grid.on( 'arrangeComplete', function( event, filteredItems ) {
 
 		    if ( $grid.data('isotope').filteredItems.length == 0) {
-			    $('.no-results').fadeIn(); 
+			    $('[data-no-results]').fadeIn(); 
 			} else {
-				$('.no-results').hide();
+				$('[data-no-results]').hide();
 				$('.events-event').removeClass('is-first');
 				
 				var months = [];

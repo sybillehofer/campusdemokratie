@@ -4,13 +4,18 @@
 
 Dieses Theme wird für die Website campusdemokratie.ch des Campus für Demokratie eingesetzt.
 
-## Version: 1.6.2
+## Version: 1.7.0
 
 ## Person Responsible
 
 Sybille Hofer @sybillehofer
 
 ## Changelog
+
+### 1.7.0 2021-03-17
+* Feature: Add democracy day overview, proposal list and proposal single view
+* Feature: Add filters for proposal list
+* Feature: Add ACF Fields for activity and proposal
 
 ### 1.6.2 2020-07-20
 * Bugfix: Change isotope filter function for posts in order to assign correct layout

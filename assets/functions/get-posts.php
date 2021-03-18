@@ -350,6 +350,18 @@ function cd_get_isotope_classes($post) {
 	if( $post->is_campus === "1" ) {
 		$class_string .= ' is-campus';
 	}
+
+	if(get_field('age', $post->ID)) { //for proposals
+		$age = get_field('age', $post->ID);
+		$age_from = $age['from'] !== '' ? $age['from'] : '0';
+		$age_to = $age['to'] !== '' ? $age['to'] : '99';
+		$class_string .= ' age-from-' . $age_from . ' age-to-' . $age_to;
+	}
+
+	if(get_field('duration', $post->ID)) { //for proposals
+		$duration = get_field('duration', $post->ID);
+		$class_string .= ' duration-' . $duration;
+	}
 	
 	return $class_string;
 }

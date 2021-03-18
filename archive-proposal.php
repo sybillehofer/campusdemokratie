@@ -12,7 +12,12 @@
 					<br>
 					<br>
 					<section class="medium-3 columns">
-						<h2><?php pll_e( 'Filter' ); ?></h2>
+						<h2>
+							<?php pll_e( 'Filter' ); ?>
+							<button class="reset-filter" data-reset-filter title="<?php pll_e( 'Filter zurücksetzen' ); ?>">
+								<?php include("assets/images/reset.svg"); ?>
+							</button>
+						</h2>
 						<?php get_template_part( 'parts/proposal', 'filter' ); ?>
 					</section>
 
@@ -29,6 +34,7 @@
 											
 										endwhile;
 									?>
+									<p class="no-results" data-no-results><?php pll_e( 'Zur Zeit haben wir keine Vorschläge, welche die gewählten Kriterien erfüllen.' ); ?></p>
 								</div>
 							</div>
 						</section>

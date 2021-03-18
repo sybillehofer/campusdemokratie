@@ -2,14 +2,14 @@
 	<div class="selects-container filters">
     
         <h3><?php pll_e( 'Alter' ); ?></h3>
-        <div class="slider" data-slider data-start="0" data-initial-start="10" data-initial-end="90" data-end="99">
+        <div class="slider" data-slider data-start="0" data-initial-start="0" data-initial-end="99" data-end="99" data-filter-range data-filter-group="age">
             <div class="slider-handle" data-slider-handle role="slider" tabindex="1"><input type="number" disabled></div>
             <span class="slider-fill" data-slider-fill></span>
             <div class="slider-handle" data-slider-handle role="slider" tabindex="1"><input type="number" disabled></div>
         </div>
 
         <h3><?php pll_e( 'Dauer (h)' ); ?></h3>
-        <div class="slider" data-slider data-start="1" data-initial-start="2" data-initial-end="3" data-end="730">
+        <div class="slider" data-slider data-start="1" data-initial-start="1" data-initial-end="730" data-end="730" data-filter-range data-filter-group="duration">
             <div class="slider-handle" data-slider-handle role="slider" tabindex="1"><input type="number" disabled></div>
             <span class="slider-fill" data-slider-fill></span>
             <div class="slider-handle" data-slider-handle role="slider" tabindex="1"><input type="number" disabled></div>
@@ -17,26 +17,26 @@
 
         <h3><?php pll_e( 'Art' ); ?></h3>
         <div class="filter-group">
-            <select class="filters-select filter-proposal-type" data-filter-group="proposal-type">
-                <option value=""><?php pll_e( 'Alle Arten' ); ?></option>
-                <?php foreach( cd_get_taxonomy_terms('proposal-type') as $art ) : ?>
-                    <option value="<?php echo $art->slug; ?>"><?php echo $art->name; ?></option>
-                <?php endforeach; ?>
-            </select>
+            <?php foreach( cd_get_taxonomy_terms('proposal-type') as $art ) : ?>
+                <label title="<?php echo $art->name; ?>">
+                    <input class="hiddenCheckbox" type="checkbox" value="<?php echo $art->slug; ?>" data-filter-checkbox data-filter-group="proposal-type"/>
+                    <div class="termIcon"><img src="<?php echo dd_get_icon_url($art, ''); ?>" alt="<?php echo $art->name; ?>"></div>
+                </label>
+            <?php endforeach; ?>
         </div>
 
         <h3><?php pll_e( 'Ich suche für...' ); ?></h3>
         <div class="filter-group">
-            <select class="filters-select filter-target-group" data-filter-group="target-group">
-                <option value=""><?php pll_e( 'Alle Zielgruppen' ); ?></option>
-                <?php foreach( cd_get_taxonomy_terms('target-group') as $zielgruppe ) : ?>
-                    <option value="<?php echo $zielgruppe->slug; ?>"><?php echo $zielgruppe->name; ?></option>
-                <?php endforeach; ?>
-            </select>
+            <?php foreach( cd_get_taxonomy_terms('target-group') as $art ) : ?>
+                <label title="<?php echo $art->name; ?>">
+                    <input class="hiddenCheckbox" type="checkbox" value="<?php echo $art->slug; ?>" data-filter-checkbox data-filter-group="target-group"/>
+                    <div class="termIcon"><img src="<?php echo dd_get_icon_url($art, ''); ?>" alt="<?php echo $art->name; ?>"></div>
+                </label>
+            <?php endforeach; ?>
         </div>
 
         <h3><?php pll_e( 'Gruppengrösse' ); ?></h3>
-        <div class="slider" data-slider data-start="1" data-initial-start="5" data-initial-end="20" data-end="100">
+        <div class="slider" data-slider data-start="1" data-initial-start="1" data-initial-end="100" data-end="100" data-filter-range data-filter-group="group-size">
             <div class="slider-handle" data-slider-handle role="slider" tabindex="1"><input type="number" disabled></div>
             <span class="slider-fill" data-slider-fill></span>
             <div class="slider-handle" data-slider-handle role="slider" tabindex="1"><input type="number" disabled></div>
@@ -44,15 +44,15 @@
 
         <h3><?php pll_e( 'Ort' ); ?></h3>
         <div class="filter-group">
-            <select class="filters-select filter-location" data-filter-group="location">
-                <option value=""><?php pll_e( 'Alle Orte' ); ?></option>
-                <?php foreach( cd_get_taxonomy_terms('location') as $ort ) : ?>
-                    <option value="<?php echo $ort->slug; ?>"><?php echo $ort->name; ?></option>
-                <?php endforeach; ?>
-            </select>
+        <?php foreach( cd_get_taxonomy_terms('location') as $art ) : ?>
+                <label title="<?php echo $art->name; ?>">
+                    <input class="hiddenCheckbox" type="checkbox" value="<?php echo $art->slug; ?>" data-filter-checkbox data-filter-group="location"/>
+                    <div class="termIcon"><img src="<?php echo dd_get_icon_url($art, ''); ?>" alt="<?php echo $art->name; ?>"></div>
+                </label>
+            <?php endforeach; ?>
         </div>
 
-        <div class="filter-group">
+        <div class="filter-group no-flex">
             <label>
                 <input type="radio" name="cost" value="kostenlos" data-filter-group="cost"/> <?php pll_e( 'kostenlos' ); ?>
             </label>
@@ -60,7 +60,7 @@
                 <input type="radio" name="cost" value=".kostenpflichtig" data-filter-group="cost" /> <?php pll_e( 'kostenpflichtig' ); ?>
             </label>
         </div>
-        <div class="filter-group">
+        <div class="filter-group no-flex">
             <label>
                 <input type="radio" name="onoffline" value=".online" data-filter-group="onoffline" /> <?php pll_e( 'online' ); ?>
             </label>
@@ -68,7 +68,7 @@
                 <input type="radio" name="onoffline" value=".offline" data-filter-group="onoffline" /> <?php pll_e( 'offline' ); ?>
             </label>
         </div>
-        <div class="filter-group">
+        <div class="filter-group no-flex">
             <label>
                 <input type="radio" name="timeslot" value=":not(.transition)" data-filter-group="timeslot" /> <?php pll_e( 'ganzes Jahr' ); ?>
             </label>
