@@ -4,13 +4,17 @@
 
 Dieses Theme wird für die Website campusdemokratie.ch des Campus für Demokratie eingesetzt.
 
-## Version: 1.7.0
+## Version: 1.7.1
 
 ## Person Responsible
 
 Sybille Hofer @sybillehofer
 
 ## Changelog
+
+### 1.7.1 2021-03-21
+* Feature: Add data to singleview of proposal
+* Layout: Style singleview of proposal incl. mobile
 
 ### 1.7.0 2021-03-17
 * Feature: Add democracy day overview, proposal list and proposal single view
