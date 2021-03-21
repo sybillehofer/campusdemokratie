@@ -6,10 +6,7 @@
 	$lastname = get_field('surname', $post);
 	
 	//get icons to display in iconGroups
-	$repeater_icons = get_field( 'democracy-day-icons', 'sh_options' );
-	foreach($repeater_icons as $icon) {
-		$icons[$icon['slug']] = $icon['icon'];
-	}
+	$icons = dd_get_democracy_day_icons();
 
 	//get data to fill icon groups
 	$groupSize = get_field('group-size', $post);

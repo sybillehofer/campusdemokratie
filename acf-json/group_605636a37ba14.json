@@ -1,7 +1,40 @@
 {
     "key": "group_605636a37ba14",
-    "title": "Democracy Day Icons",
+    "title": "Democracy Day Optionen",
     "fields": [
+        {
+            "key": "field_605771eafc3f5",
+            "label": "Formular «Vorschlag einsenden»",
+            "name": "form_proposal",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "translations": "copy_once"
+        },
+        {
+            "key": "field_60577f465ae61",
+            "label": "Formular «Brauchen Sie Hilfe?»",
+            "name": "form_help",
+            "type": "gravity_forms_field",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "allow_null": 0,
+            "allow_multiple": 0,
+            "translations": "copy_once"
+        },
         {
             "key": "field_605636aa2e8d3",
             "label": "Icons",
@@ -85,6 +118,6 @@
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
-    "description": "",
-    "modified": 1616263166
+    "description": "Democracy Day",
+    "modified": 1616346989
 }

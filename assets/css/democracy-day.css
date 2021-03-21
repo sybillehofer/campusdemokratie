@@ -34,6 +34,23 @@
 
 
 /* Proposal */
+.static-proposal-card .proposal {
+    border-color: #bd4145;
+    padding: 2.535rem 1rem;
+}
+.static-proposal-card .proposal-image-container {
+    margin-bottom: 0;
+    background-color:  #bd4145;
+}
+.static-proposal-card .proposal-image-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: 'KohinoorDevanagari-Book';
+    font-size: 1.15rem;
+}
 .proposal-card {
     width: 25%;
 }
@@ -64,6 +81,7 @@
 /* Proposal Filters */
 .proposal-archive-row {
     margin-top: 5rem;
+    position: relative;
 }
 .proposal-filter-container h2 {
     margin-top: 0;
@@ -108,7 +126,9 @@
 .label-title {
     display: none;
 }
-.hiddenCheckbox:checked + .termIcon {
+.hiddenCheckbox:checked + .termIcon,
+.termIcon:hover {
+    cursor: pointer;
     background: #8d464a;
 }
 .termIcon {
@@ -128,6 +148,9 @@
     max-height: 70%;
     max-width: 70%;
 }
+.filter-tooltip {
+    border: none;
+}
 
 #proposal-filter-wrapper .selects-container {
     display: block;
@@ -135,6 +158,24 @@
 
 .show-filters-button {
     font-size: 1rem;
+}
+
+/* Help Batch */
+.helpBatch {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    margin-bottom: -2.5rem;
+}
+.helpBatch p {
+    margin: 0;
+}
+.helpIcon {
+    height: 3rem;
+    width: 3rem;
+    margin-right: 1rem;
 }
 
 /* responsive */

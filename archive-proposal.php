@@ -23,6 +23,16 @@
 						<section class="medium-9 columns">
 							<div class="row">
 								<div class="proposal-grid isotope-filter-container" data-isotope-layoutMode="fitRows">
+
+									<div class="proposal-card static-proposal-card filter-item not-filtered" data-item-layout="">
+										<a href="<?php echo get_field('form_proposal', 'sh_options')['url']; ?>" title="<?php pll_e('Vorschlag einsenden!'); ?>">
+										<article class="proposal" role="article">
+											<div class="proposal-image-container"></div>
+											<div class="proposal-image-text"><?php pll_e('Vorschlag einsenden!'); ?></div>
+										</article>
+										</a>	
+									</div>
+
 									<?php
 										while (have_posts()) : the_post();
 										
@@ -43,8 +53,9 @@
 
 						endif; 
 					?>
+					<?php get_template_part( 'parts/help-batch' ); ?>
 				</section>
-																								
+								
 		    </main> <!-- end #main -->
 
 		</div> <!-- end #inner-content -->
