@@ -360,7 +360,9 @@ function cd_get_isotope_classes($post) {
 
 	if(get_field('duration', $post->ID)) { //for proposals
 		$duration = get_field('duration', $post->ID);
-		$class_string .= ' duration-' . $duration;
+		$duration_from = $duration['from'] !== '' ? $duration['from'] : '0';
+		$duration_to = $duration['to'] !== '' ? $duration['to'] : '730';
+		$class_string .= ' duration-from-' . $age_from . ' duration-to-' . $age_to;
 	}
 	
 	return $class_string;

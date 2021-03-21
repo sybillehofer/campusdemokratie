@@ -1,10 +1,10 @@
 
+
+<?php if( have_rows('democracy_day_content') ): ?>
+
 <h2><?php echo get_field('democracy_day_title'); ?></h2>
 
 <?php
-
-if( have_rows('democracy_day_content') ):
-
     while ( have_rows('democracy_day_content') ) : the_row();
 		
 		$text = get_sub_field( 'text' );

@@ -1,0 +1,90 @@
+{
+    "key": "group_605636a37ba14",
+    "title": "Democracy Day Icons",
+    "fields": [
+        {
+            "key": "field_605636aa2e8d3",
+            "label": "Icons",
+            "name": "democracy-day-icons",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_605636dd2e8d5",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Icon hinzufügen",
+            "sub_fields": [
+                {
+                    "key": "field_605636c52e8d4",
+                    "label": "Icon",
+                    "name": "icon",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "svg",
+                    "translations": "copy_once"
+                },
+                {
+                    "key": "field_605636dd2e8d5",
+                    "label": "Bezeichnung (slug)",
+                    "name": "slug",
+                    "type": "text",
+                    "instructions": "Ein Wort in Kleinbuchstaben, welches das Icon beschreibt. z.B. gruppengroesse\r\nmax. 20 Zeichen, Umlaute ausschreiben!",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": 20,
+                    "translations": "translate"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "theme-options"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1616263166
+}

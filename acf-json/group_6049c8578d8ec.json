@@ -36,7 +36,7 @@
                 "id": ""
             },
             "collapsed": "field_6049c8d71e05a",
-            "min": 1,
+            "min": 0,
             "max": 0,
             "layout": "table",
             "button_label": "Zeile hinzufügen",
@@ -142,5 +142,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "Democracy Day (Übersichtsseite)",
-    "modified": 1615908345
+    "modified": 1616254453
 }

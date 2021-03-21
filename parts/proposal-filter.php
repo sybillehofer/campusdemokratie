@@ -9,7 +9,7 @@
         </div>
 
         <h3><?php pll_e( 'Dauer (h)' ); ?></h3>
-        <div class="slider" data-slider data-start="1" data-initial-start="1" data-initial-end="730" data-end="730" data-filter-range data-filter-group="duration">
+        <div class="slider" data-slider data-start="0" data-initial-start="0" data-initial-end="730" data-end="730" data-filter-range data-filter-group="duration">
             <div class="slider-handle" data-slider-handle role="slider" tabindex="1"><input type="number" disabled></div>
             <span class="slider-fill" data-slider-fill></span>
             <div class="slider-handle" data-slider-handle role="slider" tabindex="1"><input type="number" disabled></div>

@@ -16,8 +16,8 @@
                 "id": ""
             },
             "choices": {
-                "Die Aktivität kann selbständig umgesetzt werden": "Die Aktivität kann selbständig umgesetzt werden",
-                "Die Aktivität kann gebucht werden": "Die Aktivität kann gebucht werden"
+                "1": "Die Aktivität kann selbständig umgesetzt werden",
+                "2": "Die Aktivität kann gebucht werden"
             },
             "allow_null": 0,
             "other_choice": 0,
@@ -135,7 +135,15 @@
             "type": "text",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6049b97764ea5",
+                        "operator": "==",
+                        "value": "meiner Organisation"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "50",
                 "class": "",
@@ -147,6 +155,39 @@
             "append": "",
             "maxlength": "",
             "translations": "translate"
+        },
+        {
+            "key": "field_6056319a24378",
+            "label": "Logo",
+            "name": "logo",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6049b97764ea5",
+                        "operator": "==",
+                        "value": "meiner Organisation"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "translations": "copy_once"
         },
         {
             "key": "field_6049b9477afdc",
@@ -162,9 +203,9 @@
                 "id": ""
             },
             "choices": {
-                "Ich bin einverstanden, dass der Campus für Demokratie (Stiftung Dialog) meine Aktivität auf seinen Kanälen bewirbt und mich über andere Angebote informiert. Gerne können Sie meine Kontaktdaten zu Vernetzungszwecken weitergeben.": "Ich bin einverstanden, dass der Campus für Demokratie (Stiftung Dialog) meine Aktivität auf seinen Kanälen bewirbt und mich über andere Angebote informiert. Gerne können Sie meine Kontaktdaten zu Vernetzungszwecken weitergeben.",
-                "Ich bin einverstanden, dass der Campus für Demokratie (Stiftung Dialog) meine Aktivität auf seinen Kanälen bewirbt und mich über andere Angebote informiert. Bitte kontaktieren Sie mich vorab, wenn Sie meine Kontaktdaten zu Vernetzungszwecken weitergeben möchten.": "Ich bin einverstanden, dass der Campus für Demokratie (Stiftung Dialog) meine Aktivität auf seinen Kanälen bewirbt und mich über andere Angebote informiert. Bitte kontaktieren Sie mich vorab, wenn Sie meine Kontaktdaten zu Vernetzungszwecken weitergeben möchten.",
-                "Meine Kontaktdaten sollen nach dem Tag der Demokratie für immer gelöscht werden. Ich möchte keinen Kontakt mehr und keine Informationen zum Tag der Demokratie in der Schweiz erhalten": "Meine Kontaktdaten sollen nach dem Tag der Demokratie für immer gelöscht werden. Ich möchte keinen Kontakt mehr und keine Informationen zum Tag der Demokratie in der Schweiz erhalten"
+                "1": "Ich bin einverstanden, dass der Campus für Demokratie (Stiftung Dialog) meine Aktivität auf seinen Kanälen bewirbt und mich über andere Angebote informiert. Gerne können Sie meine Kontaktdaten zu Vernetzungszwecken weitergeben.",
+                "2": "Ich bin einverstanden, dass der Campus für Demokratie (Stiftung Dialog) meine Aktivität auf seinen Kanälen bewirbt und mich über andere Angebote informiert. Bitte kontaktieren Sie mich vorab, wenn Sie meine Kontaktdaten zu Vernetzungszwecken weitergeben möchten.",
+                "3": "Meine Kontaktdaten sollen nach dem Tag der Demokratie für immer gelöscht werden. Ich möchte keinen Kontakt mehr und keine Informationen zum Tag der Demokratie in der Schweiz erhalten."
             },
             "allow_null": 0,
             "other_choice": 0,
@@ -370,9 +411,9 @@
         },
         {
             "key": "field_6049baf864eaa",
-            "label": "Wie lange dauert die Aktivität?",
+            "label": "Wie lange dauert die Aktivität? (in Stunden)",
             "name": "duration",
-            "type": "text",
+            "type": "group",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -381,12 +422,53 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "translations": "translate"
+            "layout": "table",
+            "sub_fields": [
+                {
+                    "key": "field_60573a4da45f5",
+                    "label": "von",
+                    "name": "from",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": "",
+                    "translations": "copy_once"
+                },
+                {
+                    "key": "field_60573a50a45f6",
+                    "label": "bis",
+                    "name": "to",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": "",
+                    "translations": "copy_once"
+                }
+            ]
         },
         {
             "key": "field_6049b9477afa0",
@@ -420,7 +502,7 @@
                     {
                         "field": "field_6049b9b464ea6",
                         "operator": "==",
-                        "value": "Die Aktivität kann selbständig umgesetzt werden"
+                        "value": "1"
                     }
                 ]
             ],
@@ -456,7 +538,7 @@
             "key": "field_6049b9477afb4",
             "label": "Welches Material wird benötigt?",
             "name": "documents",
-            "type": "checkbox",
+            "type": "radio",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -465,18 +547,19 @@
                 "class": "",
                 "id": ""
             },
-            "choices": {
-                "Ohne Material.": "Ohne Material.",
-                "Von uns zur Verfügung gestelltes Material.": "Von uns zur Verfügung gestelltes Material.",
-                "Weiteres, nämlich...": "Weiteres, nämlich..."
-            },
-            "allow_custom": 0,
-            "default_value": [],
-            "layout": "horizontal",
-            "toggle": 0,
+            "choices": [
+                "Ohne Material",
+                "Von uns zur Verfügung gestelltes Material.",
+                "Weiteres, nämlich...",
+                "Von uns zur Verfügung gestelltes und weiteres Material."
+            ],
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
             "return_format": "value",
             "translations": "copy_once",
-            "save_custom": 0
+            "save_other_choice": 0
         },
         {
             "key": "field_6049b9477afba",
@@ -490,7 +573,14 @@
                     {
                         "field": "field_6049b9477afb4",
                         "operator": "==",
-                        "value": "Von uns zur Verfügung gestelltes Material."
+                        "value": "1"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_6049b9477afb4",
+                        "operator": "==",
+                        "value": "3"
                     }
                 ]
             ],
@@ -518,7 +608,14 @@
                     {
                         "field": "field_6049b9477afb4",
                         "operator": "==",
-                        "value": "Von uns zur Verfügung gestelltes Material."
+                        "value": "1"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_6049b9477afb4",
+                        "operator": "==",
+                        "value": "3"
                     }
                 ]
             ],
@@ -542,7 +639,14 @@
                     {
                         "field": "field_6049b9477afb4",
                         "operator": "==",
-                        "value": "Weiteres, nämlich..."
+                        "value": "2"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_6049b9477afb4",
+                        "operator": "==",
+                        "value": "3"
                     }
                 ]
             ],
@@ -570,7 +674,7 @@
                     {
                         "field": "field_6049b9b464ea6",
                         "operator": "==",
-                        "value": "Die Aktivität kann gebucht werden"
+                        "value": "2"
                     }
                 ]
             ],
@@ -741,7 +845,7 @@
                     {
                         "field": "field_6049b9b464ea6",
                         "operator": "==",
-                        "value": "Die Aktivität kann gebucht werden"
+                        "value": "2"
                     }
                 ]
             ],
@@ -784,8 +888,8 @@
                 "id": ""
             },
             "choices": {
-                "ist kostenlos": "ist kostenlos",
-                "kostet...": "kostet..."
+                "1": "ist kostenlos",
+                "2": "kostet..."
             },
             "allow_null": 0,
             "other_choice": 0,
@@ -807,7 +911,7 @@
                     {
                         "field": "field_6049c012cca7c",
                         "operator": "==",
-                        "value": "kostet..."
+                        "value": "2"
                     }
                 ]
             ],
@@ -940,7 +1044,7 @@
                     {
                         "field": "field_6049b9b464ea6",
                         "operator": "==",
-                        "value": "Die Aktivität kann gebucht werden"
+                        "value": "1"
                     }
                 ]
             ],
@@ -990,5 +1094,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "Democracy Day",
-    "modified": 1615926991
+    "modified": 1616329368
 }

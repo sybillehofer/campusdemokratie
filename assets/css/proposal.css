@@ -1,0 +1,146 @@
+/* Single View of Proposal */
+.p-no-margin {
+    margin: 0;
+}
+
+.proposal-header {
+    margin-top: 4rem;
+    position: relative;
+}
+
+.proposal-thumbnail {
+    border-radius: 50%;
+    height: 25rem;
+    width: 25rem;
+    max-height: 70vw;
+    max-width: 70vw;
+    margin-bottom: 5rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* bubbles */
+.proposal-bubble {
+    border-radius: 50%;
+    height: 11rem;
+    width: 11rem;
+    background-color: rgb(189, 189, 189);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-size: 1.1rem;
+}
+
+.proposal-bubble:nth-child(1) { top: 0; left: 40%; }
+.proposal-bubble:nth-child(2) { top: 50%; left: 45%; }
+.proposal-bubble:nth-child(3) { top: 7%; left: 65%; }
+.proposal-bubble:nth-child(4) { top: 53%; left: 80%; }
+
+.proposal-bubble p {
+    margin: 0;
+}
+
+.bubble-title {
+    font-weight: bold;
+}
+
+.proposal-content {
+    background-color: #e9edf0;
+    padding: 1rem;
+    margin-bottom: 3rem;
+}
+
+.proposal-details {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1.5rem 0 1rem;
+    flex-flow: wrap;
+}
+
+/* icon groups */
+.proposal-icongroup {
+    display: flex;
+    align-items: center;
+    width: 33%;
+    margin: 0.75rem 0;
+}
+
+.proposal-icon {
+    display: inline-block;
+    background-color: #bd4145;
+    border-radius: 50%;
+    height: 6rem;
+    width: 6rem;
+    padding: 0.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1.5rem;
+}
+
+.proposal-icon img {
+    max-height: 4rem;
+    max-width: 4rem;
+}
+
+.proposal-link {
+    text-decoration: underline;
+}
+
+/* footer */
+.proposal-author {
+    margin-bottom: 3rem;
+}
+.proposal-author p {
+    display: inline;
+    vertical-align: middle;
+    margin-right: 2rem;
+}
+
+
+/* max-width 640px, mobile-only styles, use when QAing mobile issues */
+@media (max-width: 40em) {
+    .proposal-header {
+        text-align: center;
+        margin-top: 3rem;
+    }
+    .proposal-thumbnail {
+        margin: 0 auto 3rem;
+    }
+    .proposal-title {
+        margin-bottom: 3rem;
+    }
+    .proposal-headericongroup {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+    .proposal-headericongroup .proposal-icon {
+        background-color: rgb(189, 189, 189); 
+    }
+    .proposal-content {
+        margin-top: 1rem;
+    }
+    .proposal-icongroup {
+        width: 100%;
+    }
+    .proposal-icongroup:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+    .proposal-icongroup:nth-child(even) p {
+        text-align: right;
+    }
+    .proposal-icongroup:nth-child(even) .proposal-icon {
+        margin: 0 0 0 1.5rem;
+    }
+    .proposal-footer {
+        text-align: center;
+    }
+    .proposal-author p {
+        margin-right: 0;
+    }
+}

@@ -77,14 +77,16 @@
 	.bottom-bar .menu-item-has-children .submenu { 
 		position: relative; 
 		margin-top: 0.3rem;
+		border-bottom: 1px solid white;
 	}
 	.bottom-bar .menu-item-has-children .submenu .menu-item {
 		width: 100%;
 		padding: 0.5rem 0;
 	}
-	.bottom-bar .menu-item-has-children .submenu .menu-item:first-child { padding-top: 1rem; }
-	.bottom-bar .menu-item-has-children .submenu .menu-item:last-child { padding-bottom: 1rem; }
+	/* .bottom-bar .menu-item-has-children .submenu .menu-item:first-child { padding-top: 1rem; } */
+	/* .bottom-bar .menu-item-has-children .submenu .menu-item:last-child { padding-bottom: 1rem; } */
 	.bottom-bar .menu-item-has-children .submenu .menu-item:not(:last-child) a { border: none; }
+	.bottom-bar .menu-item-has-children .submenu .menu-item a { color: white; }
 	
 	/* SECTION HEADER */
 	.home-header { height: 100vh; }
