@@ -107,6 +107,7 @@
     box-shadow: none;
     display:inline;
     color: white;
+    font-weight: bold;
     padding:0;
     font-size: 0.8rem;
     cursor: grab;
