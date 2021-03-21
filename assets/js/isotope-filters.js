@@ -240,6 +240,13 @@
 			$('.posts-filters').removeClass('visible');
 		});
 
+		//show and hide filters on proposal archive page (mobile)
+		$('[data-toggle-filters]').on( 'click', function() {
+			$('.filter-group-container[data-mobile-hidden]').toggle();
+			$('[data-filter-icon]').toggle();
+		});
+		 
+
 	});
 	
 

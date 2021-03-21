@@ -6,12 +6,9 @@
 	
 		    <main id="main" class="large-12 columns" role="main">
 
-				<section class="row">
+				<section class="row proposal-archive-row">
 
-					<br>
-					<br>
-					<br>
-					<section class="medium-3 columns">
+					<section class="medium-3 columns proposal-filter-container">
 						<h2>
 							<?php pll_e( 'Filter' ); ?>
 							<button class="reset-filter" data-reset-filter title="<?php pll_e( 'Filter zurücksetzen' ); ?>">

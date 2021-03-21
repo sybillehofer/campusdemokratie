@@ -19,32 +19,6 @@
     padding: 1rem;
 }
 
-@media screen and (min-width: 40em) {
-    .text-box, .image-box {
-        float: left;
-    }
-    .text-box {
-        width: 75%;
-    }
-    .image-box {
-        width: 23%;
-        border: 5px solid #e9edf0;
-        padding: 1rem;
-    }
-    .image-box-left {
-        margin-right: 2%;
-    }
-    .image-box-right {
-        margin-left: 2%;
-    }
-}
-
-@media screen and (max-width: 39.9375em) {
-    .text-box {
-        padding-top: 25vw;
-    }
-}
-
 .icon-box {
     width: 30vw;
     height: 30vw;
@@ -60,14 +34,21 @@
 
 
 /* Proposal */
-
+.proposal-card {
+    width: 25%;
+}
 .proposal {
     text-align: center;
     border: 6px solid #e9edf0;
     padding: 1rem;
     margin: 5px;
 }
-
+.proposal .article-title {
+    font-size: 1.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 .proposal-image {
     border-radius: 50%;
     width: 100%;
@@ -81,6 +62,15 @@
 }
 
 /* Proposal Filters */
+.proposal-archive-row {
+    margin-top: 5rem;
+}
+.proposal-filter-container h2 {
+    margin-top: 0;
+}
+.filter-group-container {
+    margin-bottom: 2rem;
+}
 .filter-group.no-flex {
     display: block;
 }
@@ -114,7 +104,8 @@
   -moz-appearance: textfield;
 }
 
-.hiddenCheckbox {
+.hiddenCheckbox,
+.label-title {
     display: none;
 }
 .hiddenCheckbox:checked + .termIcon {
@@ -140,4 +131,78 @@
 
 #proposal-filter-wrapper .selects-container {
     display: block;
+}
+
+.show-filters-button {
+    font-size: 1rem;
+}
+
+/* responsive */
+@media screen and (min-width: 40em) {
+    .text-box, .image-box {
+        float: left;
+    }
+    .text-box {
+        width: 75%;
+    }
+    .image-box {
+        width: 23%;
+        border: 5px solid #e9edf0;
+        padding: 1rem;
+    }
+    .image-box-left {
+        margin-right: 2%;
+    }
+    .image-box-right {
+        margin-left: 2%;
+    }
+}
+
+/* mobile-only styles */
+@media screen and (max-width: 39.9375em) {
+    .text-box {
+        padding-top: 25vw;
+    }
+    /* Proposal */
+    .proposal-card {
+        width: 100%;
+    }
+    .proposal {
+        display: flex;
+        align-items: center;
+    }
+    .proposal .article-title {
+        flex: 2;
+        text-align: left;
+    }
+    .proposal-image-container {
+        padding-bottom: 6rem;
+        margin-right: 1rem;
+        margin-bottom: 0;
+        width: 6rem;
+    }
+
+    /* Proposal Filters */
+    .proposal-archive-row {
+        margin-top: 2rem;
+    }
+    .filter-group-container[data-mobile-hidden] {
+        display: none;
+    }
+    .filters {
+        padding: 0;
+    }
+    .selects-container .filter-group {
+        display: block;
+    }
+    .selects-container .filter-group label {
+        line-height: 1;
+    }
+    .hiddenCheckbox,
+    .label-title {
+        display: inline;
+    }
+    .termIcon {
+        display: none;
+    }
 }
