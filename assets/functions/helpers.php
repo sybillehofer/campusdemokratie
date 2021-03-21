@@ -93,16 +93,6 @@ function get_primary_taxonomy_term( $post = 0, $taxonomy = 'category' ) {
 	return $primary_term;
 }
 
-
-/**
- * Returns the primary term for the chosen taxonomy set by Yoast SEO
- * or the first term selected.
- *
- * @link https://www.tannerrecord.com/how-to-get-yoasts-primary-category/
- * @param integer $post The post id.
- * @param string  $taxonomy The taxonomy to query. Defaults to category.
- * @return array The term with keys of 'title', 'slug', and 'url'.
- */
 function dd_get_democracy_day_icons($slug = false) {
 
 	$repeater_icons = get_field( 'democracy-day-icons', 'sh_options' );
@@ -115,4 +105,15 @@ function dd_get_democracy_day_icons($slug = false) {
 	}
 	
 	return $icons;
+}
+
+
+function dd_get_countdown_days($deadline) {
+	$deadline = strtotime($deadline);
+	$now = time();
+	$remaining = $deadline - $now;
+	
+	$days_remaining = floor($remaining / 86400);
+	
+	return $days_remaining;
 }

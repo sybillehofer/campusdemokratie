@@ -322,9 +322,11 @@ function cd_get_tax_slug($post_id, $tax) {
     $tax = get_the_terms( $post_id, $tax ); //get all terms
 
 	$terms = [];
-	foreach ($tax as $term) {
-	    $terms[] = $term->slug; //add term to list of terms for this taxonomy 
-    }
+	if( $tax ) {
+		foreach ($tax as $term) {
+			$terms[] = $term->slug; //add term to list of terms for this taxonomy 
+		}
+	}
 	
 	return $terms;
 }

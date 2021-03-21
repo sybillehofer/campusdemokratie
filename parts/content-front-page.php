@@ -4,9 +4,14 @@
 			<?php
 				if( $cd_news_query->have_posts() ):
 					while( $cd_news_query->have_posts() ): $cd_news_query->the_post();
-					
-					get_template_part( 'parts/card', 'post' );       
-					
+						$index = $cd_news_query->current_post + 1;
+
+						if( $index === 2 && get_field('show_countdown', 'sh_options') ) {
+							get_template_part( 'parts/card', 'countdown' ); 
+						}
+
+						get_template_part( 'parts/card', 'post' );       
+						
 					endwhile;
 				endif;
 				wp_reset_postdata();

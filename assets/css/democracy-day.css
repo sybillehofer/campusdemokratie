@@ -178,6 +178,35 @@
     margin-right: 1rem;
 }
 
+/* Counddown on front page */
+.democracy-day-countdown {
+    border: 10px solid #bd4145;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.countdown-content {
+    border-radius: 50%;
+    background-color: #bd4145;
+    height: 90%;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    flex-direction: column;
+}
+.countdown-number {
+    font-family: 'KohinoorDevanagari-Book';
+    font-size: 8rem;
+    line-height: 1;
+}
+.countdown-text {
+    font-size: 1.6rem;
+    width: 50%;
+    text-align: center;
+}
+
 /* responsive */
 @media screen and (min-width: 40em) {
     .text-box, .image-box {

@@ -3,6 +3,22 @@
     "title": "Democracy Day Optionen",
     "fields": [
         {
+            "key": "field_60578c5187d5a",
+            "label": "Formulare",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
             "key": "field_605771eafc3f5",
             "label": "Formular «Vorschlag einsenden»",
             "name": "form_proposal",
@@ -34,6 +50,76 @@
             "allow_null": 0,
             "allow_multiple": 0,
             "translations": "copy_once"
+        },
+        {
+            "key": "field_60578c5d87d5b",
+            "label": "Countdown",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_60578be7d3703",
+            "label": "Countdown auf der Startseite einblenden?",
+            "name": "show_countdown",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "translations": "copy_once"
+        },
+        {
+            "key": "field_60578b8f6ef63",
+            "label": "Countdown bis zu folgendem Datum",
+            "name": "countdown",
+            "type": "date_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "d.m.Y",
+            "return_format": "Y-m-d",
+            "first_day": 1,
+            "translations": "copy_once"
+        },
+        {
+            "key": "field_60578c6587d5c",
+            "label": "Icons",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
         },
         {
             "key": "field_605636aa2e8d3",
@@ -119,5 +205,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "Democracy Day",
-    "modified": 1616346989
+    "modified": 1616351282
 }
