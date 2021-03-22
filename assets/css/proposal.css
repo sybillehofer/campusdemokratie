@@ -3,6 +3,9 @@
     margin: 0;
 }
 
+.proposal-content-wrapper {
+    position: relative;
+}
 .proposal-header {
     margin-top: 4rem;
     position: relative;

@@ -1,0 +1,44 @@
+{
+    "key": "group_60588ffb16a5a",
+    "title": "Brauchen Sie Hilfe?",
+    "fields": [
+        {
+            "key": "field_60589008b2928",
+            "label": "Hilfestellung auf dieser Seite einblenden",
+            "name": "show_help",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "translations": "copy_once"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-page-fullwidth.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Democracy Day",
+    "modified": 1616416907
+}

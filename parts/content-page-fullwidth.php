@@ -10,4 +10,10 @@
         <?php get_template_part( 'parts/content', 'democracy-day' ); ?>
     </article>
 	
+
+    <?php
+        if ( get_field('show_help', $post) ) {
+            get_template_part( 'parts/help-batch' );
+        }
+    ?>
 </section>

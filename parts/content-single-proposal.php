@@ -129,4 +129,5 @@
 
 	</div>
 
+	<?php get_template_part( 'parts/help-batch' ); ?>
 </section>

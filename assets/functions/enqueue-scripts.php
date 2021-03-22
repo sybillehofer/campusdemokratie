@@ -37,6 +37,7 @@ function site_scripts() {
     wp_enqueue_style( 'isotope-css', get_template_directory_uri() . '/assets/css/isotope.css', array(), '', 'all' );
     wp_enqueue_style( 'blocks-css', get_template_directory_uri() . '/assets/css/blocks.css', array(), '', 'all' );
     wp_enqueue_style( 'posts-css', get_template_directory_uri() . '/assets/css/posts.css', array(), '', 'all' );
+    wp_enqueue_style( 'pages-css', get_template_directory_uri() . '/assets/css/pages.css', array(), '', 'all' );
     wp_enqueue_style( 'democracy-day-css', get_template_directory_uri() . '/assets/css/democracy-day.css', array(), '', 'all' );
     wp_enqueue_style( 'proposal-css', get_template_directory_uri() . '/assets/css/proposal.css', array(), '', 'all' );
 
