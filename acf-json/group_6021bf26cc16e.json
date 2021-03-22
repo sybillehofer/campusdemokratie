@@ -26,6 +26,31 @@
             "ui": 1
         },
         {
+            "key": "field_60591e5eda29c",
+            "label": "Art der Aktivität",
+            "name": "activity-type",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "1": "Die Aktivität ist öffentlich.",
+                "2": "Die Aktivität wird innerhalb einer bestimmten Gruppe durchgeführt"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "return_format": "value",
+            "translations": "copy_once",
+            "save_other_choice": 0
+        },
+        {
             "key": "field_6049b66baaf64",
             "label": "Kontaktdaten",
             "name": "",
@@ -134,8 +159,8 @@
                 "id": ""
             },
             "choices": {
-                "Ich bin einverstanden, dass mich der Campus für Demokratie kontaktieren darf.": "Ich bin einverstanden, dass mich der Campus für Demokratie kontaktieren darf.",
-                "Ich möchte nicht, dass mich der Campus für Demokratie kontaktieren darf.": "Ich möchte nicht, dass mich der Campus für Demokratie kontaktieren darf."
+                "1": "Ich bin einverstanden, dass mich der Campus für Demokratie kontaktieren darf.",
+                "2": "Ich möchte nicht, dass mich der Campus für Demokratie kontaktieren darf."
             },
             "allow_null": 0,
             "other_choice": 0,
@@ -162,26 +187,6 @@
             "endpoint": 0
         },
         {
-            "key": "field_6049b5526ee7d",
-            "label": "Bitte ergänzen Sie \"sonstiges\"",
-            "name": "target-group-info",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "translations": "translate"
-        },
-        {
             "key": "field_6049b4426ee79",
             "label": "Wie viele Personen schätzen Sie werden an der Aktivität teilnehmen?*",
             "name": "participants",
@@ -202,6 +207,26 @@
             "max": "",
             "step": "",
             "translations": "copy_once"
+        },
+        {
+            "key": "field_6049b5526ee7d",
+            "label": "Bitte ergänzen Sie \"sonstiges\"",
+            "name": "target-group-info",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "translations": "translate"
         },
         {
             "key": "field_6049b69eaaf65",
@@ -277,9 +302,9 @@
         },
         {
             "key": "field_6049b4176ee78",
-            "label": "Wo findet die Aktivität statt?",
+            "label": "Wie findet die Aktivität statt?",
             "name": "location",
-            "type": "checkbox",
+            "type": "radio",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -289,17 +314,17 @@
                 "id": ""
             },
             "choices": {
-                "Online.": "Online.",
-                "Vor Ort.": "Vor Ort.",
-                "Online und vor Ort.": "Online und vor Ort."
+                "1": "Online",
+                "2": "Vor Ort",
+                "3": "Online und vor Ort"
             },
-            "allow_custom": 0,
-            "default_value": [],
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
             "layout": "horizontal",
-            "toggle": 0,
             "return_format": "value",
             "translations": "copy_once",
-            "save_custom": 0
+            "save_other_choice": 0
         },
         {
             "key": "field_6049b50c6ee7c",
@@ -313,14 +338,14 @@
                     {
                         "field": "field_6049b4176ee78",
                         "operator": "==",
-                        "value": "Online."
+                        "value": "1"
                     }
                 ],
                 [
                     {
                         "field": "field_6049b4176ee78",
                         "operator": "==",
-                        "value": "Online und vor Ort."
+                        "value": "3"
                     }
                 ]
             ],
@@ -3569,20 +3594,28 @@
             "default_value": false,
             "allow_null": 0,
             "multiple": 0,
-            "ui": 0,
+            "ui": 1,
+            "ajax": 1,
             "return_format": "value",
             "translations": "sync",
-            "ajax": 0,
             "placeholder": ""
         },
         {
             "key": "field_6049b6da46728",
-            "label": "Kosten",
+            "label": "Kosten & Anmeldung",
             "name": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_60591e5eda29c",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -3605,8 +3638,8 @@
                 "id": ""
             },
             "choices": {
-                "Kostenlos": "Kostenlos",
-                "Kostenpflichtig": "Kostenpflichtig"
+                "1": "Kostenlos",
+                "2": "Kostenpflichtig"
             },
             "allow_null": 0,
             "other_choice": 0,
@@ -3620,7 +3653,7 @@
             "key": "field_6049b4bd6ee7b",
             "label": "Bitte Kosten in CHF angeben",
             "name": "price",
-            "type": "number",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": [
@@ -3628,7 +3661,7 @@
                     {
                         "field": "field_6049b4956ee7a",
                         "operator": "==",
-                        "value": "Kostenpflichtig"
+                        "value": "2"
                     }
                 ]
             ],
@@ -3641,9 +3674,24 @@
             "placeholder": "",
             "prepend": "",
             "append": "",
-            "min": "",
-            "max": "",
-            "step": "",
+            "maxlength": "",
+            "translations": "translate"
+        },
+        {
+            "key": "field_60591ed4db96b",
+            "label": "Link zur Anmeldung",
+            "name": "registration_link",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
             "translations": "copy_once"
         }
     ],
@@ -3664,5 +3712,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "Democracy Day",
-    "modified": 1615917335
+    "modified": 1616454841
 }

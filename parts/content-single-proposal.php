@@ -11,9 +11,14 @@
 	//get data to fill icon groups
 	$groupSize = get_field('group-size', $post);
 	$surroundings = get_field('surroundings', $post);
-	$targetGroups = join(', ', array_map(function($targetGroup) {
-		return $targetGroup->name;
-	}, get_the_terms($post, 'target-group')));
+	$targetGroups = get_the_terms($post, 'target-group');
+	if ( !empty($targetGroups) ) {
+		$targetGroups = join(', ', array_map(function($targetGroup) {
+			return $targetGroup->name;
+		}, $targetGroups));
+	} else {
+		$targetGroups = '';
+	}
 	$advertisement = get_field('advertisement', $post);
 	$contactAdress = get_field('email', $post);
 	$guideline = get_field('guideline', $post);

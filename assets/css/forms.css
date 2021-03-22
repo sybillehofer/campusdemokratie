@@ -43,6 +43,11 @@ select.selected {
 	padding: 0.7rem 2rem;
 }
 
+/* File Upload Field */
+.ginput_container_fileupload {
+	margin-bottom: 3rem;
+}
+
 /* Benachrichtigungen */
 .validation_error { margin-bottom: 20px; }
 .validation_message {
@@ -58,18 +63,21 @@ select.selected {
 
 
 /* Radio Buttons */
-.gform_body ul.gfield_radio {
+/* .gform_body ul.gfield_radio {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: -webkit-flex;
 	display: flex;
 	margin-bottom: 30px;
 	flex-direction: column;
-	margin-top: 1rem;
-} 
-.gfield_radio li {
-	display: inline-block;
-	float: left;
+}  */
+/* .gfield_radio li {
+    display: flex;
+    align-items: center;
+} */
+
+.gfield_radio li input {
+	margin: 0 !important;	
 }
 
 
@@ -79,7 +87,6 @@ select.selected {
 	margin-bottom: 20px;
 	margin-top: 40px;
 }
-.gsection_title { display: none; }
 
 
 /* Footer */
@@ -93,6 +100,11 @@ select.selected {
 	.gform_body ul.gfield_radio {
 		display: block;
 		margin-top: 10px;
+	}
+
+	/* Step indicator */
+	.gf_page_steps {
+		display: none;
 	}
 	
 }

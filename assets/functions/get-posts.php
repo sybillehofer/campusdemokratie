@@ -331,9 +331,9 @@ function cd_get_tax_slug($post_id, $tax) {
 	return $terms;
 }
 
-function cd_get_taxonomy_terms($tax) {
+function cd_get_taxonomy_terms($tax, $hide_empty = true) {
 	$terms = get_terms( $tax, array(
-	    'hide_empty' => true,
+	    'hide_empty' => $hide_empty,
 	) );
 	
 	return $terms;
