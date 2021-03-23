@@ -132,6 +132,20 @@
                 "operator": "==",
                 "value": "10273"
             }
+        ],
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "10367"
+            }
+        ],
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "10339"
+            }
         ]
     ],
     "menu_order": 0,
@@ -142,5 +156,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "Democracy Day (Übersichtsseite)",
-    "modified": 1616254453
+    "modified": 1616508159
 }
