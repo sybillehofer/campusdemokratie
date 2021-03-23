@@ -291,7 +291,7 @@ li.orbit-slide.active {
     /* Proposal Filters */
     .proposal-archive-row {
         margin-top: 2rem;
-        padding-bottom: 4rem;
+        padding-bottom: 10rem;
     }
     .proposal-filter-container {
         text-align: center;

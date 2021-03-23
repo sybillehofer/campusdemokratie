@@ -36,7 +36,7 @@
 	$democracyDayOnly = get_field('democracy-day-only', $post);
 	$age = get_field('age', $post);
 	$proposalType = get_the_terms($post, 'proposal-type');
-	$proposalType = $proposalType ? $proposalType[0]->name : '';
+	$proposalTypeString = $proposalType ? $proposalType[0]->name : '';
 
 	//prepare icon groups and decide if they should be shown for this proposal
 	$activityType = get_field('activity-type', $post); //1 --> selbst umsetzen, 2 --> buchen
@@ -53,10 +53,9 @@
 	//prepare bubbles
 	$bubbles 	= [ ['slug' => 'dauer', 'title' => pll__( 'Zeitraum' ), 'content' => !empty($duration['from']) ? $duration['from'] . ' - ' . $duration['to'] . ' ' . pll__( 'Stunden' )  : pll__( 'keine Angabe' )],
 					['slug' => 'alter', 'title' => pll__( 'Alter' ), 'content' => !empty($age['from']) ? $age['from'] . ' - ' . $age['to'] . ' ' . pll__( 'jährig' ) : pll__( 'keine Angabe' )],
-					['slug' => 'art', 'title' => pll__( 'Art' ), 'content' => !empty($proposalType) ? $proposalType : pll__( 'keine Angabe' )],
+					['slug' => !empty($proposalType[0]->slug) ? $proposalType[0]->slug : 'vorschlag', 'title' => pll__( 'Art' ), 'content' => !empty($proposalTypeString) ? $proposalTypeString : pll__( 'keine Angabe' )],
 					['slug' => 'datum', 'title' => pll__( 'Umsetzung' ), 'content' => $democracyDayOnly ? pll__( 'am Tag der Demokratie' ) : pll__( 'immer' )]
 				];
-
 
 ?>
 
