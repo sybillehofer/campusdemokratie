@@ -57,6 +57,22 @@
             "translations": "copy_once"
         },
         {
+            "key": "field_605a70aefcc73",
+            "label": "Formular «Ich mache mit!»",
+            "name": "form_activity",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "translations": "copy_once"
+        },
+        {
             "key": "field_60577f465ae61",
             "label": "Formular «Brauchen Sie Hilfe?»",
             "name": "form_help",
@@ -227,5 +243,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "Democracy Day",
-    "modified": 1616527129
+    "modified": 1616539835
 }
