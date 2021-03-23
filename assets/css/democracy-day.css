@@ -283,9 +283,18 @@ li.orbit-slide.active {
         width: 6rem;
     }
 
+    /* static proposal card */
+    .static-proposal-card .proposal {
+        padding: 1rem;
+    }
+
     /* Proposal Filters */
     .proposal-archive-row {
         margin-top: 2rem;
+        padding-bottom: 4rem;
+    }
+    .proposal-filter-container {
+        text-align: center;
     }
     .filter-group-container[data-mobile-hidden] {
         display: none;
@@ -294,16 +303,11 @@ li.orbit-slide.active {
         padding: 0;
     }
     .selects-container .filter-group {
-        display: block;
+        justify-content: center;
+        padding: 0;
     }
     .selects-container .filter-group label {
         line-height: 1;
     }
-    .hiddenCheckbox,
-    .label-title {
-        display: inline;
-    }
-    .termIcon {
-        display: none;
-    }
+
 }

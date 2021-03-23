@@ -27,8 +27,13 @@
 									<div class="proposal-card static-proposal-card filter-item not-filtered" data-item-layout="">
 										<a href="<?php echo get_field('form_proposal', 'sh_options')['url']; ?>" title="<?php pll_e('Vorschlag einsenden!'); ?>">
 										<article class="proposal" role="article">
-											<div class="proposal-image-container"></div>
-											<div class="proposal-image-text"><?php pll_e('Vorschlag einsenden!'); ?></div>
+											<div class="proposal-image-container">
+												<div class="proposal-icon show-for-small-only">
+													<img src="<?php echo dd_get_democracy_day_icons('vorschlag')['url']; ?>" height="50px" width="50px" />
+												</div>
+											</div>
+											<div class="proposal-image-text hide-for-small-only"><?php pll_e('Vorschlag einsenden!'); ?></div>
+											<h2 class="article-title show-for-small-only"><?php pll_e('Vorschlag einsenden!'); ?></h2>
 										</article>
 										</a>	
 									</div>
