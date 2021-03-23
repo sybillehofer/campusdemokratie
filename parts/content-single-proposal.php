@@ -5,6 +5,12 @@
 	$author = get_field('author', $post);
 	$firstname = get_field('name', $post);
 	$lastname = get_field('surname', $post);
+	$activityType = get_field('activity-type', $post);
+	if( $activityType === 'Aktivität buchen' ) { //1 --> selbst umsetzen, 2 --> buchen
+		$activityType = 2;
+	} else {
+		$activityType = 1;
+	}
 	
 	//get icons to display in iconGroups
 	$icons = dd_get_democracy_day_icons();
@@ -40,7 +46,6 @@
 	$proposalTypeString = $proposalType ? $proposalType[0]->name : '';
 
 	//prepare icon groups and decide if they should be shown for this proposal
-	$activityType = get_field('activity-type', $post); //1 --> selbst umsetzen, 2 --> buchen
 	$iconGroups = [ ['slug' => 'gruppengroesse', 'title' => pll__( 'Gruppengrösse', ) . ':', 'show' => true, 'content' => $groupSize['from'] . '-' . $groupSize['to']],
 					['slug' => 'zielgruppe', 'title' => pll__( 'Zielgruppe(n)' ) . ':', 'show' => true, 'content' => $targetGroups],
 					['slug' => 'kontakt', 'title' => '<a class="proposal-link" href="mailto:' . $contactAdress . '">' . pll__( 'Kontakt' ) . '</a>', 'show' => $advertisement == 1 && $author != 3, 'content' => ''],
