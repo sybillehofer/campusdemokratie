@@ -282,6 +282,12 @@ li.orbit-slide.active {
         margin-bottom: 0;
         width: 6rem;
     }
+    .proposal-button {
+        margin-bottom: 1rem;
+    }
+    .proposal-content-wrapper {
+        padding-bottom: 4rem;
+    }
 
     /* static proposal card */
     .static-proposal-card .proposal {

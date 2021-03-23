@@ -121,6 +121,7 @@
         justify-content: flex-start;
         align-items: center;
         margin-bottom: 1rem;
+        text-align: left;
     }
     .proposal-headericongroup .proposal-icon {
         background-color: rgb(189, 189, 189); 
@@ -136,9 +137,18 @@
     }
     .proposal-icongroup:nth-child(even) p {
         text-align: right;
+        flex-basis: 10%;
     }
     .proposal-icongroup:nth-child(even) .proposal-icon {
         margin: 0 0 0 1.5rem;
+    }
+    .proposal-icongroup .proposal-icon {
+        height: 5rem;
+        width: 5rem;
+    }
+    .proposal-icongroup .proposal-icon img {
+        height: 3rem;
+        width: 3rem;
     }
     .proposal-footer {
         text-align: center;

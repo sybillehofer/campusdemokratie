@@ -276,7 +276,7 @@
                     {
                         "field": "field_6049b97764ea5",
                         "operator": "==",
-                        "value": "meiner Organisation"
+                        "value": "2"
                     }
                 ]
             ],
@@ -1121,5 +1121,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "Democracy Day",
-    "modified": 1616456455
+    "modified": 1616529269
 }

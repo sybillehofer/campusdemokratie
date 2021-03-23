@@ -2,6 +2,7 @@
 
 	$thumbnail = get_the_post_thumbnail_url($post, 'medium');
 	$logo = get_field('logo', $post);
+	$author = get_field('author', $post);
 	$firstname = get_field('name', $post);
 	$lastname = get_field('surname', $post);
 	
@@ -42,7 +43,7 @@
 	$activityType = get_field('activity-type', $post); //1 --> selbst umsetzen, 2 --> buchen
 	$iconGroups = [ ['slug' => 'gruppengroesse', 'title' => pll__( 'Gruppengrösse', ) . ':', 'show' => true, 'content' => $groupSize['from'] . '-' . $groupSize['to']],
 					['slug' => 'zielgruppe', 'title' => pll__( 'Zielgruppe(n)' ) . ':', 'show' => true, 'content' => $targetGroups],
-					['slug' => 'kontakt', 'title' => '<a class="proposal-link" href="mailto:' . $contactAdress . '">' . pll__( 'Kontakt' ) . '</a>', 'show' => $advertisement == 1, 'content' => ''],
+					['slug' => 'kontakt', 'title' => '<a class="proposal-link" href="mailto:' . $contactAdress . '">' . pll__( 'Kontakt' ) . '</a>', 'show' => $advertisement == 1 && $author != 3, 'content' => ''],
 					['slug' => 'durchfuehrungsort', 'title' => pll__( 'Durchführungsort(e)' ) . ':', 'show' => true, 'content' => $surroundings],
 					['slug' => 'kosten', 'title' => $priceType == 1 ? pll__( 'Keine Kosten' ) : 'CHF ' . $price, 'show' => $activityType == 2, 'content' => ''],
 					['slug' => 'buchen', 'title' => '<a class="proposal-link" href="' . $booking . '" target="_blank">' . pll__( 'Angebot buchen' ) . '</a>', 'show' => $activityType == 2 && !empty($booking), 'content' => ''],
@@ -118,7 +119,7 @@
 			<?php if( $logo || $firstname || $lastname ) { ?>
 				<div class="proposal-author">
 					<p><?php pll_e( 'Ein Vorschlag von' ); ?>:</p>
-					<?php if( $logo ) { ?>
+					<?php if( $logo && $author == 2 ) { ?>
 						<img class="proposal-logo" src="<?php echo $logo["url"]; ?>" alt="<?php echo $logo['alt'] ? $logo['alt'] : $logo['title'];?>"/>
 					<?php } else if( $name ) { ?>
 						<p><?php echo $firstname . ' ' . $lastname; ?></p>
@@ -126,8 +127,8 @@
 				</div>	
 			<?php } ?>
 			
-			<a href="<?php echo get_post_type_archive_link( get_post_type() ); ?>" class="btn-primary"><?php pll_e( 'Alle Vorschläge' ); ?></a>	
-			<a href="<?php echo get_field('form_activity', 'sh_options')["url"]; ?>" class="btn-primary"><?php pll_e( 'Ich mache mit!' ); ?></a>	
+			<a href="<?php echo get_post_type_archive_link( get_post_type() ); ?>" class="btn-primary proposal-button"><?php pll_e( 'Alle Vorschläge' ); ?></a>	
+			<a href="<?php echo get_field('form_activity', 'sh_options')["url"]; ?>" class="btn-primary proposal-button"><?php pll_e( 'Ich mache mit!' ); ?></a>	
 		</div>
 		<?php //if ($number = cd_count_proposal_in_activities(get_the_ID())) { <span>Der Vorschlag wurde <?php echo $number;   Mal umgesetzt.</span> } ?>
 
