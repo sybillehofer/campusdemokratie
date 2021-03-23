@@ -40,7 +40,7 @@
 
 	//prepare icon groups and decide if they should be shown for this proposal
 	$activityType = get_field('activity-type', $post); //1 --> selbst umsetzen, 2 --> buchen
-	$iconGroups = [ ['slug' => 'gruppengroesse', 'title' => pll__( 'Gruppengrösse' ) . ':', 'show' => true, 'content' => $groupSize['from'] . '-' . $groupSize['to']],
+	$iconGroups = [ ['slug' => 'gruppengroesse', 'title' => pll__( 'Gruppengrösse', 'shplugin.democracyday' ) . ':', 'show' => true, 'content' => $groupSize['from'] . '-' . $groupSize['to']],
 					['slug' => 'zielgruppe', 'title' => pll__( 'Zielgruppe(n)' ) . ':', 'show' => true, 'content' => $targetGroups],
 					['slug' => 'kontakt', 'title' => '<a class="proposal-link" href="mailto:' . $contactAdress . '">' . pll__( 'Kontakt' ) . '</a>', 'show' => $advertisement == 1, 'content' => ''],
 					['slug' => 'durchfuehrungsort', 'title' => pll__( 'Durchführungsort(e)' ) . ':', 'show' => true, 'content' => $surroundings],
