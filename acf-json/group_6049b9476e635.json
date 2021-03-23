@@ -663,8 +663,8 @@
             "choices": [
                 "Ohne Material",
                 "Von uns zur Verfügung gestelltes Material.",
-                "Weiteres, nämlich...",
-                "Von uns zur Verfügung gestelltes und weiteres Material."
+                "Von uns zur Verfügung gestelltes und weiteres Material.",
+                "Weiteres, nämlich..."
             ],
             "allow_null": 0,
             "other_choice": 0,
@@ -693,7 +693,7 @@
                     {
                         "field": "field_6049b9477afb4",
                         "operator": "==",
-                        "value": "3"
+                        "value": "2"
                     }
                 ]
             ],
@@ -728,7 +728,7 @@
                     {
                         "field": "field_6049b9477afb4",
                         "operator": "==",
-                        "value": "3"
+                        "value": "2"
                     }
                 ]
             ],
@@ -1121,5 +1121,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "Democracy Day",
-    "modified": 1616454012
+    "modified": 1616456455
 }
