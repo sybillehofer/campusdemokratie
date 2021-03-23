@@ -7,7 +7,7 @@
             "label": "Zugehöriger Vorschlag",
             "name": "proposal",
             "type": "post_object",
-            "instructions": "mehrere möglich",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -20,7 +20,7 @@
             ],
             "taxonomy": "",
             "allow_null": 0,
-            "multiple": 1,
+            "multiple": 0,
             "return_format": "object",
             "translations": "copy_once",
             "ui": 1
@@ -3712,5 +3712,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "Democracy Day",
-    "modified": 1616454841
+    "modified": 1616537817
 }
