@@ -4,18 +4,30 @@
         <div class="filter-group-container" data-mobile-hidden>
             <h3><?php pll_e( 'Alter' ); ?></h3>
             <div class="slider" data-slider data-start="0" data-initial-start="0" data-initial-end="99" data-end="99" data-filter-range data-filter-group="age">
-                <div class="slider-handle" data-slider-handle role="slider" tabindex="1"><input type="number" disabled></div>
+                <div class="slider-handle" data-slider-handle role="slider" tabindex="1">
+                    <input type="hidden" disabled>
+                    <div data-slider-display>0</div>
+                </div>
                 <span class="slider-fill" data-slider-fill></span>
-                <div class="slider-handle" data-slider-handle role="slider" tabindex="1"><input type="number" disabled></div>
+                <div class="slider-handle" data-slider-handle role="slider" tabindex="1">
+                    <input type="hidden" disabled>
+                    <div data-slider-display>99</div>
+                </div>
             </div>
         </div>
 
         <div class="filter-group-container" data-mobile-hidden>
-            <h3><?php pll_e( 'Dauer (h)' ); ?></h3>
+            <h3><?php pll_e( 'Dauer' ); ?></h3>
             <div class="slider" data-slider data-start="0" data-initial-start="0" data-initial-end="730" data-end="730" data-filter-range data-filter-group="duration">
-                <div class="slider-handle" data-slider-handle role="slider" tabindex="1"><input type="number" disabled></div>
+                <div class="slider-handle" data-slider-handle role="slider" tabindex="1">
+                    <input type="hidden" disabled>
+                    <div data-slider-display>0</div>
+                </div>
                 <span class="slider-fill" data-slider-fill></span>
-                <div class="slider-handle" data-slider-handle role="slider" tabindex="1"><input type="number" disabled></div>
+                <div class="slider-handle" data-slider-handle role="slider" tabindex="1">
+                    <input type="hidden" disabled data-input>
+                    <div data-slider-display>1</div>
+                </div>
             </div>
         </div>
 
@@ -51,9 +63,15 @@
         <div class="filter-group-container" data-mobile-hidden>
             <h3><?php pll_e( 'Gruppengrösse' ); ?></h3>
             <div class="slider" data-slider data-start="1" data-initial-start="1" data-initial-end="100" data-end="100" data-filter-range data-filter-group="group-size">
-                <div class="slider-handle" data-slider-handle role="slider" tabindex="1"><input type="number" disabled></div>
+                <div class="slider-handle" data-slider-handle role="slider" tabindex="1">
+                    <input type="hidden" disabled>
+                    <div data-slider-display>1</div>
+                </div>
                 <span class="slider-fill" data-slider-fill></span>
-                <div class="slider-handle" data-slider-handle role="slider" tabindex="1"><input type="number" disabled></div>
+                <div class="slider-handle" data-slider-handle role="slider" tabindex="1">
+                    <input type="hidden" disabled>
+                    <div data-slider-display>100+</div>
+                </div>
             </div>
         </div>
 
