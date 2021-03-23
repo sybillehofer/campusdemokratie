@@ -34,29 +34,20 @@
         <div class="filter-group-container" data-mobile-hidden>
             <h3><?php pll_e( 'Art' ); ?></h3>
             <div class="filter-group">
-                <?php foreach( cd_get_taxonomy_terms('proposal-type') as $art ) : ?>
-                    <span data-tooltip class="top filter-tooltip" title="<?php echo $art->name; ?>">
-                        <label title="<?php echo $art->name; ?>">
-                            <input class="hiddenCheckbox" type="checkbox" value="<?php echo $art->slug; ?>" data-filter-checkbox data-filter-group="proposal-type"/>
-                            <div class="termIcon"><img src="<?php echo dd_get_icon_url($art, ''); ?>" alt="<?php echo $art->name; ?>"></div>
-                        </label>
-                    </span>
-                <?php endforeach; ?>
+                <?php
+                    $content = ['items' => cd_get_taxonomy_terms('proposal-type'), 'slug' => 'proposal-type'];
+                    get_template_part( 'parts/proposal-filter', 'orbit', ['items' => cd_get_taxonomy_terms('proposal-type'), 'slug' => 'proposal-type'] );
+                ?>              
             </div>
         </div>
 
         <div class="filter-group-container">
             <h3><?php pll_e( 'Ich suche für...' ); ?></h3>
             <div class="filter-group">
-                <?php foreach( cd_get_taxonomy_terms('target-group') as $art ) : ?>
-                    <span data-tooltip class="top filter-tooltip" title="<?php echo $art->name; ?>">
-                        <label title="<?php echo $art->name; ?>">
-                            <input class="hiddenCheckbox" type="checkbox" value="<?php echo $art->slug; ?>" data-filter-checkbox data-filter-group="target-group"/>
-                            <div class="termIcon"><img src="<?php echo dd_get_icon_url($art, ''); ?>" alt="<?php echo $art->name; ?>"></div>
-                            <span class="label-title"><?php echo $art->name; ?></span>
-                        </label>
-                    </span>
-                <?php endforeach; ?>
+                <?php
+                    $content = ['items' => cd_get_taxonomy_terms('target-group'), 'slug' => 'target-group'];
+                    get_template_part( 'parts/proposal-filter', 'orbit', ['items' => cd_get_taxonomy_terms('target-group'), 'slug' => 'target-group'] );
+                ?>
             </div>
         </div>
 
@@ -78,14 +69,9 @@
         <div class="filter-group-container" data-mobile-hidden>
             <h3><?php pll_e( 'Ort' ); ?></h3>
             <div class="filter-group">
-            <?php foreach( cd_get_taxonomy_terms('location') as $art ) : ?>
-                    <span data-tooltip class="top filter-tooltip" title="<?php echo $art->name; ?>">
-                        <label title="<?php echo $art->name; ?>">
-                            <input class="hiddenCheckbox" type="checkbox" value="<?php echo $art->slug; ?>" data-filter-checkbox data-filter-group="location"/>
-                            <div class="termIcon"><img src="<?php echo dd_get_icon_url($art, ''); ?>" alt="<?php echo $art->name; ?>"></div>
-                        </label>
-                    </span>
-                <?php endforeach; ?>
+                <?php
+                    get_template_part( 'parts/proposal-filter', 'orbit', ['items' => cd_get_taxonomy_terms('location'), 'slug' => 'location'] );
+                ?>
             </div>
         </div>
 
