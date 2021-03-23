@@ -5,6 +5,7 @@
 	$author = get_field('author', $post);
 	$firstname = get_field('name', $post);
 	$lastname = get_field('surname', $post);
+	$organization = get_field('organization_required', $post);
 	$activityType = get_field('activity-type', $post);
 	if( $activityType === 'Aktivität buchen' ) { //1 --> selbst umsetzen, 2 --> buchen
 		$activityType = 2;
@@ -121,12 +122,16 @@
 		
 
 		<div class="proposal-footer">
-			<?php if( $logo || $firstname || $lastname ) { ?>
+			<?php if( $logo || $organization || $firstname || $lastname ) { ?>
 				<div class="proposal-author">
 					<p><?php pll_e( 'Ein Vorschlag von' ); ?>:</p>
-					<?php if( $logo && $author == 2 ) { ?>
-						<img class="proposal-logo" src="<?php echo $logo["url"]; ?>" alt="<?php echo $logo['alt'] ? $logo['alt'] : $logo['title'];?>"/>
-					<?php } else if( $name ) { ?>
+					<?php if( $author == 2 ) { 
+						if( $logo ) { ?>
+							<img class="proposal-logo" src="<?php echo $logo["url"]; ?>" alt="<?php echo $logo['alt'] ? $logo['alt'] : $logo['title'];?>"/>
+						<?php } else { ?>
+							<p><?php echo $organization; ?>
+						<?php } ?>
+					<?php } else if( $firstname || $lastname ) { ?>
 						<p><?php echo $firstname . ' ' . $lastname; ?></p>
 					<?php } ?>
 				</div>	
