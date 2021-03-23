@@ -21,7 +21,7 @@
 					<?php echo wp_get_attachment_image( $icon['ID'], 'thumbnail', true ); ?>
 				</div>
 			</div>
-			<div class="column">
+			<div class="column box-wrapper">
 				<?php if($i%2==0): ?>
 					<div class="image-box image-box-left show-for-medium">
 						<?php echo wp_get_attachment_image( $image['ID'], Array(640, 480) ); ?>

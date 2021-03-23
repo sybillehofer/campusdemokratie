@@ -15,8 +15,14 @@
     left: 0;
 }
 
+.box-wrapper {
+    display: flex;
+}
+
 .text-box {
     padding: 1rem;
+    display: flex;
+    align-items: center;
 }
 
 .icon-box {
