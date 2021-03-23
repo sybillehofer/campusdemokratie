@@ -7,7 +7,7 @@
             "label": "Zugehöriger Vorschlag",
             "name": "proposal",
             "type": "post_object",
-            "instructions": "",
+            "instructions": "mehrere möglich",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -19,7 +19,7 @@
                 "proposal"
             ],
             "taxonomy": "",
-            "allow_null": 0,
+            "allow_null": 1,
             "multiple": 0,
             "return_format": "object",
             "translations": "copy_once",
@@ -45,7 +45,7 @@
             "allow_null": 0,
             "other_choice": 0,
             "default_value": "",
-            "layout": "vertical",
+            "layout": "horizontal",
             "return_format": "value",
             "translations": "copy_once",
             "save_other_choice": 0
@@ -3712,5 +3712,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "Democracy Day",
-    "modified": 1616537817
+    "modified": 1616538393
 }
