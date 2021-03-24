@@ -258,7 +258,7 @@
                 "id": ""
             },
             "display_format": "d.m.Y",
-            "return_format": "d\/m\/Y",
+            "return_format": "m\/d\/y",
             "first_day": 1,
             "translations": "copy_once"
         },
@@ -276,7 +276,7 @@
                 "id": ""
             },
             "display_format": "d.m.Y",
-            "return_format": "d\/m\/Y",
+            "return_format": "m\/d\/y",
             "first_day": 1,
             "translations": "copy_once"
         },
@@ -3712,5 +3712,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "Democracy Day",
-    "modified": 1616538393
+    "modified": 1616580823
 }
