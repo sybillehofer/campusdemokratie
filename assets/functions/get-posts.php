@@ -353,18 +353,28 @@ function cd_get_isotope_classes($post) {
 		$class_string .= ' is-campus';
 	}
 
-	if(get_field('age', $post->ID)) { //for proposals
-		$age = get_field('age', $post->ID);
-		$age_from = $age['from'] !== '' ? $age['from'] : '0';
-		$age_to = $age['to'] !== '' ? $age['to'] : '99';
-		$class_string .= ' age-from-' . $age_from . ' age-to-' . $age_to;
-	}
+	if( $post->post_type == 'proposal' ) { //for proposals only
 
-	if(get_field('duration', $post->ID)) { //for proposals
-		$duration = get_field('duration', $post->ID);
-		$duration_from = $duration['from'] !== '' ? $duration['from'] : '0';
-		$duration_to = $duration['to'] !== '' ? $duration['to'] : '730';
-		$class_string .= ' duration-from-' . $age_from . ' duration-to-' . $age_to;
+		$type = get_field('price-type', $post->ID);
+		if($type == 2) {
+			$class_string .= ' chargeable';
+		} else {
+			$class_string .= ' free';
+		}
+
+		$location = get_field('location', $post->ID);
+		if($location == 1) {
+			$class_string .= ' online';
+		} else {
+			$class_string .= ' offline';
+		}
+
+		$democracy_day = get_field('democracy-day-only', $post->ID);
+		if($democracy_day == 2) {
+			$class_string .= ' democracy-day';
+		} else {
+			$class_string .= ' always';
+		}
 	}
 	
 	return $class_string;
@@ -378,4 +388,34 @@ function cd_get_isotope_classes_month($posts) {
 	}
 	
 	return $class_string;
+}
+
+function cd_get_isotope_data_attr($post) {
+	$data_string = '';
+
+	if( $post->post_type == 'proposal' ) { //for proposals only
+		
+		if(get_field('age', $post->ID)) {
+			$age = get_field('age', $post->ID);
+			$age_from = $age['from'] !== '' ? $age['from'] : '0';
+			$age_to = $age['to'] !== '' ? $age['to'] : '99';
+			$data_string .= 'data-age-from="' . $age_from . '" data-age-to="' . $age_to . '"';
+		}
+
+		if(get_field('duration', $post->ID)) {
+			$duration = get_field('duration', $post->ID);
+			$duration_from = $duration['from'] !== '' ? $duration['from'] : '0';
+			$duration_to = $duration['to'] !== '' ? $duration['to'] : '730';
+			$data_string .= 'data-duration-from="' . $duration_from . '" data-duration-to="' . $duration_to . '"';
+		}
+
+		if(get_field('group-size', $post->ID)) {
+			$group_size = get_field('group-size', $post->ID);
+			$group_size_from = $group_size['from'] !== '' ? $group_size['from'] : '0';
+			$group_size_to = $group_size['to'] !== '' ? $group_size['to'] : '730';
+			$data_string .= 'data-group-from="' . $group_size_from . '" data-group-to="' . $group_size_to . '"';
+		}
+	}
+	
+	return $data_string;
 }

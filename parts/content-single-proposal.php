@@ -19,13 +19,12 @@
 	//get data to fill icon groups
 	$groupSize = get_field('group-size', $post);
 	$surroundings = get_field('surroundings', $post);
-	$targetGroups = get_the_terms($post, 'target-group');
-	if ( !empty($targetGroups) ) {
+	$targetGroupsArray = get_the_terms($post, 'target-group');
+	$targetGroups = '';
+	if ( !empty($targetGroupsArray) ) {
 		$targetGroups = join(', ', array_map(function($targetGroup) {
 			return $targetGroup->name;
-		}, $targetGroups));
-	} else {
-		$targetGroups = '';
+		}, $targetGroupsArray));
 	}
 	$advertisement = get_field('advertisement', $post);
 	$contactAdress = get_field('email', $post);
@@ -37,7 +36,7 @@
 	$file = get_field('file', $post);
 	$fileString = $file ? '<a class="proposal-link" href="' . $file["url"] . '" download>' . $file["filename"] . '</a><br>' : '';
 	$documentLink = get_field('document-link', $post);
-	$documentLinkString =  $documentLink ? '<a class="proposal-link" href="' . $documentLink['url'] . '" target="_blank">' . pll__( 'Zu den Dokumenten' ) . '</a>' : '';
+	$documentLinkString =  $documentLink ? '<a class="proposal-link" href="' . $documentLink . '" target="_blank">' . pll__( 'Zu den Dokumenten' ) . '</a>' : '';
 	$documentInfo = get_field('document-info', $post);
 	$documentInfoString =  !empty($documentInfo) ? $documentInfo . '<br>' : '';
 	$duration = get_field('duration', $post);
@@ -46,15 +45,23 @@
 	$proposalType = get_the_terms($post, 'proposal-type');
 	$proposalTypeString = $proposalType ? $proposalType[0]->name : '';
 
+	$targetgroupModal = '<a data-open="targetgroupModal">anzeigen</a>' . '
+						<div class="reveal" id="targetgroupModal" data-reveal>' . $targetGroups . 
+						'<button class="close-button" data-close aria-label="Fenser schliessen" type="button">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						</div>';
+
+
 	//prepare icon groups and decide if they should be shown for this proposal
 	$iconGroups = [ ['slug' => 'gruppengroesse', 'title' => pll__( 'Gruppengrösse', ) . ':', 'show' => true, 'content' => $groupSize['from'] . '-' . $groupSize['to']],
-					['slug' => 'zielgruppe', 'title' => pll__( 'Zielgruppe(n)' ) . ':', 'show' => true, 'content' => $targetGroups],
+					['slug' => 'zielgruppe', 'title' => pll__( 'Zielgruppe(n)' ) . ':', 'show' => true, 'content' => strlen($targetGroups) <= 45 ? $targetGroups : $targetgroupModal],
 					['slug' => 'kontakt', 'title' => '<a class="proposal-link" href="mailto:' . $contactAdress . '">' . pll__( 'Kontakt' ) . '</a>', 'show' => $advertisement == 1 && $author != 3, 'content' => ''],
-					['slug' => 'durchfuehrungsort', 'title' => pll__( 'Durchführungsort(e)' ) . ':', 'show' => true, 'content' => $surroundings],
+					['slug' => 'durchfuehrungsort', 'title' => pll__( 'Durchführungsort(e)' ) . ':', 'show' => true, 'content' => !empty($surroundings) ? $surroundings : pll__('keine Angabe')],
 					['slug' => 'kosten', 'title' => $priceType == 1 ? pll__( 'Keine Kosten' ) : 'CHF ' . $price, 'show' => $activityType == 2, 'content' => ''],
 					['slug' => 'buchen', 'title' => '<a class="proposal-link" href="' . $booking . '" target="_blank">' . pll__( 'Angebot buchen' ) . '</a>', 'show' => $activityType == 2 && !empty($booking), 'content' => ''],
 					['slug' => 'material', 'title' => $documents != 0 ? pll__( 'Material' ) . ':' : pll__( 'Ohne Material' ), 'show' => $activityType == 1, 'content' => $documentInfoString . $fileString . $documentLinkString],
-					['slug' => 'download', 'title' => '<a class="proposal-link" href="' . $guideline["url"] . '" download>' . pll__( 'Anleitung zur Umsetzung' ) . '</a>', 'show' => $activityType == 1 && isset($guideline), 'content' => ''],
+					['slug' => 'download', 'title' => '<a class="proposal-link" href="' . $guideline["url"] . '" download>' . pll__( 'Anleitung zur Umsetzung' ) . '</a>', 'show' => $activityType == 1 && $guideline, 'content' => ''],
 				];
 
 	//prepare bubbles

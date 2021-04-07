@@ -97,6 +97,8 @@
 }
 .filter-group.no-flex {
     display: block;
+    border-top: 1px solid #e9edf0;
+    padding-top: 10px;
 }
 .slider-handle {
     background-color: #bd4145;

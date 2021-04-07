@@ -53,7 +53,7 @@
 
         <div class="filter-group-container" data-mobile-hidden>
             <h3><?php pll_e( 'Gruppengrösse' ); ?></h3>
-            <div class="slider" data-slider data-start="1" data-initial-start="1" data-initial-end="100" data-end="100" data-filter-range data-filter-group="group-size">
+            <div class="slider" data-slider data-start="1" data-initial-start="1" data-initial-end="100" data-end="100" data-filter-range data-filter-group="group">
                 <div class="slider-handle" data-slider-handle role="slider" tabindex="1">
                     <input type="hidden" disabled>
                     <div data-slider-display>1</div>
@@ -78,26 +78,26 @@
         <div class="filter-group-container" data-mobile-hidden>
             <div class="filter-group no-flex">
                 <label>
-                    <input type="radio" name="cost" value="kostenlos" data-filter-group="cost"/> <?php pll_e( 'kostenlos' ); ?>
+                    <input type="radio" name="cost" value="free" data-filter-radio data-filter-group="cost"/> <?php pll_e( 'kostenlos' ); ?>
                 </label>
                 <label>
-                    <input type="radio" name="cost" value=".kostenpflichtig" data-filter-group="cost" /> <?php pll_e( 'kostenpflichtig' ); ?>
-                </label>
-            </div>
-            <div class="filter-group no-flex">
-                <label>
-                    <input type="radio" name="onoffline" value=".online" data-filter-group="onoffline" /> <?php pll_e( 'online' ); ?>
-                </label>
-                <label>
-                    <input type="radio" name="onoffline" value=".offline" data-filter-group="onoffline" /> <?php pll_e( 'offline' ); ?>
+                    <input type="radio" name="cost" value="chargeable" data-filter-radio data-filter-group="cost" /> <?php pll_e( 'kostenpflichtig' ); ?>
                 </label>
             </div>
             <div class="filter-group no-flex">
                 <label>
-                    <input type="radio" name="timeslot" value=":not(.transition)" data-filter-group="timeslot" /> <?php pll_e( 'ganzes Jahr' ); ?>
+                    <input type="radio" name="onoffline" value="online" data-filter-radio data-filter-group="onoffline" /> <?php pll_e( 'online' ); ?>
                 </label>
                 <label>
-                    <input type="radio" name="timeslot" value="numberGreaterThan50" data-filter-group="timeslot" /> <?php pll_e( 'nur am 15. September' ); ?>
+                    <input type="radio" name="onoffline" value="offline" data-filter-radio data-filter-group="onoffline" /> <?php pll_e( 'offline' ); ?>
+                </label>
+            </div>
+            <div class="filter-group no-flex">
+                <label>
+                    <input type="radio" name="timeslot" value="always" data-filter-radio data-filter-group="timeslot" /> <?php pll_e( 'ganzes Jahr' ); ?>
+                </label>
+                <label>
+                    <input type="radio" name="timeslot" value="democracy-day" data-filter-radio data-filter-group="timeslot" /> <?php pll_e( 'nur am 15. September' ); ?>
                 </label>
             </div>
         </div>

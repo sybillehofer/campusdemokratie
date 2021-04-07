@@ -24,7 +24,7 @@
 							<div class="row">
 								<div class="proposal-grid isotope-filter-container" data-isotope-layoutMode="fitRows">
 
-									<div class="proposal-card static-proposal-card filter-item not-filtered" data-item-layout="">
+									<div class="proposal-card static-proposal-card filter-item not-filtered" data-item-layout="" data-age-from="0" data-age-to="99" data-duration-from="0" data-duration-to="730" data-group-from="1" data-group-to="100">
 										<a href="<?php echo get_field('form_proposal', 'sh_options')['url']; ?>" title="<?php pll_e('Vorschlag einsenden!'); ?>">
 										<article class="proposal" role="article">
 											<div class="proposal-image-container">

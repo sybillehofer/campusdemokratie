@@ -58,7 +58,7 @@
 
 .proposal-details {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     margin: 1.5rem 0 1rem;
     flex-flow: wrap;
 }
@@ -75,8 +75,8 @@
     display: inline-block;
     background-color: #bd4145;
     border-radius: 50%;
-    height: 6rem;
-    width: 6rem;
+    min-height: 6rem;
+    min-width: 6rem;
     padding: 0.75rem;
     display: flex;
     justify-content: center;
@@ -103,6 +103,11 @@
     margin-right: 2rem;
 }
 
+@media (max-width: 920px) {
+    .proposal-icongroup {
+        width: 50%;
+    }
+}
 
 /* max-width 640px, mobile-only styles, use when QAing mobile issues */
 @media (max-width: 40em) {

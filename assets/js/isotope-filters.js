@@ -4,6 +4,7 @@
 		
 		var filters = {}; //list of filters and their values
 		
+		//check if url contains parameter with given name
 		$.urlParam = function(name) {
 		    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
 		    if (results==null) {
@@ -28,6 +29,10 @@
 						var $thisFilter = $('.filter-button[data-filter-value="' + value + '"]');
 						$.setButtonActive($thisFilter);
 						
+						//for checkboxes
+						var $thisFilter = $('.hiddenCheckbox[value="' + value + '"]');
+						$.setCheckboxActive($thisFilter);
+
 						$.updateFilters($thisFilter);
 					}
 				});
@@ -48,6 +53,11 @@
 			$this.siblings('button').removeClass('selected');
 			$this.addClass('selected');
 		}
+
+		//set given checkbox element to active
+		$.setCheckboxActive = function($this) {
+			$this.prop("checked", true);
+		}
 		
 		//update filters according to given select, button or checkbox
 		$.updateFilters = function($this) {
@@ -57,7 +67,8 @@
 			
 			if (typeof attr !== typeof undefined && attr !== false) {
 				value = $this.attr('data-filter-value'); //for buttons
-			} else if (typeof $this.attr('data-filter-checkbox') !== typeof undefined && $this.attr('data-filter-checkbox') !== false) {
+			} else if ( (typeof $this.attr('data-filter-checkbox') !== typeof undefined && $this.attr('data-filter-checkbox') !== false) ||
+			(typeof $this.attr('data-filter-radio') !== typeof undefined && $this.attr('data-filter-radio') !== false)) {
 				var $checkboxes = $('[data-filter-group="'+filterGroup+'"]'),
 					values = [];
 				$checkboxes.each( function(i,el) {
@@ -65,14 +76,10 @@
 						values.push( el.value );
 					}
 				});
-				value = values.join([separator = '.']); //for checkboxes
+				value = values.join([separator = '.']); //for checkboxes or radiobuttons
 			} else if (typeof $this.attr('data-filter-range') !== typeof undefined && $this.attr('data-filter-range') !== false) {
-				// var filterGroup = $this.data('filter-group'),
-				// 	$inputs = $this.find('input'),
-				// 	values = [];
-				// values.push(filterGroup + '-from-' + $inputs.first().val());
-				// values.push(filterGroup + '-to-' + $inputs.last().val());
-				// value = values.join([separator = '.']); //for range sliders
+				var $inputs = $this.find('input'),
+					value = [$inputs.first().val(), $inputs.last().val()]; //for range sliders
 			} else {
 				value = $this.val(); //for selects
 			}
@@ -83,16 +90,52 @@
 		$.concatValues = function( obj ) {
 			var value = '';
 			for ( var prop in obj ) {
-				if( obj[prop] != '' ) {
+				if( obj[prop] != '' && prop != 'age' && prop != 'duration' && prop != 'group') {
 					value += '.'+obj[ prop ];
 				}
 			}
 			return value;
 		}
 		
+		//filter the list by attributes (for proposals)
+		$.filterListbyAttributes = function( item, filterValue ) {
+			var dataSets = ['age-from', 'age-to', 'duration-from', 'duration-to', 'group-from', 'group-to'],
+				data = [],
+				$item = $(item),
+				show = true;
+
+			dataSets.forEach(function(set, index){
+				data[set] = $item.data(set);
+			});
+			
+			$.each(filters, function(index, values){
+				
+				if( $.isArray(values) ) { //if age, duration or group
+					if( (data[index+'-from'] <= values[0] && values[0] <= data[index+'-to']) || 
+						(data[index+'-from'] <= values[1] && values[1] <= data[index+'-to']) || 
+						(data[index+'-from'] >= values[0] && values[1] >= data[index+'-to']) ) {
+					} else {
+						show = false;
+					}
+				} else if( values === '' || $item.hasClass( values ) ) { //if class-filter is empty or item has class
+	
+				} else {
+					show = false;
+				}
+			});
+
+			return show;
+		};
+
 		//filter the list and arrange items
-		$.filterList = function(filterValue) {
-			$grid.isotope({ filter: filterValue }); //filter the list
+		$.filterList = function(filterValue, $input) {
+
+			if( filters.hasOwnProperty('age') || filters.hasOwnProperty('duration') || filters.hasOwnProperty('group') ) { //if has proposal slider filter
+				$grid.isotope({ filter: function() { return $.filterListbyAttributes( this, filterValue ); }}); //filter the list by classes and attributes (proposals only)
+			} else {
+				$grid.isotope({ filter: filterValue }); //filter the list by classes
+			}
+			
 			$.asignLayoutId(); //needed for 'posts' only
 		}	
 
@@ -142,6 +185,7 @@
 		$.resetFilters = function() {
 			$('.filters-select').prop('selectedIndex',0).removeClass('selected');
 			$('[data-filter-checkbox]').prop("checked", false);
+			$('[data-filter-radio]').prop("checked", false);
 			filters = {};
 			$.filterList();
 			$.addFilterstoURL('');
@@ -154,9 +198,8 @@
 			$.updateFilters($input);
 
 			var filterValue = $.concatValues( filters );
-			
-			$.filterList(filterValue);
-			
+
+			$.filterList(filterValue, $input);
 			$.addFilterstoURL(filterValue);
 			
 			$('[data-reset-filter]').show();
@@ -202,10 +245,17 @@
 			$.handleInputChange($(this));	
 		});	
 
-		//if a range slider is changed
-		$('[data-filter-range]').on('changed.zf.slider', function(){
+		//if a radiobutton is clicked
+		$('[data-filter-radio]').on('change', function(){
 			$.handleInputChange($(this));	
-		});
+		});	
+
+		//if a range slider is changed
+		setTimeout(function(){ 
+			$('[data-filter-range]').on('changed.zf.slider', function(){
+				$.handleInputChange($(this));
+			});
+		}, 1000);
 		
 		//as soon as filtering is done
 		$grid.on( 'arrangeComplete', function( event, filteredItems ) {
