@@ -19,12 +19,12 @@
         <div class="filter-group-container" data-mobile-hidden>
             <h3><?php pll_e( 'Dauer' ); ?></h3>
             <div class="slider" data-slider data-start="0" data-initial-start="0" data-initial-end="730" data-end="730" data-filter-range data-filter-group="duration">
-                <div class="slider-handle" data-slider-handle role="slider" tabindex="1">
+                <div class="slider-handle" data-slider-handle role="slider" tabindex="1" data-tooltip title="Stunden" data-click-open="false">
                     <input type="hidden" disabled>
                     <div data-slider-display>0</div>
                 </div>
                 <span class="slider-fill" data-slider-fill></span>
-                <div class="slider-handle" data-slider-handle role="slider" tabindex="1">
+                <div class="slider-handle" data-slider-handle role="slider" tabindex="1" title="Monat">
                     <input type="hidden" disabled data-input>
                     <div data-slider-display>1</div>
                 </div>

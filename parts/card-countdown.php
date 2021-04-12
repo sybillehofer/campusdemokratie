@@ -7,8 +7,10 @@
 	<a href="<?php echo $link_url; ?>">
 		<article class="democracy-day-countdown article" role="article">	
 			<div class="countdown-content">
-				<span class="countdown-number"><?php echo dd_get_countdown_days($deadline); ?></span>
-				<span class="countdown-text"><?php pll_e('Tage bis zum Democracy Day'); ?></span>
+				<div class="countdown-inner">
+					<span class="countdown-number"><?php echo dd_get_countdown_days($deadline); ?></span>
+					<span class="countdown-text"><?php pll_e('Tage bis zum Democracy Day'); ?></span>
+				</div>
 			</div>
 		</article>
 	</a>

@@ -217,21 +217,35 @@ li.orbit-slide.active {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 .countdown-content {
     border-radius: 50%;
     background-color: #bd4145;
-    height: 90%;
+    position: relative;
     width: 90%;
+    padding-top: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     flex-direction: column;
 }
+.countdown-inner {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
 .countdown-number {
     font-family: 'KohinoorDevanagari-Book';
-    font-size: 8rem;
+    font-size: 7.5rem;
     line-height: 1;
 }
 .countdown-text {
@@ -241,6 +255,23 @@ li.orbit-slide.active {
 }
 
 /* responsive */
+@media screen and (max-width: 991px) {
+    .countdown-text {
+        font-size: 1.2rem;
+    }
+}
+@media screen and (max-width: 767px) { /* small, medium */
+    /* Countdown */
+    .democracy-day-countdown {
+        height: auto;
+        padding: 1rem;
+    }
+    .countdown-content {
+        width: 95%;
+        padding-top: 95%;
+    }
+}
+
 @media screen and (min-width: 40em) {
     .text-box, .image-box {
         float: left;
@@ -259,6 +290,7 @@ li.orbit-slide.active {
     .image-box-right {
         margin-left: 2%;
     }
+    
 }
 
 /* mobile-only styles */

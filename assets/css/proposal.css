@@ -102,6 +102,10 @@
     vertical-align: middle;
     margin-right: 2rem;
 }
+.proposal-author img {
+    max-height: 5rem;
+    max-width: 20rem;
+}
 
 @media (max-width: 920px) {
     .proposal-icongroup {
@@ -137,6 +141,9 @@
     .proposal-icongroup {
         width: 100%;
     }
+    .proposal-icongroup p {
+        flex-grow: 1;
+    }
     .proposal-icongroup:nth-child(even) {
         flex-direction: row-reverse;
     }
@@ -159,6 +166,6 @@
         text-align: center;
     }
     .proposal-author p {
-        margin-right: 0;
+        display: inline-block;
     }
 }
