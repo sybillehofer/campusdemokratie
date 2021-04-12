@@ -54,10 +54,10 @@
 
 
 	//prepare icon groups and decide if they should be shown for this proposal
-	$iconGroups = [ ['slug' => 'gruppengroesse', 'title' => pll__( 'Gruppengrösse', ) . ':', 'show' => true, 'content' => $groupSize['from'] . '-' . $groupSize['to']],
-					['slug' => 'zielgruppe', 'title' => pll__( "Zielgruppe" ) . ':', 'show' => true, 'content' => strlen($targetGroups) <= 45 ? $targetGroups : $targetgroupModal],
+	$iconGroups = [ ['slug' => 'gruppengroesse', 'title' => pll__( 'Gruppengrösse' ) . ':', 'show' => true, 'content' => $groupSize['from'] . '-' . $groupSize['to']],
+					['slug' => 'zielgruppe', 'title' => pll__( 'Zielgruppe(n)' ) . ':', 'show' => true, 'content' => strlen($targetGroups) <= 45 ? $targetGroups : $targetgroupModal],
 					['slug' => 'kontakt', 'title' => '<a class="proposal-link" href="mailto:' . $contactAdress . '">' . pll__( 'Kontakt' ) . '</a>', 'show' => $advertisement == 1 && $author != 3, 'content' => ''],
-					['slug' => 'durchfuehrungsort', 'title' => pll__( 'Durchführungsort' ) . ':', 'show' => true, 'content' => !empty($surroundings) ? $surroundings : pll__('keine Angabe')],
+					['slug' => 'durchfuehrungsort', 'title' => pll__( 'Durchführungsort(e)' ) . ':', 'show' => true, 'content' => !empty($surroundings) ? $surroundings : pll__('keine Angabe')],
 					['slug' => 'kosten', 'title' => $priceType == 1 ? pll__( 'Keine Kosten' ) : 'CHF ' . $price, 'show' => $activityType == 2, 'content' => ''],
 					['slug' => 'buchen', 'title' => '<a class="proposal-link" href="' . $booking . '" target="_blank">' . pll__( 'Angebot buchen' ) . '</a>', 'show' => $activityType == 2 && !empty($booking), 'content' => ''],
 					['slug' => 'material', 'title' => $documents != 0 ? pll__( 'Material' ) . ':' : pll__( 'Ohne Material' ), 'show' => $activityType == 1, 'content' => $documentInfoString . $fileString . $documentLinkString],
