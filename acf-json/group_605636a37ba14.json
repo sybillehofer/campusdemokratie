@@ -44,7 +44,7 @@
             "key": "field_605771eafc3f5",
             "label": "Formular «Vorschlag einsenden»",
             "name": "form_proposal",
-            "type": "link",
+            "type": "post_object",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -53,14 +53,19 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array",
-            "translations": "copy_once"
+            "post_type": "",
+            "taxonomy": "",
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "id",
+            "translations": "copy_once",
+            "ui": 1
         },
         {
             "key": "field_605a70aefcc73",
             "label": "Formular «Ich mache mit!»",
             "name": "form_activity",
-            "type": "link",
+            "type": "post_object",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -69,8 +74,13 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array",
-            "translations": "copy_once"
+            "post_type": "",
+            "taxonomy": "",
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "id",
+            "translations": "copy_once",
+            "ui": 1
         },
         {
             "key": "field_60577f465ae61",
@@ -243,5 +253,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "Democracy Day",
-    "modified": 1616539835
+    "modified": 1618349141
 }

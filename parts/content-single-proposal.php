@@ -160,7 +160,8 @@
 			<?php } ?>
 			
 			<a href="<?php echo get_post_type_archive_link( get_post_type() ); ?>" class="btn-primary proposal-button"><?php pll_e( 'Alle Vorschläge' ); ?></a>	
-			<a href="<?php echo get_field('form_activity', 'sh_options')["url"]; ?>" class="btn-primary proposal-button"><?php pll_e( 'Ich mache mit!' ); ?></a>	
+			<?php $formPage = pll_get_post(get_field('form_activity', 'sh_options')); ?>
+			<a href="<?php echo $formPage ? get_permalink($formPage) : get_permalink(pll_get_post(get_field('form_activity', 'sh_options'), 'de')); ?>" class="btn-primary proposal-button"><?php pll_e( 'Ich mache mit!' ); ?></a>	
 		</div>
 		<?php //if ($number = cd_count_proposal_in_activities(get_the_ID())) { <span>Der Vorschlag wurde <?php echo $number;   Mal umgesetzt.</span> } ?>
 
