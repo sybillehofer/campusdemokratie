@@ -628,21 +628,37 @@
             "endpoint": 0
         },
         {
-            "key": "field_6049b9477afad",
+            "key": "field_6075ba29fefc4",
             "label": "Anleitung und Planung",
             "name": "guideline",
-            "type": "file",
+            "type": "gallery",
             "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6049b9b464ea6",
+                        "operator": "==",
+                        "value": "Aktivität selber umsetzen"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
             "return_format": "array",
+            "preview_size": "medium",
+            "insert": "append",
             "library": "all",
+            "min": "",
+            "max": "",
+            "min_width": "",
+            "min_height": "",
             "min_size": "",
+            "max_width": "",
+            "max_height": "",
             "max_size": "",
             "mime_types": "",
             "translations": "copy_once"
@@ -676,9 +692,9 @@
         },
         {
             "key": "field_6049b9477afba",
-            "label": "Datei",
-            "name": "file",
-            "type": "file",
+            "label": "Dateien",
+            "name": "files",
+            "type": "gallery",
             "instructions": "",
             "required": 0,
             "conditional_logic": [
@@ -703,8 +719,16 @@
                 "id": ""
             },
             "return_format": "array",
+            "preview_size": "medium",
+            "insert": "append",
             "library": "all",
+            "min": "",
+            "max": "",
+            "min_width": "",
+            "min_height": "",
             "min_size": "",
+            "max_width": "",
+            "max_height": "",
             "max_size": "",
             "mime_types": "",
             "translations": "copy_once"
@@ -1061,20 +1085,12 @@
         },
         {
             "key": "field_6049c203a10c4",
-            "label": "Dokumente",
+            "label": "weitere Dokumente",
             "name": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_6049b9b464ea6",
-                        "operator": "==",
-                        "value": "Aktivität buchen"
-                    }
-                ]
-            ],
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -1087,7 +1103,7 @@
             "key": "field_6049c103cca82",
             "label": "Gerne können Sie weitere Dateien (z.B. Ihr Logo, Flyer etc.) hochladen.",
             "name": "additional-documents",
-            "type": "file",
+            "type": "gallery",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -1097,8 +1113,16 @@
                 "id": ""
             },
             "return_format": "array",
+            "preview_size": "medium",
+            "insert": "append",
             "library": "all",
+            "min": "",
+            "max": "",
+            "min_width": "",
+            "min_height": "",
             "min_size": "",
+            "max_width": "",
+            "max_height": "",
             "max_size": "",
             "mime_types": "",
             "translations": "copy_once"
@@ -1121,5 +1145,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "Democracy Day",
-    "modified": 1616529269
+    "modified": 1618334535
 }

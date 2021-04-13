@@ -77,7 +77,7 @@
 					}
 				});
 				value = values.join([separator = '.']); //for checkboxes or radiobuttons
-			} else if (typeof $this.attr('data-filter-range') !== typeof undefined && $this.attr('data-filter-range') !== false) {
+			} else if (typeof $this.attr('data-slider') !== typeof undefined && $this.attr('data-slider') !== false) {
 				var $inputs = $this.find('input'),
 					value = [$inputs.first().val(), $inputs.last().val()]; //for range sliders
 			} else {
@@ -109,14 +109,25 @@
 			});
 			
 			$.each(filters, function(index, values){
-				
-				if( $.isArray(values) ) { //if age, duration or group
-					if( (data[index+'-from'] <= values[0] && values[0] <= data[index+'-to']) || 
-						(data[index+'-from'] <= values[1] && values[1] <= data[index+'-to']) || 
-						(data[index+'-from'] >= values[0] && values[1] >= data[index+'-to']) ) {
+		
+				if( $item.hasClass('static-proposal-card') ) {
+					show = true;
+				} else if( $.isArray(values) ) { //if age, duration or group
+	
+					if( index === 'duration' ) {
+						var maxDauer = values[0];
+						if( maxDauer >= data[index+'-from'] ) {
+
+						} else {
+							show = false;
+						}
+					} else if( data[index+'-from'] <= values[0] && values[0] <= data[index+'-to'] ) {
+					// (data[index+'-from'] <= values[1] && values[1] <= data[index+'-to']) || 
+					// (data[index+'-from'] >= values[0] && values[1] >= data[index+'-to']) 
 					} else {
 						show = false;
 					}
+
 				} else if( values === '' || $item.hasClass( values ) ) { //if class-filter is empty or item has class
 	
 				} else {
@@ -129,8 +140,7 @@
 
 		//filter the list and arrange items
 		$.filterList = function(filterValue, $input) {
-
-			if( filters.hasOwnProperty('age') || filters.hasOwnProperty('duration') || filters.hasOwnProperty('group') ) { //if has proposal slider filter
+			if($input && $input.parents('#proposal-filter-wrapper').length ) { //if on proposal filter page
 				$grid.isotope({ filter: function() { return $.filterListbyAttributes( this, filterValue ); }}); //filter the list by classes and attributes (proposals only)
 			} else {
 				$grid.isotope({ filter: filterValue }); //filter the list by classes
@@ -250,9 +260,9 @@
 			$.handleInputChange($(this));	
 		});	
 
-		//if a range slider is changed
+		//if a slider is changed
 		setTimeout(function(){ 
-			$('[data-filter-range]').on('changed.zf.slider', function(){
+			$('[data-slider]').on('changed.zf.slider', function(){
 				$.handleInputChange($(this));
 			});
 		}, 1000);

@@ -42,7 +42,7 @@
 /* Proposal */
 .static-proposal-card .proposal {
     border-color: #bd4145;
-    padding: 2.535rem 1rem;
+    padding: 3.15rem 1rem;
 }
 .static-proposal-card .proposal-image-container {
     margin-bottom: 0;
@@ -67,10 +67,12 @@
     margin: 5px;
 }
 .proposal .article-title {
-    font-size: 1.5rem;
-    white-space: nowrap;
+    font-size: 1.2rem;
     overflow: hidden;
     text-overflow: ellipsis;
+    display: -webkit-box;
+   -webkit-line-clamp: 2; /* number of lines to show */
+   -webkit-box-orient: vertical;
 }
 .proposal-image {
     border-radius: 50%;
@@ -97,8 +99,6 @@
 }
 .filter-group.no-flex {
     display: block;
-    border-top: 1px solid #e9edf0;
-    padding-top: 10px;
 }
 .slider-handle {
     background-color: #bd4145;

@@ -3,31 +3,23 @@
     
         <div class="filter-group-container" data-mobile-hidden>
             <h3><?php pll_e( 'Alter' ); ?></h3>
-            <div class="slider" data-slider data-start="0" data-initial-start="0" data-initial-end="99" data-end="99" data-filter-range data-filter-group="age">
+            <div class="slider" data-slider data-start="0" data-initial-start="0" data-end="99" data-filter-group="age">
                 <div class="slider-handle" data-slider-handle role="slider" tabindex="1">
                     <input type="hidden" disabled>
-                    <div data-slider-display>0</div>
+                    <div data-slider-display>0+</div>
                 </div>
                 <span class="slider-fill" data-slider-fill></span>
-                <div class="slider-handle" data-slider-handle role="slider" tabindex="1">
-                    <input type="hidden" disabled>
-                    <div data-slider-display>99</div>
-                </div>
             </div>
         </div>
 
         <div class="filter-group-container" data-mobile-hidden>
             <h3><?php pll_e( 'Dauer' ); ?></h3>
-            <div class="slider" data-slider data-start="0" data-initial-start="0" data-initial-end="730" data-end="730" data-filter-range data-filter-group="duration">
+            <div class="slider" data-slider data-start="1" data-initial-start="1" data-end="168" data-filter-group="duration">
                 <div class="slider-handle" data-slider-handle role="slider" tabindex="1" data-tooltip title="Stunden" data-click-open="false">
                     <input type="hidden" disabled>
-                    <div data-slider-display>0</div>
-                </div>
-                <span class="slider-fill" data-slider-fill></span>
-                <div class="slider-handle" data-slider-handle role="slider" tabindex="1" title="Monat">
-                    <input type="hidden" disabled data-input>
                     <div data-slider-display>1</div>
                 </div>
+                <span class="slider-fill" data-slider-fill></span>
             </div>
         </div>
 
@@ -53,16 +45,12 @@
 
         <div class="filter-group-container" data-mobile-hidden>
             <h3><?php pll_e( 'Gruppengrösse' ); ?></h3>
-            <div class="slider" data-slider data-start="1" data-initial-start="1" data-initial-end="100" data-end="100" data-filter-range data-filter-group="group">
+            <div class="slider" data-slider data-start="1" data-initial-start="1" data-end="100" data-filter-group="group">
                 <div class="slider-handle" data-slider-handle role="slider" tabindex="1">
                     <input type="hidden" disabled>
                     <div data-slider-display>1</div>
                 </div>
                 <span class="slider-fill" data-slider-fill></span>
-                <div class="slider-handle" data-slider-handle role="slider" tabindex="1">
-                    <input type="hidden" disabled>
-                    <div data-slider-display>100+</div>
-                </div>
             </div>
         </div>
 
@@ -78,26 +66,16 @@
         <div class="filter-group-container" data-mobile-hidden>
             <div class="filter-group no-flex">
                 <label>
-                    <input type="radio" name="cost" value="free" data-filter-radio data-filter-group="cost"/> <?php pll_e( 'kostenlos' ); ?>
+                    <input type="checkbox" name="cost" value="free" data-filter-checkbox data-filter-group="cost"/> <?php pll_e( 'kostenlos' ); ?>
                 </label>
                 <label>
-                    <input type="radio" name="cost" value="chargeable" data-filter-radio data-filter-group="cost" /> <?php pll_e( 'kostenpflichtig' ); ?>
-                </label>
-            </div>
-            <div class="filter-group no-flex">
-                <label>
-                    <input type="radio" name="onoffline" value="online" data-filter-radio data-filter-group="onoffline" /> <?php pll_e( 'online' ); ?>
+                    <input type="checkbox" name="onoffline" value="online" data-toggle-checkbox="offline" data-filter-checkbox data-filter-group="onoffline" /> <?php pll_e( 'online' ); ?>
                 </label>
                 <label>
-                    <input type="radio" name="onoffline" value="offline" data-filter-radio data-filter-group="onoffline" /> <?php pll_e( 'offline' ); ?>
-                </label>
-            </div>
-            <div class="filter-group no-flex">
-                <label>
-                    <input type="radio" name="timeslot" value="always" data-filter-radio data-filter-group="timeslot" /> <?php pll_e( 'ganzes Jahr' ); ?>
+                    <input type="checkbox" name="onoffline" value="offline" data-toggle-checkbox="online" data-filter-checkbox data-filter-group="onoffline" /> <?php pll_e( 'offline' ); ?>
                 </label>
                 <label>
-                    <input type="radio" name="timeslot" value="democracy-day" data-filter-radio data-filter-group="timeslot" /> <?php pll_e( 'nur am 15. September' ); ?>
+                    <input type="checkbox" name="timeslot" value="democracy-day" data-filter-checkbox data-filter-group="timeslot" /> <?php pll_e( 'nur am 15. September' ); ?>
                 </label>
             </div>
         </div>

@@ -28,13 +28,21 @@
 	}
 	$advertisement = get_field('advertisement', $post);
 	$contactAdress = get_field('email', $post);
-	$guideline = get_field('guideline', $post);
+	$guidelineFiles = get_field('guideline', $post);
 	$booking = get_field('booking-link', $post);
 	$priceType = get_field('price-type', $post);
 	$price = get_field('price', $post);
 	$documents = get_field('documents', $post);
-	$file = get_field('file', $post);
-	$fileString = $file ? '<a class="proposal-link" href="' . $file["url"] . '" download>' . $file["filename"] . '</a><br>' : '';
+	$materialFiles = get_field('files', $post);
+	$filesArray = [];
+	$files = '';
+	if( $materialFiles ) {
+		foreach($materialFiles as $file) { 
+			$filesArray[] = '<a class="proposal-link" href="' . $file["url"] . '" download>' . $file["filename"] . '</a>';
+		}
+		$files = join('<br>', $filesArray);
+	}
+
 	$documentLink = get_field('document-link', $post);
 	$documentLinkString =  $documentLink ? '<a class="proposal-link" href="' . $documentLink . '" target="_blank">' . pll__( 'Zu den Dokumenten' ) . '</a>' : '';
 	$documentInfo = get_field('document-info', $post);
@@ -52,7 +60,14 @@
 						</button>
 						</div>';
 
-
+	$guideline = [];
+	if( $guidelineFiles ) {
+		foreach($guidelineFiles as $file) {
+			$guideline[] = '<a class="proposal-link" href="' . $file["url"] . '" download>' . pll__( 'Anleitung zur Umsetzung' ) . '</a>';
+		}
+		$guideline = join('<br>', $guideline);
+	}
+	
 	//prepare icon groups and decide if they should be shown for this proposal
 	$iconGroups = [ ['slug' => 'gruppengroesse', 'title' => pll__( 'Gruppengrösse' ) . ':', 'show' => true, 'content' => $groupSize['from'] . '-' . $groupSize['to']],
 					['slug' => 'zielgruppe', 'title' => pll__( 'Zielgruppe(n)' ) . ':', 'show' => true, 'content' => strlen($targetGroups) <= 45 ? $targetGroups : $targetgroupModal],
@@ -60,8 +75,8 @@
 					['slug' => 'durchfuehrungsort', 'title' => pll__( 'Durchführungsort(e)' ) . ':', 'show' => true, 'content' => !empty($surroundings) ? $surroundings : pll__('keine Angabe')],
 					['slug' => 'kosten', 'title' => $priceType == 1 ? pll__( 'Keine Kosten' ) : 'CHF ' . $price, 'show' => $activityType == 2, 'content' => ''],
 					['slug' => 'buchen', 'title' => '<a class="proposal-link" href="' . $booking . '" target="_blank">' . pll__( 'Angebot buchen' ) . '</a>', 'show' => $activityType == 2 && !empty($booking), 'content' => ''],
-					['slug' => 'material', 'title' => $documents != 0 ? pll__( 'Material' ) . ':' : pll__( 'Ohne Material' ), 'show' => $activityType == 1, 'content' => $documentInfoString . $fileString . $documentLinkString],
-					['slug' => 'download', 'title' => '<a class="proposal-link" href="' . $guideline["url"] . '" download>' . pll__( 'Anleitung zur Umsetzung' ) . '</a>', 'show' => $activityType == 1 && $guideline, 'content' => ''],
+					['slug' => 'material', 'title' => $documents != 0 ? pll__( 'Material' ) . ':' : pll__( 'Ohne Material' ), 'show' => $activityType == 1, 'content' => $documentInfoString . $files . $documentLinkString],
+					['slug' => 'download', 'title' => $guideline, 'show' => $activityType == 1 && !empty($guideline), 'content' => ''],
 				];
 
 	//prepare bubbles
