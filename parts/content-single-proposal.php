@@ -53,7 +53,7 @@
 	$proposalType = get_the_terms($post, 'proposal-type');
 	$proposalTypeString = $proposalType ? $proposalType[0]->name : '';
 
-	$targetgroupModal = '<a data-open="targetgroupModal">anzeigen</a>' . '
+	$targetgroupModal = '<a data-open="targetgroupModal">' . pll__('anzeigen') . '</a>' . '
 						<div class="reveal" id="targetgroupModal" data-reveal>' . $targetGroups . 
 						'<button class="close-button" data-close aria-label="Fenser schliessen" type="button">
 							<span aria-hidden="true">&times;</span>

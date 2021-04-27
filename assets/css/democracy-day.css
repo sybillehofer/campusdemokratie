@@ -42,9 +42,9 @@
 /* Proposal */
 .static-proposal-card .proposal {
     border-color: #bd4145;
-    padding: 3.15rem 1rem;
+    padding: 2.7rem 1rem;
 }
-.static-proposal-card .proposal-image-container {
+.static-proposal-card .proposal-image-container-inner {
     margin-bottom: 0;
     background-color:  #bd4145;
 }
@@ -63,11 +63,11 @@
 .proposal {
     text-align: center;
     border: 6px solid #e9edf0;
-    padding: 1rem;
+    padding: 0.73rem;
     margin: 5px;
 }
 .proposal .article-title {
-    font-size: 1.2rem;
+    font-size: 1.05rem;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -79,11 +79,14 @@
     width: 100%;
 }
 .proposal-image-container {
+    padding: 0.5rem;
+}
+.proposal-image-container-inner {
     background-color: #e9edf0;
     height: 0;
     padding-bottom: 100%;
     border-radius: 50%;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 /* Proposal Filters */
