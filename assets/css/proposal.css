@@ -3,64 +3,26 @@
     margin: 0;
 }
 
-.proposal-content-wrapper {
+.single-proposal {
     position: relative;
 }
+
 .proposal-header {
-    margin-top: 4rem;
+    display: flex;
+    align-items: center;
+    margin: 4rem 0 3rem;
     position: relative;
 }
-
-.proposal-thumbnail {
-    border-radius: 50%;
-    height: 25rem;
-    width: 25rem;
-    max-height: 70vw;
-    max-width: 70vw;
-    margin-bottom: 5rem;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-/* bubbles */
-.proposal-bubble {
-    border-radius: 50%;
-    height: 11rem;
-    width: 11rem;
-    background-color: rgb(189, 189, 189);
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    font-size: 1.1rem;
-}
-
-.proposal-bubble:nth-child(1) { top: 0; left: 40%; }
-.proposal-bubble:nth-child(2) { top: 50%; left: 45%; }
-.proposal-bubble:nth-child(3) { top: 7%; left: 65%; }
-.proposal-bubble:nth-child(4) { top: 53%; left: 80%; }
-
-.proposal-bubble p {
-    margin: 0;
-}
-
-.bubble-title {
-    font-weight: bold;
-}
-
-.proposal-content {
+.proposal-details {
     background-color: #e9edf0;
     padding: 1rem;
     margin-bottom: 3rem;
 }
-
-.proposal-details {
-    display: flex;
-    justify-content: flex-start;
-    margin: 1.5rem 0 1rem;
-    flex-flow: wrap;
+.proposal-thumbnail {
+    border-radius: 50%;
+    padding-bottom: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /* icon groups */
@@ -69,6 +31,11 @@
     align-items: center;
     width: 33%;
     margin: 0.75rem 0;
+    overflow: hidden;
+}
+
+.proposal-icongroup:last-child {
+    float: left !important;
 }
 
 .proposal-icon {
@@ -94,6 +61,9 @@
 }
 
 /* footer */
+.proposal-footer {
+    padding-bottom: 2rem;
+}
 .proposal-author {
     margin-bottom: 3rem;
 }
@@ -104,8 +74,9 @@
 }
 .proposal-author img {
     max-height: 5rem;
-    max-width: 20rem;
+    max-width: 100%;
 }
+
 
 @media (max-width: 920px) {
     .proposal-icongroup {
@@ -116,6 +87,7 @@
 /* max-width 640px, mobile-only styles, use when QAing mobile issues */
 @media (max-width: 40em) {
     .proposal-header {
+        display: block;
         text-align: center;
         margin-top: 3rem;
     }
@@ -124,19 +96,6 @@
     }
     .proposal-title {
         margin-bottom: 3rem;
-    }
-    .proposal-headericongroup {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        margin-bottom: 1rem;
-        text-align: left;
-    }
-    .proposal-headericongroup .proposal-icon {
-        background-color: rgb(189, 189, 189); 
-    }
-    .proposal-content {
-        margin-top: 1rem;
     }
     .proposal-icongroup {
         width: 100%;

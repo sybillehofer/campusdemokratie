@@ -69,7 +69,11 @@
 	}
 	
 	//prepare icon groups and decide if they should be shown for this proposal
-	$iconGroups = [ ['slug' => 'gruppengroesse', 'title' => pll__( 'Gruppengrösse' ) . ':', 'show' => true, 'content' => $groupSize['from'] . '-' . $groupSize['to']],
+	$iconGroups = [ ['slug' => 'dauer', 'title' => pll__( 'Zeitraum' ) . ':', 'show' => true, 'content' => !empty($duration['from']) ? $duration['from'] . ' - ' . $duration['to'] . ' ' . pll__( 'Stunden' )  : pll__( 'keine Angabe' )],
+					['slug' => 'datum', 'title' => pll__( 'Umsetzung' ) . ':', 'show' => true, 'content' => $democracyDayOnly ? pll__( 'am Tag der Demokratie' ) : pll__( 'immer' )],
+					['slug' => !empty($proposalType[0]->slug) ? $proposalType[0]->slug : 'vorschlag', 'title' => pll__( 'Art' ) . ':', 'show' => true, 'content' => '', 'content' => !empty($proposalTypeString) ? $proposalTypeString : pll__( 'keine Angabe' )],
+					['slug' => 'alter', 'title' => pll__( 'Alter' ) . ':', 'show' => true,  'content' => !empty($age['from']) ? $age['from'] . ' - ' . $age['to'] . ' ' . pll__( 'jährig' ) : pll__( 'keine Angabe' )],
+					['slug' => 'gruppengroesse', 'title' => pll__( 'Gruppengrösse' ) . ':', 'show' => true, 'content' => $groupSize['from'] . '-' . $groupSize['to']],
 					['slug' => 'zielgruppe', 'title' => pll__( 'Zielgruppe(n)' ) . ':', 'show' => true, 'content' => strlen($targetGroups) <= 45 ? $targetGroups : $targetgroupModal],
 					['slug' => 'kontakt', 'title' => '<a class="proposal-link" href="mailto:' . $contactAdress . '">' . pll__( 'Kontakt' ) . '</a>', 'show' => $advertisement == 1 && $author != 3, 'content' => ''],
 					['slug' => 'durchfuehrungsort', 'title' => pll__( 'Durchführungsort(e)' ) . ':', 'show' => true, 'content' => !empty($surroundings) ? $surroundings : pll__('keine Angabe')],
@@ -79,94 +83,62 @@
 					['slug' => 'download', 'title' => $guideline, 'show' => $activityType == 1 && !empty($guideline), 'content' => ''],
 				];
 
-	//prepare bubbles
-	$bubbles 	= [ ['slug' => 'dauer', 'title' => pll__( 'Zeitraum' ), 'content' => !empty($duration['from']) ? $duration['from'] . ' - ' . $duration['to'] . ' ' . pll__( 'Stunden' )  : pll__( 'keine Angabe' )],
-					['slug' => 'alter', 'title' => pll__( 'Alter' ), 'content' => !empty($age['from']) ? $age['from'] . ' - ' . $age['to'] . ' ' . pll__( 'jährig' ) : pll__( 'keine Angabe' )],
-					['slug' => !empty($proposalType[0]->slug) ? $proposalType[0]->slug : 'vorschlag', 'title' => pll__( 'Art' ), 'content' => !empty($proposalTypeString) ? $proposalTypeString : pll__( 'keine Angabe' )],
-					['slug' => 'datum', 'title' => pll__( 'Umsetzung' ), 'content' => $democracyDayOnly ? pll__( 'am Tag der Demokratie' ) : pll__( 'immer' )]
-				];
-
 ?>
 
-<header class="proposal-header">
+<article class="single-proposal">
+	<header class="row proposal-header">
 
-	<div class="proposal-thumbnail" style='background-image:url(<?php echo $thumbnail; ?>);'></div>
+		<div class="small-12 medium-5 columns">
+			<div class="proposal-thumbnail" style='background-image:url(<?php echo $thumbnail; ?>);'></div>
+		</div>
+		<div class="small-12 medium-7 columns">
+				<h1 class="proposal-title"><?php the_title(); ?></h1>
+				<?php the_content(); ?>
+		</div>
 
-	<div class="proposal-bubbles hide-for-small-only">
+	</header>
+
+
+	<section class="row proposal-details">
 		<?php					
-			foreach( $bubbles as $bubble ) {
+			foreach( $iconGroups as $group ) {
+				if( $group['show'] ) {
 		?>
-			<div class="proposal-bubble">
-				<p class="p-no-margin"><span class="bubble-title"><?php echo $bubble['title']; ?></span><br><?php echo $bubble['content']; ?></p>
+		<div class="proposal-icongroup column small-12 medium-4" data-<?php echo $group['slug']; ?>>
+			<div class="proposal-icon">
+				<img src="<?php echo $icons[$group['slug']]['url']; ?>" height="50px" width="50px" />
 			</div>
-		<?php } ?>
-	</div>
+			<p class="p-no-margin" ><?php echo $group['title']; ?><br><?php echo $group['content']; ?></p>
+		</div>
+		<?php } } ?>
+	</section>
 
-	<h1 class="proposal-title">
-		<?php the_title(); ?>
-	</h1>
-
-	<div class="proposal-headericongroups show-for-small-only">
-		<?php					
-			foreach( $bubbles as $bubble ) {
-		?>
-			<div class="proposal-headericongroup" data-<?php echo $bubble['slug']; ?>>
-				<div class="proposal-icon">
-					<img src="<?php echo $icons[$bubble['slug']]['url']; ?>" height="50px" width="50px" />
-				</div>
-				<p class="p-no-margin"><?php echo $bubble['content']; ?></p>
-			</div>
-		<?php } ?>
-	</div>
-</header>
-
-<section class="row proposal-content-wrapper">
-
-	<div class="small-12 columns">
-		<article class="proposal-content">
-			<?php the_content(); ?>
-
-			<div class="proposal-details">
-				<?php					
-					foreach( $iconGroups as $group ) {
-						if( $group['show'] ) {
-				?>
-				<div class="proposal-icongroup" data-<?php echo $group['slug']; ?>>
-					<div class="proposal-icon">
-						<img src="<?php echo $icons[$group['slug']]['url']; ?>" height="50px" width="50px" />
-					</div>
-					<p class="p-no-margin" ><?php echo $group['title']; ?><br><?php echo $group['content']; ?></p>
-				</div>
-				<?php } } ?>
-
-			</div>
-		</article>
-		
-
-		<div class="proposal-footer">
-			<?php if( $logo || $organization || $firstname || $lastname ) { ?>
-				<div class="proposal-author">
-					<p><?php pll_e( 'Ein Vorschlag von' ); ?>:</p>
-					<?php if( $author == 2 ) { 
-						if( $logo ) { ?>
-							<img class="proposal-logo" src="<?php echo $logo["url"]; ?>" alt="<?php echo $logo['alt'] ? $logo['alt'] : $logo['title'];?>"/>
-						<?php } else { ?>
-							<p><?php echo $organization; ?>
-						<?php } ?>
-					<?php } else if( $firstname || $lastname ) { ?>
-						<p><?php echo $firstname . ' ' . $lastname; ?></p>
+	<section class="row proposal-footer">
+		<?php if( $logo || $organization || $firstname || $lastname ) { ?>
+			<div class="proposal-author column small-12">
+				<p><?php pll_e( 'Ein Vorschlag von' ); ?>:</p>
+				<?php if( $author == 2 ) { 
+					if( $logo ) { ?>
+						<img class="proposal-logo" src="<?php echo $logo["url"]; ?>" alt="<?php echo $logo['alt'] ? $logo['alt'] : $logo['title'];?>"/>
+					<?php } else { ?>
+						<p><?php echo $organization; ?>
 					<?php } ?>
-				</div>	
-			<?php } ?>
-			
+				<?php } else if( $firstname || $lastname ) { ?>
+					<p><?php echo $firstname . ' ' . $lastname; ?></p>
+				<?php } ?>
+			</div>	
+		<?php } ?>
+		
+		<div class="column small-12">
 			<a href="<?php echo get_post_type_archive_link( get_post_type() ); ?>" class="btn-primary proposal-button"><?php pll_e( 'Alle Vorschläge' ); ?></a>	
+
 			<?php $formPage = pll_get_post(get_field('form_activity', 'sh_options')); ?>
 			<a href="<?php echo $formPage ? get_permalink($formPage) : get_permalink(pll_get_post(get_field('form_activity', 'sh_options'), 'de')); ?>" class="btn-primary proposal-button"><?php pll_e( 'Ich mache mit!' ); ?></a>	
+			<?php //if ($number = cd_count_proposal_in_activities(get_the_ID())) { <span>Der Vorschlag wurde <?php echo $number;   Mal umgesetzt.</span> } ?>
 		</div>
-		<?php //if ($number = cd_count_proposal_in_activities(get_the_ID())) { <span>Der Vorschlag wurde <?php echo $number;   Mal umgesetzt.</span> } ?>
-
-
-	</div>
-
+		
+	</section>
+	
 	<?php get_template_part( 'parts/help-batch' ); ?>
-</section>
+	
+</article>
