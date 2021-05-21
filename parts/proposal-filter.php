@@ -15,7 +15,7 @@
         <div class="filter-group-container" data-mobile-hidden>
             <h3><?php pll_e( 'Dauer' ); ?></h3>
             <div class="slider" data-slider data-start="1" data-initial-start="1" data-end="168" data-filter-group="duration">
-                <div class="slider-handle" data-slider-handle role="slider" tabindex="1" data-tooltip title="Stunden" data-click-open="false">
+                <div class="slider-handle" data-slider-handle role="slider" tabindex="1" data-tooltip title="<?php pll_e('Stunden'); ?>" data-hours="<?php pll_e('Stunden'); ?>" data-days="<?php pll_e('Tage'); ?>" data-week="<?php pll_e('Woche'); ?>" data-click-open="false">
                     <input type="hidden" disabled>
                     <div data-slider-display>1</div>
                 </div>

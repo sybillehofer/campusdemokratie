@@ -47,6 +47,10 @@
 .static-proposal-card .proposal-image-container-inner {
     margin-bottom: 0;
     background-color:  #bd4145;
+
+}
+.static-proposal-card .proposal-image-container-inner img {
+    height: 5rem;
 }
 .static-proposal-card .proposal-image-text {
     position: absolute;
@@ -73,6 +77,7 @@
     display: -webkit-box;
    -webkit-line-clamp: 2; /* number of lines to show */
    -webkit-box-orient: vertical;
+   height: 2.8em;
 }
 .proposal-image {
     border-radius: 50%;
@@ -259,6 +264,9 @@ li.orbit-slide.active {
 
 /* responsive */
 @media screen and (max-width: 991px) {
+    .proposal-card {
+        width: 33%;
+    }
     .countdown-text {
         font-size: 1.2rem;
     }
@@ -272,6 +280,9 @@ li.orbit-slide.active {
     .countdown-content {
         width: 95%;
         padding-top: 95%;
+    }
+    .proposal-card {
+        width: 50%;
     }
 }
 
@@ -312,12 +323,15 @@ li.orbit-slide.active {
     .proposal .article-title {
         flex: 2;
         text-align: left;
+        height: auto;
     }
     .proposal-image-container {
-        padding-bottom: 6rem;
         margin-right: 1rem;
         margin-bottom: 0;
         width: 6rem;
+    }
+    .proposal-image-container-inner {
+        margin-bottom: 0;
     }
     .proposal-button {
         margin-bottom: 1rem;

@@ -30,7 +30,7 @@
 										<article class="proposal" role="article">
 											<div class="proposal-image-container">
 												<div class="proposal-image-container-inner">
-													<div class="proposal-icon show-for-small-only">
+													<div class="show-for-small-only">
 														<img src="<?php echo dd_get_democracy_day_icons('vorschlag')['url']; ?>" height="50px" width="50px" />
 													</div>
 												</div>

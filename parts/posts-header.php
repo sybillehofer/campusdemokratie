@@ -27,9 +27,11 @@
 <header class="posts-header row">		
     <div class="posts-header-text columns small-12 medium-9">	
         <h1 class="posts-title"><?php echo $title; ?></h1>
-        <?php if( $subtitle ) { ?>
-            <h2 class="posts-subtitle"><?php echo $subtitle; ?></h2>
+        <?php $fontweight = get_field('fontweight', get_queried_object());
+        if( $subtitle ) { ?>
+            <h2 class="posts-subtitle<?php echo $fontweight ? ' text-bold' : ''; ?>"><?php echo $subtitle; ?></h2>
         <?php } ?>
+    </div>
     </div>
     <div class="columns small-12 medium-3">
         <img class="posts-header-icon" src="<?php echo $image_url; ?>"/>

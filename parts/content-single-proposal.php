@@ -1,6 +1,6 @@
 <?php 
 
-	$thumbnail = get_the_post_thumbnail_url($post, 'medium');
+	$thumbnail = get_the_post_thumbnail_url($post, 'large');
 	$logo = get_field('logo', $post);
 	$author = get_field('author', $post);
 	$firstname = get_field('name', $post);
@@ -70,8 +70,8 @@
 	
 	//prepare icon groups and decide if they should be shown for this proposal
 	$iconGroups = [ ['slug' => 'dauer', 'title' => pll__( 'Zeitraum' ) . ':', 'show' => true, 'content' => !empty($duration['from']) ? $duration['from'] . ' - ' . $duration['to'] . ' ' . pll__( 'Stunden' )  : pll__( 'keine Angabe' )],
-					['slug' => 'datum', 'title' => pll__( 'Umsetzung' ) . ':', 'show' => true, 'content' => $democracyDayOnly ? pll__( 'am Tag der Demokratie' ) : pll__( 'immer' )],
-					['slug' => !empty($proposalType[0]->slug) ? $proposalType[0]->slug : 'vorschlag', 'title' => pll__( 'Art' ) . ':', 'show' => true, 'content' => '', 'content' => !empty($proposalTypeString) ? $proposalTypeString : pll__( 'keine Angabe' )],
+					['slug' => 'datum', 'title' => pll__( 'Umsetzung' ) . ':', 'show' => true, 'content' => $democracyDayOnly == 2 ? pll__( 'am Tag der Demokratie' ) : pll__( 'immer' )],
+					//['slug' => !empty($proposalType[0]->slug) ? $proposalType[0]->slug : 'vorschlag', 'title' => pll__( 'Art' ) . ':', 'show' => true, 'content' => '', 'content' => !empty($proposalTypeString) ? $proposalTypeString : pll__( 'keine Angabe' )],
 					['slug' => 'alter', 'title' => pll__( 'Alter' ) . ':', 'show' => true,  'content' => !empty($age['from']) ? $age['from'] . ' - ' . $age['to'] . ' ' . pll__( 'jährig' ) : pll__( 'keine Angabe' )],
 					['slug' => 'gruppengroesse', 'title' => pll__( 'Gruppengrösse' ) . ':', 'show' => true, 'content' => $groupSize['from'] . '-' . $groupSize['to']],
 					['slug' => 'zielgruppe', 'title' => pll__( 'Zielgruppe(n)' ) . ':', 'show' => true, 'content' => strlen($targetGroups) <= 45 ? $targetGroups : $targetgroupModal],
