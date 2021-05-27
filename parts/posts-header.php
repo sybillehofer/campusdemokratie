@@ -32,7 +32,6 @@
             <h2 class="posts-subtitle<?php echo $fontweight ? ' text-bold' : ''; ?>"><?php echo $subtitle; ?></h2>
         <?php } ?>
     </div>
-    </div>
     <div class="columns small-12 medium-3">
         <img class="posts-header-icon" src="<?php echo $image_url; ?>"/>
     </div>
