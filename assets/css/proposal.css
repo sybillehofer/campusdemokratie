@@ -60,6 +60,10 @@
     text-decoration: underline;
 }
 
+.single-proposal .reveal {
+    line-height: 1.75;
+}
+
 /* footer */
 .proposal-footer {
     padding-bottom: 2rem;

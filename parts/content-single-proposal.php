@@ -38,15 +38,20 @@
 	$files = '';
 	if( $materialFiles ) {
 		foreach($materialFiles as $file) { 
-			$filesArray[] = '<a class="proposal-link" href="' . $file["url"] . '" download>' . $file["filename"] . '</a>';
+			$title = $file["title"] ? $file["title"] : $file["filename"];
+			$filesArray[] = '<a class="proposal-link" href="' . $file["url"] . '" download>' . $title . '</a>';
 		}
-		$files = join('<br>', $filesArray);
+		$files = join('<br>', $filesArray) . '<br>';
 	}
 
 	$documentLink = get_field('document-link', $post);
-	$documentLinkString =  $documentLink ? '<a class="proposal-link" href="' . $documentLink . '" target="_blank">' . pll__( 'Zu den Dokumenten' ) . '</a>' : '';
+	$documentLinkString =  $documentLink ? '<a class="proposal-link" href="' . $documentLink . '" target="_blank">' . $documentLink . '</a>' : '';
 	$documentInfo = get_field('document-info', $post);
 	$documentInfoString =  !empty($documentInfo) ? $documentInfo . '<br>' : '';
+	$isurl = '~(?:(https?)://([^\s<]+)|(www\.[^\s<]+?\.[^\s<]+))(?<![\.,:])~i'; 
+	$documentInfoString = preg_replace($isurl, '<a class="proposal-link" href="$0" target="_blank" title="$0">$0</a>', $documentInfoString);
+
+
 	$duration = get_field('duration', $post);
 	$democracyDayOnly = get_field('democracy-day-only', $post);
 	$age = get_field('age', $post);
@@ -56,6 +61,13 @@
 	$targetgroupModal = '<a data-open="targetgroupModal">' . pll__('anzeigen') . '</a>' . '
 						<div class="reveal" id="targetgroupModal" data-reveal>' . $targetGroups . 
 						'<button class="close-button" data-close aria-label="Fenser schliessen" type="button">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						</div>';
+
+	$materialModal = '<a data-open="materialModal">' . pll__('anzeigen') . '</a>' . '
+						<div class="reveal" id="materialModal" data-reveal><div>' . $documentInfoString . $files . $documentLinkString . 
+						'</div><button class="close-button" data-close aria-label="Fenser schliessen" type="button">
 							<span aria-hidden="true">&times;</span>
 						</button>
 						</div>';
@@ -79,7 +91,7 @@
 					['slug' => 'durchfuehrungsort', 'title' => pll__( 'Durchführungsort(e)' ) . ':', 'show' => true, 'content' => !empty($surroundings) ? $surroundings : pll__('keine Angabe')],
 					['slug' => 'kosten', 'title' => $priceType == 1 ? pll__( 'Keine Kosten' ) : 'CHF ' . $price, 'show' => $activityType == 2, 'content' => ''],
 					['slug' => 'buchen', 'title' => '<a class="proposal-link" href="' . $booking . '" target="_blank">' . pll__( 'Angebot buchen' ) . '</a>', 'show' => $activityType == 2 && !empty($booking), 'content' => ''],
-					['slug' => 'material', 'title' => $documents != 0 ? pll__( 'Material' ) . ':' : pll__( 'Ohne Material' ), 'show' => $activityType == 1, 'content' => $documentInfoString . $files . $documentLinkString],
+					['slug' => 'material', 'title' => $documents != 0 ? pll__( 'Material' ) . ':' : pll__( 'Ohne Material' ), 'show' => $activityType == 1, 'content' => strlen($documentInfoString . $files . $documentLinkString) <= 45 ? $documentInfoString . $files . $documentLinkString : $materialModal],
 					['slug' => 'download', 'title' => $guideline, 'show' => $activityType == 1 && !empty($guideline), 'content' => ''],
 				];
 
