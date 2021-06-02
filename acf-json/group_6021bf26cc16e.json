@@ -146,6 +146,26 @@
             "translations": "translate"
         },
         {
+            "key": "field_60b77d0b70330",
+            "label": "Webseite \/ Social Media \/ App",
+            "name": "project_link",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "translations": "translate"
+        },
+        {
             "key": "field_6049b5a86ee7e",
             "label": "Einwilligung",
             "name": "agreement",
@@ -3607,15 +3627,7 @@
             "type": "tab",
             "instructions": "",
             "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_60591e5eda29c",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -3643,7 +3655,7 @@
             },
             "allow_null": 0,
             "other_choice": 0,
-            "default_value": "",
+            "default_value": 1,
             "layout": "horizontal",
             "return_format": "value",
             "translations": "copy_once",
@@ -3712,5 +3724,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "Democracy Day",
-    "modified": 1616580823
+    "modified": 1622639468
 }

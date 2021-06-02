@@ -109,7 +109,6 @@
 			});
 			
 			$.each(filters, function(index, values){
-		
 				if( $item.hasClass('static-proposal-card') ) {
 					show = true;
 				} else if( $.isArray(values) ) { //if age, duration or group
@@ -128,10 +127,14 @@
 						show = false;
 					}
 
-				} else if( values === '' || $item.hasClass( values ) ) { //if class-filter is empty or item has class
+				} else if( values === '' ) { //if class-filter is empty or item has class
 	
 				} else {
-					show = false;
+					$.each(values.split("."), function(index, value) {
+						if( !$item.hasClass( value ) ) {
+							show = false;
+						}
+					});
 				}
 			});
 
@@ -140,7 +143,8 @@
 
 		//filter the list and arrange items
 		$.filterList = function(filterValue, $input) {
-			if($input && $input.parents('#proposal-filter-wrapper').length ) { //if on proposal filter page
+
+			if($('.proposal-grid').length) { //if on proposal filter page
 				$grid.isotope({ filter: function() { return $.filterListbyAttributes( this, filterValue ); }}); //filter the list by classes and attributes (proposals only)
 			} else {
 				$grid.isotope({ filter: filterValue }); //filter the list by classes

@@ -11,7 +11,7 @@
 					<section class="medium-3 columns proposal-filter-container">
 						<h2>
 							<?php pll_e( 'Filter' ); ?>
-							<button class="reset-filter" data-reset-filter title="<?php pll_e( 'Filter zurücksetzen' ); ?>">
+							<button class="reset-filter right filter-tooltip" data-reset-filter title="<?php pll_e( 'Filter zurücksetzen' ); ?>" data-tooltip>
 								<?php include("assets/images/reset.svg"); ?>
 							</button>
 						</h2>
