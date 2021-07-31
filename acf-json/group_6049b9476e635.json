@@ -883,12 +883,20 @@
         },
         {
             "key": "field_6049c1dda10c2",
-            "label": "Buchung \/ Kosten",
+            "label": "Buchung",
             "name": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6049b9b464ea6",
+                        "operator": "==",
+                        "value": "Aktivität buchen"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -1137,5 +1145,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "Democracy Day",
-    "modified": 1622639440
+    "modified": 1625923359
 }
