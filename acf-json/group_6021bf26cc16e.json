@@ -146,6 +146,23 @@
             "translations": "translate"
         },
         {
+            "key": "field_61053e5011915",
+            "label": "Webseite \/ Social Media \/ App",
+            "name": "project_link",
+            "type": "url",
+            "instructions": "Wird für die Schaltfläche «Reinschauen!» verwendet.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "translations": "copy_once"
+        },
+        {
             "key": "field_6049b5a86ee7e",
             "label": "Einwilligung",
             "name": "agreement",
@@ -3712,5 +3729,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "Democracy Day",
-    "modified": 1625914720
+    "modified": 1627733827
 }
