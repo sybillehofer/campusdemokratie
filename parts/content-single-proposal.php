@@ -32,6 +32,7 @@
 	$booking = get_field('booking-link', $post);
 	$priceType = get_field('price-type', $post);
 	$price = get_field('price', $post);
+	$show_price = false;
 	if( $activityType == 2 || ($activityType == 1 && $priceType == 2 && !empty($price)) ) {
 		$show_price = true;
 	}

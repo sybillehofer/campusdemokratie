@@ -810,15 +810,7 @@
             "type": "tab",
             "instructions": "",
             "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_6049b9b464ea6",
-                        "operator": "==",
-                        "value": "Aktivität buchen"
-                    }
-                ]
-            ],
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -831,27 +823,30 @@
             "key": "field_6049bf06cca77",
             "label": "Wo findet die Aktivität statt?",
             "name": "location",
-            "type": "radio",
+            "type": "checkbox",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "choices": {
-                "1": "Online",
-                "2": "Vor Ort (bei uns)",
-                "3": "Vor Ort (bei Ihnen)"
-            },
-            "allow_null": 0,
-            "other_choice": 0,
-            "default_value": "",
+            "choices": [
+                "Offline",
+                "Online",
+                "Vor Ort (bei uns)",
+                "Vor Ort (bei Ihnen)"
+            ],
+            "allow_custom": 0,
+            "default_value": [
+                0
+            ],
             "layout": "horizontal",
+            "toggle": 0,
             "return_format": "value",
             "translations": "copy_once",
-            "save_other_choice": 0
+            "save_custom": 0
         },
         {
             "key": "field_6049bf3fcca78",
@@ -859,8 +854,15 @@
             "name": "address",
             "type": "text",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": [
+                [
+                    {
+                        "field": "field_6049bf06cca77",
+                        "operator": "==",
+                        "value": "0"
+                    }
+                ],
                 [
                     {
                         "field": "field_6049bf06cca77",
@@ -1145,5 +1147,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "Democracy Day",
-    "modified": 1625923359
+    "modified": 1630573327
 }

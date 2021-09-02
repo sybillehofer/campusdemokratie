@@ -364,8 +364,15 @@ function cd_get_isotope_classes($post) {
 		}
 
 		$location = get_field('location', $post->ID);
-		if($location == 1) {
-			$class_string .= ' online';
+		if( is_array($location) === true ) {
+			if( in_array(0, $location) || in_array(1, $location) ) {
+				if( in_array(0, $location) ) { $class_string .= ' offline'; }
+				if( in_array(1, $location) ) { $class_string .= ' online'; }
+				if( in_array(2, $location) ) { $class_string .= ' offline'; }
+				if( in_array(3, $location) ) { $class_string .= ' offline'; }
+			} else {
+				$class_string .= ' offline';
+			}
 		} else {
 			$class_string .= ' offline';
 		}
