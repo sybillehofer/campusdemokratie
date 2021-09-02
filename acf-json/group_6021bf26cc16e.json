@@ -2211,9 +2211,9 @@
                 "6053 Alpnachstad": "6053 Alpnachstad",
                 "6055 Alpnach Dorf": "6055 Alpnach Dorf",
                 "6056 Kägiswil": "6056 Kägiswil",
-                "6060 Ramersberg": "6060 Ramersberg",
-                "6062 Wilen Sarnen": "6062 Wilen Sarnen",
-                "6063 Stalden Sarnen": "6063 Stalden Sarnen",
+                "6060 Sarnen": "6060 Sarnen",
+                "6062 Wilen": "6062 Wilen",
+                "6063 Stalden": "6063 Stalden",
                 "6064 Kerns": "6064 Kerns",
                 "6066 St. Niklausen OW": "6066 St. Niklausen OW",
                 "6067 Melchtal": "6067 Melchtal",
@@ -2955,6 +2955,7 @@
                 "8057 Zürich": "8057 Zürich",
                 "8063 Zürich": "8063 Zürich",
                 "8064 Zürich": "8064 Zürich",
+                "8090 Zürich": "8090 Zürich",
                 "8099 Zürich": "8099 Zürich",
                 "8102 Oberengstringen": "8102 Oberengstringen",
                 "8103 Unterengstringen": "8103 Unterengstringen",
@@ -3164,6 +3165,7 @@
                 "8497 Fischenthal": "8497 Fischenthal",
                 "8498 Gibswil-Ried": "8498 Gibswil-Ried",
                 "8499 Sternenberg": "8499 Sternenberg",
+                "8500 Frauenfeld": "8500 Frauenfeld",
                 "8500 Gerlikon": "8500 Gerlikon",
                 "8505 Pfyn": "8505 Pfyn",
                 "8506 Lanzenneunforn": "8506 Lanzenneunforn",
@@ -3731,5 +3733,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "Democracy Day",
-    "modified": 1628003503
+    "modified": 1630326247
 }
