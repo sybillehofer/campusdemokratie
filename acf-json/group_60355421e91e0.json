@@ -56,6 +56,13 @@
                 "operator": "==",
                 "value": "proposal-type"
             }
+        ],
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "activity-year"
+            }
         ]
     ],
     "menu_order": 0,
@@ -66,5 +73,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "Democracy Day",
-    "modified": 1615916795
+    "modified": 1644762169
 }

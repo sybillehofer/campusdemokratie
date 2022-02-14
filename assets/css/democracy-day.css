@@ -147,7 +147,7 @@
     display: none;
 }
 .hiddenCheckbox:checked + .termIcon,
-.termIcon:hover {
+.termIcon:not(.no-hover):hover {
     cursor: pointer;
     background: #8d464a;
 }
@@ -161,6 +161,9 @@
     align-items: center;
     margin-right: 0.3rem;
     padding: 2px;
+}
+.termIcon.no-hover {
+    cursor: help;
 }
 .termIcon img {
     height: 1.2rem;

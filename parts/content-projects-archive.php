@@ -68,5 +68,5 @@
 	    </tbody>
 	</table>
 	    
-	    <p class="no-results" data-no-results><?php pll_e( 'Zur Zeit haben wir keine Projekte, welche die gewählten Kriterien erfüllen.' ); ?></p>
+	    <p class="no-results" data-no-results><?php pll_e( 'Zurzeit haben wir keine Projekte, welche die gewählten Kriterien erfüllen.' ); ?></p>
 </div>

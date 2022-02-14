@@ -297,22 +297,28 @@ function cd_get_tax_name($post_id, $tax) {
 
     $tax = get_the_terms( $post_id, $tax ); //get all terms
 
-	foreach ($tax as $term) {
-		if ( pll_get_term_language($term->term_id) === pll_current_language() ) {
-			if( $link = get_field('link', 'akteur_' . $term->term_id) ) {
-				$term_string = '<a href="' . $link['url'] . '" target="' . $link['target'] . '">' . $term->name . '</a>';
-			} else {
-				$term_string = $term->name;
-			}
+	if (!empty($tax) ) {
 		
-			if( $term)
-	        $terms[] = $term_string; //add term to list of terms for this taxonomy
-	    }
-    }
+		foreach ($tax as $term) {
+			if ( pll_get_term_language($term->term_id) === pll_current_language() ) {
+				if( $link = get_field('link', 'akteur_' . $term->term_id) ) {
+					$term_string = '<a href="' . $link['url'] . '" target="' . $link['target'] . '">' . $term->name . '</a>';
+				} else {
+					$term_string = $term->name;
+				}
+			
+				if( $term)
+				$terms[] = $term_string; //add term to list of terms for this taxonomy
+			}
+		}
     
-	if(empty($terms) ) {
-	    $terms[] = '-';
-    }
+		if(empty($terms) ) {
+			$terms[] = '-';
+		}
+
+	} else {
+		$terms[] = '-';
+	}
     
 	return $terms;
 }
@@ -331,10 +337,11 @@ function cd_get_tax_slug($post_id, $tax) {
 	return $terms;
 }
 
-function cd_get_taxonomy_terms($tax, $hide_empty = true) {
+function cd_get_taxonomy_terms($tax, $hide_empty = true, $order = 'ASC') {
 	$terms = get_terms( array(
 		'taxonomy' => $tax,
-		'hide_empty' => $hide_empty
+		'hide_empty' => $hide_empty,
+		'order' => $order,
 	));
 	
 	return $terms;

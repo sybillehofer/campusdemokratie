@@ -9,7 +9,8 @@
     align-items: center;
 }
 
-.page-template-template-project-list .filter-group:first-child {
+.page-template-template-project-list .selects-container .filter-group:first-child,
+.map-shortcode .selects-container .filter-group:first-child {
     padding-left: 10px;
 }
 
@@ -32,6 +33,7 @@
 
 .no-results {
 	display: none;
+	padding-left: 10px;
 }
 
 .reset-filter {
