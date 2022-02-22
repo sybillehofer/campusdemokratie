@@ -3,7 +3,8 @@
 	<article id="post-<?php the_ID(); ?>" <?php post_class('proposal'); ?> role="article">
 		<div class="proposal-image-container">
 			<div class="proposal-image-container-inner">
-				<?php echo get_the_post_thumbnail( $post, 'thumbnail', array( 'class' => 'alignleft proposal-image' ) ); ?>
+				<?php $thumbnail = get_the_post_thumbnail_url($post, 'small'); ?>
+				<div class="proposal-thumbnail" style='background-image:url(<?php echo $thumbnail; ?>);'></div>
 			</div>
 		</div>
 		<h2 class="article-title"><?php the_title(); ?></h2>

@@ -1,0 +1,15 @@
+/* Print Styles */
+@media print {
+
+    header,
+    footer,
+    .helpBatch,
+    .proposal-links {
+        display: none;
+    }
+
+    * {
+        visibility: visible;
+        -webkit-print-color-adjust: exact;
+    }
+}

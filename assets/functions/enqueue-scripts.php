@@ -41,6 +41,7 @@ function site_scripts() {
     wp_enqueue_style( 'pages-css', get_template_directory_uri() . '/assets/css/pages.css', array(), '', 'all' );
     wp_enqueue_style( 'democracy-day-css', get_template_directory_uri() . '/assets/css/democracy-day.css', array(), '', 'all' );
     wp_enqueue_style( 'proposal-css', get_template_directory_uri() . '/assets/css/proposal.css', array(), '', 'all' );
+    wp_enqueue_style( 'print-css', get_template_directory_uri() . '/assets/css/print.css', array(), '', 'all' );
 
 }
 add_action('wp_enqueue_scripts', 'site_scripts', 999);

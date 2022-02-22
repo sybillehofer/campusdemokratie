@@ -2,7 +2,8 @@
 		
 	$(document).ready(function() {
 		
-		var filters = {}; //list of filters and their values
+		var filters = {}, //list of filters and their values
+		changedByJquery = false;
 		
 		//check if url contains parameter with given name
 		$.urlParam = function(name) {
@@ -123,7 +124,7 @@
 					} else if( data[index+'-from'] <= values[0] && values[0] <= data[index+'-to'] ) {
 					// (data[index+'-from'] <= values[1] && values[1] <= data[index+'-to']) || 
 					// (data[index+'-from'] >= values[0] && values[1] >= data[index+'-to']) 
-					} else {
+					} else {
 						show = false;
 					}
 
@@ -200,10 +201,15 @@
 			$('.filters-select').prop('selectedIndex',0).removeClass('selected');
 			$('[data-filter-checkbox]').prop("checked", false);
 			$('[data-filter-radio]').prop("checked", false);
+			changedByJquery = true;
+			$('[data-slider]').find('input').val('0').trigger('change');
 			filters = {};
 			$.filterList();
 			$.addFilterstoURL('');
 			$('[data-reset-filter]').hide();
+			setTimeout(function(){ 
+				changedByJquery = false;
+			}, 1100);
 		}
 
 		$.handleInputChange = function($input) {
@@ -267,7 +273,9 @@
 		//if a slider is changed
 		setTimeout(function(){ 
 			$('[data-slider]').on('changed.zf.slider', function(){
-				$.handleInputChange($(this));
+				if( changedByJquery === false ) {
+					$.handleInputChange($(this));
+				}
 			});
 		}, 1000);
 		

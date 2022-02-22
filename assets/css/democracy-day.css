@@ -265,6 +265,12 @@ li.orbit-slide.active {
     text-align: center;
 }
 
+/* share buttons */
+.proposal-footer .shared-counts-wrap {
+    width: auto;
+    display: inline-flex;
+}
+
 /* responsive */
 @media screen and (max-width: 991px) {
     .proposal-card {
@@ -371,3 +377,4 @@ li.orbit-slide.active {
     }
 
 }
+

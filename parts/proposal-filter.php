@@ -4,15 +4,15 @@
         <div class="filter-group-container" data-mobile-hidden>
             <h3><?php pll_e( 'Alter' ); ?></h3>
             <div class="slider" data-slider data-start="0" data-initial-start="0" data-end="99" data-filter-group="age">
-                <div class="slider-handle" data-slider-handle role="slider" tabindex="1">
-                    <input type="hidden" disabled>
+                <div class="slider-handle" data-slider-handle role="slider" tabindex="1" aria-controls="ageInput">
+                    <input type="hidden" disabled id="ageInput">
                     <div data-slider-display>0+</div>
                 </div>
                 <span class="slider-fill" data-slider-fill></span>
             </div>
         </div>
 
-        <div class="filter-group-container" data-mobile-hidden>
+        <!-- <div class="filter-group-container" data-mobile-hidden>
             <h3><?php pll_e( 'Dauer' ); ?></h3>
             <div class="slider" data-slider data-start="1" data-initial-start="1" data-end="168" data-filter-group="duration">
                 <div class="slider-handle" data-slider-handle role="slider" tabindex="1" data-tooltip title="<?php pll_e('Stunden'); ?>" data-hours="<?php pll_e('Stunden'); ?>" data-days="<?php pll_e('Tage'); ?>" data-week="<?php pll_e('Woche'); ?>" data-click-open="false">
@@ -21,7 +21,7 @@
                 </div>
                 <span class="slider-fill" data-slider-fill></span>
             </div>
-        </div>
+        </div> -->
 
         <div class="filter-group-container" data-mobile-hidden>
             <h3><?php pll_e( 'Art' ); ?></h3>
@@ -82,11 +82,13 @@
 
         <div class="filter-group-container" data-mobile-hidden>
             <h3><?php pll_e( 'Stichwort' ); ?></h3>
-            <form role="search" action="<?php echo site_url('/mitmachen'); ?>" method="get" id="searchform" class="proposal-form">
+            <p><input type="text" id="proposalsearch" class="search-input" placeholder="<?php pll_e( 'Nach Stichwort suchen' ); ?>" /></p>
+
+            <!-- <form role="search" action="<?php echo site_url('/vorschlaege'); ?>" method="get" id="proposalsearchform" class="proposal-form">
                 <input type="text" name="s" placeholder="<?php pll_e( 'Nach Stichwort suchen' ); ?>" class="search-input" />
                 <input type="submit" alt="Search" class="button submit-button" value="<?php pll_e( 'Suchen' ); ?>" />
                 <input type="hidden" name="post_type" value="sh_proposal" />
-            </form>
+            </form> -->
         </div>
 
 
