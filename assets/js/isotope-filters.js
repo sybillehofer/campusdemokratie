@@ -234,8 +234,10 @@
 			},
 			visibleStyle: {
 				opacity: 1
-			}
+			},
+			initLayout: false // prevent intialization for filterhandling and applying eventlistener
 		});
+
 		
 		//if the url contains a parameter called "filter"
 		if( $.urlParam('filter') ) {
@@ -298,7 +300,12 @@
 					}
 				});
 			}
+			window.dispatchEvent(new CustomEvent('isotope:layoutcomplete', {detail: {grid: $grid, initialTarget: event.target}}));
 		});
+
+		// Initialize isotope
+		// @see https://isotope.metafizzy.co/options.html#initlayout
+		$grid.isotope();
 		
 		$('[data-reset-filter]').on( 'click', function() {
 			$.resetFilters();
