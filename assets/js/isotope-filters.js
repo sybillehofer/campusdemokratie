@@ -141,7 +141,7 @@
 
 			return show;
 		};
-
+	
 		//filter the list and arrange items
 		$.filterList = function(filterValue, $input) {
 
@@ -280,7 +280,35 @@
 				}
 			});
 		}, 1000);
-		
+
+		// Used to slow down keyinputs on searchfield
+		function throttle(func, delay) {
+			let timeout = null
+			return function(...args) {
+				if (!timeout) {
+						timeout = setTimeout(() => {
+						func.call(this, ...args)
+						timeout = null
+					}, delay)
+				}
+			}
+		}	
+
+		// Filter cardcontent against a regular expression from search input
+		function filterBySearchInput(event) {
+			$.resetFilters();
+			$grid.isotope({ filter: function() {
+				var regex = new RegExp(event.target.value, 'gi');
+				var $this = $(this);
+				return $this.text().match(regex);
+			}});
+		}
+
+		//if searchbox has changed
+		$('#proposalsearch').on('input', throttle(function(event) {
+			filterBySearchInput(event);
+		},500));
+
 		//as soon as filtering is done
 		$grid.on( 'arrangeComplete', function( event, filteredItems ) {
 
