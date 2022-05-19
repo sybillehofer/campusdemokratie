@@ -113,7 +113,7 @@
 				if( $item.hasClass('static-proposal-card') ) {
 					show = true;
 				} else if( $.isArray(values) ) { //if age, duration or group
-	
+					
 					if( index === 'duration' ) {
 						var maxDauer = values[0];
 						if( maxDauer >= data[index+'-from'] ) {
@@ -281,33 +281,30 @@
 			});
 		}, 1000);
 
-		// Used to slow down keyinputs on searchfield
-		function throttle(func, delay) {
-			let timeout = null
-			return function(...args) {
-				if (!timeout) {
-						timeout = setTimeout(() => {
-						func.call(this, ...args)
-						timeout = null
-					}, delay)
-				}
-			}
-		}	
+		
+		let currentSearchValue = '';
+		let timer;
+		let inputDelay = 1000;
 
 		// Filter cardcontent against a regular expression from search input
-		function filterBySearchInput(event) {
+		function filterBySearchInput() {
 			$.resetFilters();
 			$grid.isotope({ filter: function() {
-				var regex = new RegExp(event.target.value, 'gi');
+				var regex = new RegExp(currentSearchValue, 'gi');
 				var $this = $(this);
 				return $this.text().match(regex);
 			}});
 		}
 
+
 		//if searchbox has changed
-		$('#proposalsearch').on('input', throttle(function(event) {
-			filterBySearchInput(event);
-		},500));
+		$('#proposalsearch').on('input', (event) => {
+			currentSearchValue = event.target.value;
+			clearTimeout(timer);
+			timer = setTimeout(() => {
+				filterBySearchInput();
+			}, inputDelay)
+		});
 
 		//as soon as filtering is done
 		$grid.on( 'arrangeComplete', function( event, filteredItems ) {

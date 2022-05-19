@@ -13,7 +13,7 @@
         $link = get_field('title_link', get_queried_object());
         $image_url = get_field('post_icon', 'category_' . get_queried_object()->term_id)["sizes"]["full-width"];
     } else if( $post->post_type === 'post' ) {
-        $image_url = get_field('post_icon')["sizes"]["full-width"];
+        $image_url = isset(get_field('post_icon')["sizes"]["full-width"]) ? get_field('post_icon')["sizes"]["full-width"] : '';
     } else {
         $image_url = get_the_post_thumbnail_url($post, 'full-width');
     }

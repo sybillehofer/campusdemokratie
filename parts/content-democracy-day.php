@@ -15,7 +15,9 @@
 		?>
 		
 		<div class="row content-row">
-			<a href="<?php echo $link['url']; ?>" class="content-link"></a>
+			<?php if (isset($link['url'])) : ?>
+				<a href="<?php echo $link['url']; ?>" class="content-link"></a>
+			<?php endif; ?>
 			<div class="column show-for-small-only">
 				<div class="icon-box">
 					<?php echo wp_get_attachment_image( $icon['ID'], 'thumbnail', true ); ?>

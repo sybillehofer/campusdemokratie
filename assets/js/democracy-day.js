@@ -18,7 +18,11 @@
                 $sliderHandle = $(input).parent();
 
             switch (sliderType) { 
-                case 'age': 
+                case 'age':
+                    if (input.getAttribute('id') === 'ageInputTo') {
+                        val = val + '-';
+                        break;
+                    }
                     val = val + '+';
                     break;
                 case 'duration': 

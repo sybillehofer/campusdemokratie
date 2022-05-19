@@ -1,16 +1,21 @@
 <div id="proposal-filter-wrapper">
 	<div class="selects-container filters">
     
-        <div class="filter-group-container" data-mobile-hidden>
+        <!-- <div class="filter-group-container" data-mobile-hidden>
             <h3><?php pll_e( 'Alter' ); ?></h3>
             <div class="slider" data-slider data-start="0" data-initial-start="0" data-end="99" data-filter-group="age">
                 <div class="slider-handle" data-slider-handle role="slider" tabindex="1" aria-controls="ageInput">
                     <input type="hidden" disabled id="ageInput">
-                    <div data-slider-display>0+</div>
+                    <div data-slider-display>0</div>
                 </div>
+                <div class="slider-handle" data-slider-handle role="slider" tabindex="1" aria-controls="ageInput">
+                <input type="hidden" disabled id="ageInputTo">
+                    <div data-slider-display>99</div>
+                </div>
+                
                 <span class="slider-fill" data-slider-fill></span>
             </div>
-        </div>
+        </div> -->
 
         <!-- <div class="filter-group-container" data-mobile-hidden>
             <h3><?php pll_e( 'Dauer' ); ?></h3>
