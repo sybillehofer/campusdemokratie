@@ -128,30 +128,9 @@
     "location": [
         [
             {
-                "param": "page",
-                "operator": "==",
-                "value": "10273"
-            }
-        ],
-        [
-            {
-                "param": "page",
-                "operator": "==",
-                "value": "15885"
-            }
-        ],
-        [
-            {
-                "param": "page",
-                "operator": "==",
-                "value": "15887"
-            }
-        ],
-        [
-            {
-                "param": "page",
-                "operator": "==",
-                "value": "15875"
+                "param": "page_type",
+                "operator": "!=",
+                "value": "front_page"
             }
         ]
     ],
@@ -163,5 +142,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "Democracy Day (Übersichtsseite)",
-    "modified": 1652995187
+    "modified": 1653426600
 }

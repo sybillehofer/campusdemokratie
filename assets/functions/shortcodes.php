@@ -43,3 +43,21 @@ function slideshow_shortcode( $atts, $content, $tag = 'slideshow' ) {
 }
 
 add_shortcode('slideshow', 'slideshow_shortcode');
+
+/*
+ *
+ * register shortcode "fragengenerator"
+ *
+*/
+function fragengenerator_shortcode( $atts, $content, $tag = 'fragengenerator' ) {
+  
+    ob_start();
+    include(locate_template( 'parts/shortcode-fragengenerator.php'));
+    $content = ob_get_contents();
+    ob_end_clean();
+
+    return $content;
+    
+}
+
+add_shortcode('fragengenerator', 'fragengenerator_shortcode');
