@@ -234,6 +234,103 @@
                     "translations": "translate"
                 }
             ]
+        },
+        {
+            "key": "field_62fa33739a1e8",
+            "label": "Demokratiefragen",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_62fa331e9a1e6",
+            "label": "Fragen für Zufallsgenerator",
+            "name": "democracy-day-questions",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_62fa33479a1e7",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Frage hinzufügen",
+            "sub_fields": [
+                {
+                    "key": "field_62fa33479a1e7",
+                    "label": "Frage (DE)",
+                    "name": "question_de_DE",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "translations": "translate"
+                },
+                {
+                    "key": "field_62fcb1eb7b7d3",
+                    "label": "Frage (FR)",
+                    "name": "question_fr_FR",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "translations": "translate"
+                },
+                {
+                    "key": "field_62fcb2077b7d5",
+                    "label": "Frage (IT)",
+                    "name": "question_it_IT",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "translations": "translate"
+                }
+            ]
         }
     ],
     "location": [
@@ -253,5 +350,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "Democracy Day",
-    "modified": 1618349141
+    "modified": 1660728166
 }
