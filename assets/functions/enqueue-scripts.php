@@ -13,6 +13,13 @@ function site_scripts() {
     wp_enqueue_script( 'glossary-js', get_template_directory_uri() . '/assets/js/glossary.js', array( 'jquery' ), '', true );
     wp_enqueue_script( 'democracy-day-js', get_template_directory_uri() . '/assets/js/democracy-day.js', array( 'jquery' ), '', true );
     wp_enqueue_script( 'glossary-ajax-js', get_template_directory_uri() . '/assets/js/glossary-ajax.js', array( 'jquery' ), '', true );
+    wp_enqueue_script( 'p5-library-js', get_template_directory_uri() . '/assets/js/p5.min.js', array( 'jquery' ), '', true );
+    wp_enqueue_script( 'questions-generator-js', get_template_directory_uri() . '/assets/js/questions-generator.js', array( 'jquery' ), '', true );
+    wp_localize_script('questions-generator-js', 'generator', array(
+        'font_bold' => get_template_directory_uri() .'/assets/fonts/GT-Pressura-Bold.ttf',
+        'font_regular' => get_template_directory_uri() .'/assets/fonts/GT-Pressura-Regular.ttf',
+        'image' => get_template_directory_uri() .'/assets/images/democracy_day_logo_red.svg'
+    ));
 
     // AJAX
     wp_localize_script( 'glossary-ajax-js', 'CDAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' )) );

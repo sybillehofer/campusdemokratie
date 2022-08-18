@@ -264,7 +264,7 @@
                 "class": "",
                 "id": ""
             },
-            "collapsed": "",
+            "collapsed": "field_62fa33479a1e7",
             "min": 0,
             "max": 0,
             "layout": "table",
@@ -272,11 +272,51 @@
             "sub_fields": [
                 {
                     "key": "field_62fa33479a1e7",
-                    "label": "Frage",
-                    "name": "question",
+                    "label": "Frage (DE)",
+                    "name": "question_de_DE",
                     "type": "text",
                     "instructions": "",
-                    "required": 1,
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "translations": "translate"
+                },
+                {
+                    "key": "field_62fcb1eb7b7d3",
+                    "label": "Frage (FR)",
+                    "name": "question_fr_FR",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "translations": "translate"
+                },
+                {
+                    "key": "field_62fcb2077b7d5",
+                    "label": "Frage (IT)",
+                    "name": "question_it_IT",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
@@ -310,5 +350,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "Democracy Day",
-    "modified": 1660564356
+    "modified": 1660728166
 }
