@@ -50,7 +50,16 @@ add_shortcode('slideshow', 'slideshow_shortcode');
  *
 */
 function fragengenerator_shortcode( $atts, $content, $tag = 'fragengenerator' ) {
-  
+    
+    // JAVASCRIPT
+    wp_enqueue_script( 'p5-library-js', get_template_directory_uri() . '/assets/js/p5.min.js', array( 'jquery' ), '', true );
+    wp_enqueue_script( 'questions-generator-js', get_template_directory_uri() . '/assets/js/questions-generator.js', array( 'jquery' ), '', true );
+    wp_localize_script('questions-generator-js', 'generator', array(
+        'font_bold' => get_template_directory_uri() .'/assets/fonts/GT-Pressura-Bold.ttf',
+        'font_regular' => get_template_directory_uri() .'/assets/fonts/GT-Pressura-Regular.ttf',
+        'image' => get_template_directory_uri() .'/assets/images/democracy_day_logo_red.svg'
+    ));
+      
     ob_start();
     include(locate_template( 'parts/shortcode-fragengenerator.php'));
     $content = ob_get_contents();

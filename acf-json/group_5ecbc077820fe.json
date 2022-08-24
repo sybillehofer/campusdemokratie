@@ -1,10 +1,10 @@
 {
     "key": "group_5ecbc077820fe",
-    "title": "Untertitel (für Titelbox)",
+    "title": "Einstellungen Titelbox",
     "fields": [
         {
             "key": "field_5ecbc0778ce75",
-            "label": "",
+            "label": "Untertitel",
             "name": "subtitle",
             "type": "text",
             "instructions": "Dieser Text wird direkt unterhalb des Titels angezeigt.",
@@ -41,6 +41,26 @@
             "ui_on_text": "fett",
             "ui_off_text": "normal",
             "translations": "copy_once"
+        },
+        {
+            "key": "field_630693288955f",
+            "label": "Titel anzeigen?",
+            "name": "show_title",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "translations": "sync"
         }
     ],
     "location": [
@@ -95,5 +115,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1621590099
+    "modified": 1661375337
 }

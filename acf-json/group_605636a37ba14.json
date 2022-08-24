@@ -252,6 +252,126 @@
             "endpoint": 0
         },
         {
+            "key": "field_63069653bfccf",
+            "label": "Kartentitel DE",
+            "name": "cardtitle_de_DE",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "#3",
+            "maxlength": "",
+            "translations": "translate"
+        },
+        {
+            "key": "field_6306970c4a904",
+            "label": "Kartentitel FR",
+            "name": "cardtitle_fr_FR",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "#3",
+            "maxlength": "",
+            "translations": "translate"
+        },
+        {
+            "key": "field_6306971f4a905",
+            "label": "Kartentitel IT",
+            "name": "cardtitle_it_IT",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "#3",
+            "maxlength": "",
+            "translations": "translate"
+        },
+        {
+            "key": "field_630696a7bfcd0",
+            "label": "Button-Text DE",
+            "name": "buttontext_de_DE",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "translations": "translate"
+        },
+        {
+            "key": "field_630697634a906",
+            "label": "Button-Text FR",
+            "name": "buttontext_fr_FR",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "translations": "translate"
+        },
+        {
+            "key": "field_630697694a907",
+            "label": "Button-Text IT",
+            "name": "buttontext_it_IT",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "translations": "translate"
+        },
+        {
             "key": "field_62fa331e9a1e6",
             "label": "Fragen für Zufallsgenerator",
             "name": "democracy-day-questions",
@@ -350,5 +470,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "Democracy Day",
-    "modified": 1660728166
+    "modified": 1661376415
 }

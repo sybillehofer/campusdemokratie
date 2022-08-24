@@ -8,12 +8,18 @@ function preload() {
 }
 
 function setup() {
-  var questionsCanvas = createCanvas(windowWidth, windowHeight);
+  var canvasWidth = windowWidth,
+      canvasHeight = windowWidth;
+  if (windowWidth > windowHeight) { canvasHeight = windowHeight };
+
+  var questionsCanvas = createCanvas(canvasWidth, canvasHeight);
   questionsCanvas.parent("generator");
-  button = createButton('Nächste Frage');
+  questionsCanvas.mousePressed(changeBG);
+  questionsCanvas.style('cursor: pointer;')
+  button = createButton(buttontext);
   button.parent('generator');
   button.mousePressed(changeBG);
-  button.style("position: relative; left: 50%; top: auto; background-color: #e32c2c; color: white; border: none; width: auto; height: auto; font-size: 1.6rem; cursor: pointer; padding: 0.8rem; transform: translate(-50%");
+  button.style("position: relative; left: 50%; top: auto; background-color: #bd4145; color: white; border: none; width: auto; height: auto; font-size: 1.2rem; cursor: pointer; padding: 0.8rem; transform: translate(-50%");
 }
 
 function draw() {
@@ -30,21 +36,24 @@ function karte() {
   rectMode(CENTER);
   stroke(225);
   fill(150);
-  rect(width/2+width/150, height/2+width/150, width/1.5, width/2.7, width/25);
+  rect(width/2+width/150, height/2+width/150, width/1.1, width/2, width/25);
 
   fill(255);
-  rect(width/2, height/2, width/1.5, width/2.7, width/25);
+  rect(width/2, height/2, width/1.1, width/2, width/25);
   noLoop();
   var randomword = random(questions.length-1);
   fill('#e32c2c');
-  textSize(width/30);
+  
+  textSize(width/25);
   textWrap(WORD);
   textAlign(CENTER);
-  text(questions[round(randomword)], width/2, height/2-width/20, width/2);
-  textSize(width/60);
+  text(questions[round(randomword)], width/2, height/2-width/14, width/1.5);
+
+  textSize(width/45);
   textFont(bold);
-  text("Demokratiefrage #"+round(randomword+1), width/2, height/2-width/7.5, width/3.3);
+  text(cardtitle+" #"+round(randomword+1), width/2, height/2-width/7, width/3.3);
+
+  //logo
   imageMode(CENTER);
-  mySvg.resize(width/15, 0);
-  image(mySvg, width/2, height/2+width/8);
+  image(mySvg, width/2, height/2+width/6, width/10, width/10);
 }
