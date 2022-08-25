@@ -8,9 +8,14 @@ function preload() {
 }
 
 function setup() {
+
   var canvasWidth = windowWidth,
       canvasHeight = windowWidth;
-  if (windowWidth > windowHeight) { canvasHeight = windowHeight };
+      
+  if (windowWidth > windowHeight) {
+    canvasHeight = windowHeight
+    if( windowHeight < windowWidth/2.1 ) { canvasHeight = 1.5*windowHeight; };
+  };
 
   var questionsCanvas = createCanvas(canvasWidth, canvasHeight);
   questionsCanvas.parent("generator");
@@ -39,7 +44,7 @@ function karte() {
   rect(width/2+width/150, height/2+width/150, width/1.1, width/2, width/25);
 
   fill(255);
-  rect(width/2, height/2, width/1.1, width/2, width/25);
+  rect(width/2, height/2, width/1.1, width/2, width/25); //rect(x, y, h, w, r);
   noLoop();
   var randomword = random(questions.length-1);
   fill('#e32c2c');
