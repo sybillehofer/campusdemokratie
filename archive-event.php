@@ -12,7 +12,7 @@ $upcoming_events = cd_get_events_new();
 			    
 			    <header class="page-header row events-header">
 				    <div class="medium-12 columns">
-					    <h1><?php pll_e( 'Events' ); ?></h1>
+					    <h1><?php the_archive_title(); ?></h1>
 				    </div>
 				    
 				    <div class="medium-12 columns">
