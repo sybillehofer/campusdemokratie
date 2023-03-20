@@ -10,7 +10,10 @@
 			<?php } ?>
 		</div>
 		<div class="columns small-12 medium-3">
-			<img src="<?php echo get_the_post_thumbnail_url($post, 'full-width');; ?>"/>
+			<?php $thumbnail_img = get_the_post_thumbnail_url($post, 'full-width');
+			if ($thumbnail_img ) { ?>
+			<img src="<?php echo $thumbnail_img ?>"/>
+			<?php } ?>
 		</div>
 	</header>
 <?php } ?>

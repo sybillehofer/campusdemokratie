@@ -31,7 +31,7 @@
 
 <?php 
 	$button = get_field( 'link_events_list', 'sh_options' );
-	if( isset($button) && $button['url'] !== '') :
+	if( isset($button['url']) && $button['url'] !== '') :
 ?>
 <a href="<?php echo $button['url']; ?>" target="<?php echo $button['target']; ?>" class="btn-primary"><?php echo $button['title']; ?></a>	
 <?php endif; ?>

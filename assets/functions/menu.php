@@ -68,7 +68,7 @@ function cd_add_icon_menu_icons( $items, $args ) {
 			
 			// append icon
 			if( $icon ) {
-				$item->title = '<img class="iconnav-img" src="' . $icon['url'] . '" alt="' . $item->title . '" /><span>' . $item->title . '</span>';
+				$item->title = '<img class="iconnav-img" src="' . $icon['url'] . '" alt="' . $item->title . '" height="32" width="32" /><span>' . $item->title . '</span>';
 			}
 			
 		}	
@@ -112,7 +112,7 @@ function cd_wp_nav_menu_objects( $items, $args ) {
 		$icon = get_field('icon', $item);
 		if( $icon ) {
 			$title = $item->title;
-			$item->title = ' <img src="' . $icon['url'] . '" title="' . $title . '" alt="' . $title . '" />';
+			$item->title = ' <img src="' . $icon['url'] . '" title="' . $title . '" alt="' . $title . '" height="32" width="32" />';
 			$item->target = '_blank';
 		}
 	}
