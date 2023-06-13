@@ -100,8 +100,9 @@ function dd_get_democracy_day_icons($slug = false) {
 	foreach($repeater_icons as $icon) {
 		$icons[$icon['slug']] = $icon['icon'];
 	}
-	if($slug) {
-		$icons = $icons[$slug]; 
+
+	if($slug && array_key_exists($slug, $icons)) {
+		$icons = $icons[$slug];
 	}
 	
 	return $icons;
