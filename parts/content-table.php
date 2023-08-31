@@ -14,22 +14,25 @@ if( have_rows('rows') ):
 			
 			<?php 
 			foreach( $fields_array as $fields ) {
+
+				if( !empty($fields) ):
+					if( $fields['type'] === 'image' && !empty($fields['image']) ): ?>
 				
-				if( $fields['type'] === 'image' && !empty($fields['image']) ): ?>
-	    	
-		    	<div class="image-column columns small-8 small-offset-2 medium-3 medium-offset-0">
-					<img src="<?php echo $fields['image']['url']; ?>" class="table-img" alt="<?php echo $fields['image']['alt']; ?>" />
-		    	</div>
-	
-				<?php endif; ?>
+					<div class="image-column columns small-8 small-offset-2 medium-3 medium-offset-0">
+						<img src="<?php echo $fields['image']['url']; ?>" class="table-img" alt="<?php echo $fields['image']['alt']; ?>" />
+					</div>
+		
+					<?php endif; ?>
 		    	
 		    	
-		    	<?php
-			    if( $fields['type'] === 'text' && !empty($fields['text']) ) { ?>			    
-				    <div class="columns small-12 medium-9 table-text">
-				    <?php echo $fields['text']; ?>
-				    </div>
-				<?php }
+					<?php
+					if( $fields['type'] === 'text' && !empty($fields['text']) ) { ?>			    
+						<div class="columns small-12 medium-9 table-text">
+						<?php echo $fields['text']; ?>
+						</div>
+					<?php }
+
+				endif;
 
 			} ?>
 			
